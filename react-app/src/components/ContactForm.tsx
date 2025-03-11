@@ -1,4 +1,5 @@
 import "../index.css";
+import "../css/ContactForm.css";
 
 const ContactForm = () => {
   return (
