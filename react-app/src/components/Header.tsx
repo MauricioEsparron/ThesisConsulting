@@ -1,10 +1,11 @@
 import "../index.css";
+import "../css/Header.css";
 import videoBanner from "../media/banner.mp4";
 
 const Header = () => {
   return (
     <div className="top-header">
-      <video className="video-background" autoPlay muted loop>
+      <video className="video-background" autoPlay loop muted>
         <source src={videoBanner} type="video/mp4" />
         Tu navegador no soporta la etiqueta de video.
       </video>

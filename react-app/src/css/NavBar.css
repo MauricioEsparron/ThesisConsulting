@@ -1,0 +1,83 @@
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(34, 29, 29, 0.51);
+  backdrop-filter: blur(5px);
+  position: fixed; /* Fijar el navbar en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; /* Asegurar que esté por encima de todo */
+}
+
+.NavBar-nombre-empresa {
+  color: #ffffff;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffa902;
+}
+
+.nav-icon i {
+  color: #ffffff;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-icon i:hover {
+  color: #ffa902;
+}
+
+/* Menú desplegable */
+.menu-desplegable {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(255, 169, 2, 0.79);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 200; /* Asegurar que esté por encima del formulario */
+}
+
+/* Agregar la clase active cuando el menú está abierto */
+.menu-desplegable.active {
+  right: 0;
+}
+
+.menu-desplegable a {
+  color: #ffffff;
+
+  text-decoration: none;
+  font-size: 1.2em;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.menu-desplegable a:hover {
+  color: #232e60;
+}
