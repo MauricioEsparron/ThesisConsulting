@@ -1,0 +1,153 @@
+/* Ajuste del header */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.header {
+  width: 100%;
+  height: 100vh; /* Asegura que tome toda la pantalla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo si es necesario */
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+/* Contenedor del video */
+.header-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.header-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra todo sin deformarse */
+}
+
+/* Ajuste del contenido dentro del header */
+.header-content {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.titulo-video {
+  max-width: 400px;
+}
+
+.texto-video {
+  max-width: 400px;
+}
+
+.subtitulo-video {
+  max-width: 400px;
+}
+
+/* Posicionamiento del contenido */
+.header-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.header-left {
+  margin-left: -350px;
+  max-width: 40%;
+  padding: 1rem;
+  border-radius: 10px;
+  color: white;
+  position: absolute;
+  text-align: left;
+  left: 5%;
+  bottom: 20%;
+}
+
+.header-right {
+  margin-right: -350px;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: white;
+  position: absolute;
+  right: 5%;
+  bottom: 15%;
+}
+
+/* 🟢 ESTILOS PARA PANTALLAS GRANDES (DESKTOP XXL) */
+@media screen and (max-width: 1799px) {
+  .subtitulo-video {
+    font-size: 11px; /* Reduce el tamaño del subtítulo */
+    margin-bottom: 60px;
+  }
+  .header-left {
+    margin-left: 0px;
+    max-width: 40%;
+    left: 2%;
+    bottom: 20%;
+  }
+
+  .header-right {
+    margin-right: 0px;
+    right: 2%;
+    bottom: 15%;
+  }
+}
+
+/* 🟠 ESTILOS RESPONSIVOS (TABLETS Y MÓVILES) */
+@media screen and (max-width: 768px) {
+  .header {
+    height: 100vh;
+  }
+
+  .header-content {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .header-left {
+    margin-left: 0px;
+    max-width: 40%;
+    left: 1%;
+    bottom: 7%;
+  }
+
+  .header-right {
+    margin-right: 0px;
+    right: 1%;
+    bottom: 7%;
+  }
+
+  .titulo-video {
+    font-size: 24px;
+    width: 250px;
+    max-width: 255px;
+    margin-bottom: 30px;
+  }
+
+  .texto-video {
+    font-size: 12px;
+    margin-bottom: 60px;
+  }
+
+  .subtitulo-video {
+    font-size: 11px;
+    margin-bottom: 60px;
+  }
+}
