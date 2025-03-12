@@ -30,7 +30,7 @@ const ContactForm = () => {
         </div>
         <div className="form-group">
           <label htmlFor="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <textarea id="mensaje" name="mensaje" required></textarea>
         </div>
         <div className="form-group-checkbox">
           <input type="checkbox" id="terminos" name="terminos" required />
