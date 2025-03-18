@@ -1,0 +1,57 @@
+.Pilares {
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos uniformemente */
+  flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
+  width: 100%;
+  border: 2px solid blue;
+  padding: 50px 0px 50px 0px;
+}
+.Pilares-contenedor {
+  display: flex;
+  width: 20%; /* Ajusta el ancho para que haya espacio entre ellos */
+  border: 2px solid red;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  background-color: #b1c392;
+}
+.Pilar-contenedor1 {
+  margin-left: 10%;
+}
+.Pilar-contenedor2 {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.Pilar-contenedor3 {
+  margin-right: 10%;
+}
+
+.Pilares-imagen {
+  width: 40%;
+  border: 2px solid #000000;
+  margin: auto;
+}
+
+.Pilares-texto {
+  width: 50%; /* Ajusta el tamaño para que se vea mejor */
+  border: 2px solid #000000;
+  margin: auto;
+  text-align: left;
+}
+.Pilares-texto p {
+  color: #304086;
+}
+
+@media screen and (max-width: 1799px) {
+}
+
+/* 🟠 ESTILOS RESPONSIVOS (TABLETS Y MÓVILES) */
+@media screen and (max-width: 768px) {
+  .Pilares {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 100%;
+  }
+}

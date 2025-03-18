@@ -29,7 +29,7 @@ const Header = () => {
 
         {/* Renderizar solo si formOpen es true */}
         {formOpen && (
-          <div className="formulario visible">
+          <div id="formulario" className="formulario visible">
             <div className="form-container">
               <div className="form">
                 <button
