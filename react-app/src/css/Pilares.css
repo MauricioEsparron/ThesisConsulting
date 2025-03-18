@@ -1,15 +1,16 @@
 .Pilares {
+  background-color: #f4f4f4;
   display: flex;
   justify-content: space-between; /* Distribuye los elementos uniformemente */
   flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
   width: 100%;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   padding: 50px 0px 50px 0px;
 }
 .Pilares-contenedor {
   display: flex;
   width: 20%; /* Ajusta el ancho para que haya espacio entre ellos */
-  border: 2px solid red;
+  /* border: 2px solid red; */
   padding: 30px;
   align-items: center;
   justify-content: center;
@@ -29,17 +30,17 @@
 
 .Pilares-imagen {
   width: 40%;
-  border: 2px solid #000000;
+  /* border: 2px solid #000000; */
   margin: auto;
 }
 
 .Pilares-texto {
   width: 50%; /* Ajusta el tamaño para que se vea mejor */
-  border: 2px solid #000000;
+  /* border: 2px solid #000000; */
   margin: auto;
   text-align: left;
 }
-.Pilares-texto p {
+.Pilares-texto {
   color: #304086;
 }
 

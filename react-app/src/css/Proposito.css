@@ -1,59 +1,94 @@
 .Proposito {
   width: 100%;
-  /* border: 2px solid blue; */
   background-color: #f4f4f4;
 }
+
 .Proposito-contenedor {
   width: 100%;
-  padding: 60px;
-  border: 2px solid green;
-  /* margin-top: 40px; */
+  padding: 120px;
   display: flex;
-  padding-right: 80px;
+  align-items: center;
+  justify-content: space-between;
 }
+
 .Proposito-imagen-contenedor {
-  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
+
 .Proposito-imagen {
   width: 100%;
-  border: 2px solid red;
-  border-radius: 200px 0px 0px 0px;
-  margin: 50px;
-  height: 750px;
   max-width: 750px;
+  height: auto;
+  border-radius: 200px 0px 0px 0px;
 }
 
 .Proposito-info {
-  width: 100%;
-  border: 2px solid red;
-  margin: 50px;
-  padding: 10px;
+  flex: 1;
+  padding: 20px;
+  text-align: left;
 }
 
 .Proposito-titulo {
   color: black;
   font-size: 80px;
-  margin: 50px;
-  width: 50%;
-  border: 2px solid red;
+  margin-bottom: 20px;
 }
 
-p,
-a {
-  width: 50%;
-  margin: 50px;
+.Proposito-info p {
   font-size: 25px;
-  /* border: 2px solid red; */
+  width: 80%;
+  line-height: 1.5;
+}
+
+.contenedor-opciones {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .Proposito-opciones {
-  width: 50%;
   display: flex;
+  width: 50%;
   background-color: #f5db86;
+  backdrop-filter: blur(5px);
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.Proposito-opciones p {
+  color: #f4f4f4;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px;
+}
+
 .Proposito-opciones a {
-  border: 2px solid blue;
-  color: white;
-  width: 100%;
+  color: #f4f4f4;
+  font-size: 18px;
+  font-weight: bold;
   text-decoration: none;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100px;
+  left: 30%;
+  width: 40%;
+  height: auto;
+  background-color: #f5db86;
+  color: #f4f4f4;
+  text-align: center;
+  padding: 15px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid red;
 }
