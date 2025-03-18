@@ -1,10 +1,20 @@
+import { useState, useEffect } from "react";
 import "../index.css";
 import "../css/Header.css";
 import videoBanner from "../media/banner.mp4";
-import { useState } from "react";
 
 const Header = () => {
-  const [formOpen, setFormOpen] = useState(false); // Estado para mostrar/ocultar formulario
+  const [formOpen, setFormOpen] = useState(false);
+
+  // 📌 Escucha el evento global y abre el formulario
+  useEffect(() => {
+    const handleOpenForm = () => setFormOpen(true);
+    window.addEventListener("openForm", handleOpenForm);
+
+    return () => {
+      window.removeEventListener("openForm", handleOpenForm);
+    };
+  }, []);
 
   return (
     <div className={`top-header ${formOpen ? "active" : ""}`}>

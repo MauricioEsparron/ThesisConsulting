@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../css/Proposito.css";
 
 type Props = { imagen: string; titulo: string; texto: string };
@@ -6,7 +5,7 @@ type Props = { imagen: string; titulo: string; texto: string };
 function Proposito({ imagen, titulo, texto }: Props) {
   return (
     <div className="Proposito">
-      <div className="Proposito-contenedor">
+      <div className="Proposito-contenedor background">
         <div className="Proposito-imagen-contenedor">
           <ImagenProposito imagen={imagen} />
         </div>
@@ -15,11 +14,25 @@ function Proposito({ imagen, titulo, texto }: Props) {
           <TextoProposito texto={texto} />
         </div>
       </div>
-      <div className="Proposito-opciones">
-        <OpcionProposito opcion="+5 AÑOS DE EXPERIENCIA" />
-        <a href="#formulario" className="boton-experiencia">
-          Agenda una sesión gratuita
-        </a>
+      <div className="contenedor-opciones">
+        <div className="Proposito-opciones overlay">
+          <OpcionProposito opcion="+5 AÑOS DE EXPERIENCIA" />
+          <a
+            href="#"
+            className="boton-sesion-gratuita"
+            onClick={(e) => {
+              e.preventDefault();
+              window.dispatchEvent(new Event("openForm"));
+              setTimeout(() => {
+                document.getElementById("formulario")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }, 100);
+            }}
+          >
+            AGENDA UNA SESIÓN GRATUITA
+          </a>
+        </div>
       </div>
     </div>
   );
