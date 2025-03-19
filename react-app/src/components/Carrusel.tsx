@@ -41,36 +41,38 @@ function Carrusel({ imagenes }: Props) {
         />
       </AnimatePresence>
 
-      {/* Botones de navegación */}
-      <div className="slide-direction">
-        <button
-          className="left"
-          onClick={handlePrevious}
-          aria-label="Imagen anterior"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="20"
-            viewBox="0 0 24 24"
-            width="20"
+      <div className="contenedor-carrusel">
+        {/* Botones de navegación */}
+        <div className="slide-direction">
+          <button
+            className="left"
+            onClick={handlePrevious}
+            aria-label="Imagen anterior"
           >
-            <path d="M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
-          </svg>
-        </button>
-        <button
-          className="right"
-          onClick={handleNext}
-          aria-label="Imagen siguiente"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="20"
-            viewBox="0 0 24 24"
-            width="20"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="20"
+              viewBox="0 0 24 24"
+              width="20"
+            >
+              <path d="M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+            </svg>
+          </button>
+          <button
+            className="right"
+            onClick={handleNext}
+            aria-label="Imagen siguiente"
           >
-            <path d="M9 6l-1.41 1.41L12.17 12l-4.58 4.59L9 18l6-6z" />
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="20"
+              viewBox="0 0 24 24"
+              width="20"
+            >
+              <path d="M9 6l-1.41 1.41L12.17 12l-4.58 4.59L9 18l6-6z" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Indicadores (dots) */}

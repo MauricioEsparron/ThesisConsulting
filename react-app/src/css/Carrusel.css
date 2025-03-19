@@ -1,39 +1,72 @@
-.carousel-container {
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
+.App-header {
+  font-size: 1rem;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  padding-bottom: 2rem;
+}
+.carousel-images {
   position: relative;
-  width: 100%;
-  max-width: 650px; /* Ajusta según sea necesario */
+  border-radius: 10px;
+  height: 400px;
+  max-width: 650px;
   margin: auto;
   overflow: hidden;
 }
-
-.carousel-images {
-  width: 50%;
+.carousel-images img {
+  width: 99%;
+  height: 99%;
+  border-radius: 8px;
+  border: #ff00008e solid 2px;
+}
+.contenedor-carrusel {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.slide_direction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left,
+.right {
+  position: absolute;
+  top: 50%; /* Centra los botones verticalmente */
+  transform: translateY(-50%); /* Ajuste fino para centrar mejor */
+  width: 40px;
+  height: 40px;
+  background-color: #fb666675;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.left,
-.right {
-  position: sticky;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
   border-radius: 50%;
-  cursor: pointer;
   z-index: 10;
+  cursor: pointer;
 }
-
 .left {
-  position: sticky;
-  left: 10px;
+  left: 150px; /* Ajusta la posición hacia afuera del carrusel */
 }
 
 .right {
-  position: sticky;
-  right: 10px;
+  right: 150px; /* Ajusta la posición hacia afuera del carrusel */
+}
+.carousel-indicator {
+  margin-top: -5px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.dot {
+  background-color: #333;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+}
+.active {
+  background-color: #fa2020;
 }
