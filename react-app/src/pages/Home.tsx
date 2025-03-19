@@ -13,6 +13,7 @@ import Metodologia from "../components/Metodologia";
 import imgMetodologia1 from "../img/Aprendizaje Interactivo y Práctico.jpg";
 import imgMetodologia2 from "../img/agencia de Marketing y publicidad.jpg";
 import imgMetodologia3 from "../img/agencia de Marketing y publicidad2.jpg";
+import Nosotros from "../components/Nosotros";
 
 // Arreglo de imágenes
 const imagenesMetodologia = [imgMetodologia1, imgMetodologia2, imgMetodologia3];
@@ -44,6 +45,8 @@ function Home({}: Props) {
         texto="Un enfoque innovador para investigaciones de alto impacto. Nuestro método combina tecnología, sostenibilidad y personalización:"
         imagenes={imagenesMetodologia}
       />
+
+      <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO-" />
     </>
   );
 }

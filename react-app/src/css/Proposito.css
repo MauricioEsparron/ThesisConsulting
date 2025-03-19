@@ -82,7 +82,7 @@
   left: 30%;
   width: 40%;
   height: auto;
-  background-color: #f5db86;
+  background-color: #ebb403;
   color: #f4f4f4;
   text-align: center;
   padding: 15px;
@@ -90,5 +90,5 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid red;
+  opacity: 0.92;
 }
