@@ -38,6 +38,7 @@ function Proposito({ imagen, titulo, texto }: Props) {
       >
         <div className="Proposito-opciones overlay">
           <OpcionProposito opcion="+5 AÑOS DE EXPERIENCIA" />
+          <span>|</span>
           <a
             href="#"
             className="boton-sesion-gratuita"

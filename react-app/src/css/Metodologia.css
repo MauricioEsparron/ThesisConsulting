@@ -41,3 +41,52 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .Metodologia {
+    /* border: 2px solid blue; */
+    padding: 60px 30px;
+  }
+
+  .Metodologia-contenedor {
+    width: 100%;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Metodologia-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Metodologia-titulo {
+    border: 2px solid blue;
+    font-size: 40px;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+  }
+  .Metodologia-texto {
+    margin: 10px;
+    width: 100%;
+    font-size: 18px;
+    padding: 20px;
+    width: 100%;
+    /* border: 2px solid blue; */
+  }
+
+  .Metodologia-imagen {
+    width: 100%;
+    /* border: 5px solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

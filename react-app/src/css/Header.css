@@ -88,3 +88,17 @@ h3 {
 html {
   scroll-behavior: smooth;
 }
+
+@media screen and (max-width: 768px) {
+  .title-line {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  /* #formulario {
+    width: 100vh;
+  } */
+}
