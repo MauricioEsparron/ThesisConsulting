@@ -19,8 +19,8 @@
 
 .Proposito-imagen {
   width: 100%;
-  max-width: 750px;
-  height: auto;
+  max-width: 800px;
+  height: 650px;
   border-radius: 200px 0px 0px 0px;
 }
 
@@ -34,14 +34,114 @@
   color: black;
   font-size: 80px;
   margin-bottom: 20px;
+  .Proposito {
+    width: 100%;
+    background-color: #f4f4f4;
+  }
+
+  .Proposito-contenedor {
+    width: 100%;
+    padding: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .Proposito-imagen-contenedor {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Proposito-imagen {
+    width: 100%;
+    max-width: 800px;
+    height: 650px;
+    border-radius: 200px 0px 0px 0px;
+  }
+
+  .Proposito-info {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .Proposito-titulo {
+    color: black;
+    font-size: 80px;
+    margin-bottom: 20px;
+  }
+
+  .Proposito-info p {
+    font-size: 25px;
+    width: 80%;
+    line-height: 1.5;
+    padding: 20px;
+  }
+
+  .contenedor-opciones {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .Proposito-opciones {
+    display: flex;
+    width: 50%;
+    background-color: #f5db86;
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .Proposito-opciones p {
+    color: #f4f4f4;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px;
+  }
+
+  .Proposito-opciones a {
+    color: #f4f4f4;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+    background-color: transparent;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 100px;
+    left: 30%;
+    width: 40%;
+    height: auto;
+    background-color: #ebb403;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 15px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.92;
+  }
 }
 
 .Proposito-info p {
   font-size: 25px;
   width: 80%;
   line-height: 1.5;
+  padding: 20px;
+}
+.Proposito-info h2 {
+  padding: 20px;
 }
 
+/* Opciones */
 .contenedor-opciones {
   position: relative;
   display: flex;
@@ -49,7 +149,6 @@
   align-items: center;
   margin-top: 20px;
 }
-
 .Proposito-opciones {
   display: flex;
   width: 50%;
@@ -78,7 +177,7 @@
 
 .overlay {
   position: absolute;
-  bottom: 100px;
+  bottom: 60px;
   left: 30%;
   width: 40%;
   height: auto;

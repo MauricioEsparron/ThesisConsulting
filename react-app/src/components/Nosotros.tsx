@@ -1,8 +1,8 @@
 import "../css/Nosotros.css";
 
-type Props = { titulo: string; subtitulo: string };
+type Props = { titulo: string; subtitulo: string; imagen: string };
 
-function Nosotros({ titulo, subtitulo }: Props) {
+function Nosotros({ titulo, subtitulo, imagen }: Props) {
   return (
     <div className="parent">
       <div className="div1">
@@ -14,7 +14,9 @@ function Nosotros({ titulo, subtitulo }: Props) {
       <div className="div3"> Estudiantes</div>
       <div className="div4"> Organizaciones</div>
       <div className="div5"> Profesionales</div>
-      <div className="div6"> Imagen</div>
+      <div className="div6">
+        <ImagenNosotros imagen={imagen} />
+      </div>
     </div>
   );
 }
@@ -30,5 +32,14 @@ interface SubTituloNosotrosProps {
 }
 export function SubTituloNosotros({ subtitulo }: SubTituloNosotrosProps) {
   return <h4 className="Nosotros-subtitulo">{subtitulo}</h4>;
+}
+
+interface ImagenNosotrosProps {
+  imagen: string;
+}
+export function ImagenNosotros({ imagen }: ImagenNosotrosProps) {
+  return (
+    <img className="Nosotros-imagen" src={imagen} alt="imagen de prueba" />
+  );
 }
 export default Nosotros;

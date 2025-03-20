@@ -13,6 +13,7 @@ import Metodologia from "../components/Metodologia";
 import imgMetodologia1 from "../img/Aprendizaje Interactivo y Práctico.jpg";
 import imgMetodologia2 from "../img/agencia de Marketing y publicidad.jpg";
 import imgMetodologia3 from "../img/agencia de Marketing y publicidad2.jpg";
+import imgMuestra from "../img/muestra.png";
 import Nosotros from "../components/Nosotros";
 
 // Arreglo de imágenes
@@ -46,7 +47,11 @@ function Home({}: Props) {
         imagenes={imagenesMetodologia}
       />
 
-      <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO-" />
+      <Nosotros
+        titulo="¿QUIENES SOMOS?"
+        subtitulo="IMPACTO-"
+        imagen={imgMuestra}
+      />
     </>
   );
 }
