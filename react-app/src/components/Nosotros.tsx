@@ -39,7 +39,21 @@ interface ImagenNosotrosProps {
 }
 export function ImagenNosotros({ imagen }: ImagenNosotrosProps) {
   return (
-    <img className="Nosotros-imagen" src={imagen} alt="imagen de prueba" />
+    <a
+      href="#"
+      className="boton-sesion-gratuita"
+      onClick={(e) => {
+        e.preventDefault();
+        window.dispatchEvent(new Event("openForm"));
+        setTimeout(() => {
+          document.getElementById("formulario")?.scrollIntoView({
+            behavior: "smooth",
+          });
+        }, 100);
+      }}
+    >
+      <img className="Nosotros-imagen" src={imagen} alt="imagen de prueba" />
+    </a>
   );
 }
 export default Nosotros;

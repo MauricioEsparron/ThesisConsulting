@@ -4,21 +4,20 @@
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  border: 2px solid red;
-  padding: 120px 80px 120px 80px;
+  /* border: 2px solid red; */
+  padding: 130px 80px 1px 80px;
 }
 
 .div1 {
-  width: 95%;
+  width: 96%;
   grid-area: 1 / 1 / 2 / 5;
   background-color: #fdbe41;
-  border: 2px solid #fdbe41;
   border-radius: 110px 0px 0px 0px;
   margin: 20px;
 }
 .div2 {
   grid-area: 2 / 1 / 6 / 2;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   /* margin-right: 30px; */
   /* margin-top: 20px; */
   width: 40%;
@@ -33,8 +32,11 @@
   height: 60%;
   grid-area: 2 / 2 / 6 / 2;
   background-color: #3b4a8b;
-  border: 2px solid #3b4a8b;
+  /* border: 2px solid #3b4a8b; */
   margin: 20px;
+  padding: 500px 0px 0px 300px;
+  color: #f4f4f4;
+  font-size: 20px;
   margin-left: -110px;
 }
 .div4 {
@@ -42,25 +44,29 @@
   height: 55%;
   grid-area: 2 / 3 / 4 / 5;
   background-color: #cfa85a;
-  border: 2px solid green;
+  /* border: 2px solid green; */
   margin: 20px;
-  padding: 20px;
+  padding: 30px;
+  color: #f4f4f4;
+  font-size: 20px;
 }
 .div5 {
   width: 90%;
   height: 55%;
   grid-area: 4 / 3 / 6 / 5;
   background-color: #5d5454;
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   margin: 20px;
-  padding: 20px;
+  padding: 30px;
   margin-top: -145px;
+  color: #f4f4f4;
+  font-size: 20px;
 }
 .div6 {
   width: 500px;
   height: 797px;
   grid-area: 1 / 5 / 6 / 6;
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   margin: 20px;
 }
 
@@ -69,11 +75,43 @@
   padding: 50px;
   text-align: center;
   font-size: 80px;
+  position: relative;
+  cursor: pointer;
+}
+
+.Nosotros-titulo::after {
+  content: "Somos la unidad de Latam Business Consulting especializada en asesorar investigaciones académicas con un enfoque en sostenibilidad, innovación y excelencia.";
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%);
+  background-color: #fdbe41;
+  color: white;
+  border-radius: 110px 0px 0px 0px;
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  padding: 20px 200px 10px 200px;
+  box-sizing: border-box;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transition-delay: 0.3s; /* ⏳ Retardo al aparecer */
+}
+
+.Nosotros-titulo:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.2s; /* ⏳ Retardo al desaparecer */
 }
 
 .Nosotros-subtitulo {
   rotate: 270deg;
-  margin: 2px solid red;
+  /* margin: 2px solid red; */
   display: flex;
   align-items: center;
 }
