@@ -81,3 +81,13 @@ nav {
 .menu-desplegable a:hover {
   color: #232e60;
 }
+
+@media screen and (max-width: 768px) {
+  .NavBar-nombre-empresa {
+    font-size: 15px;
+  }
+  .nav-links a {
+    font-size: 11px;
+    padding: 0px;
+  }
+}
