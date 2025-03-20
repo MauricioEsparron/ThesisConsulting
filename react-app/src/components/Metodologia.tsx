@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Carrusel from "./Carrusel";
 import "../css/Metodologia.css";
 
@@ -5,17 +6,32 @@ type Props = { titulo: string; texto: string; imagenes: string[] };
 
 function Metodologia({ titulo, texto, imagenes }: Props) {
   return (
-    <div className="Metodologia">
+    <motion.div
+      className="Metodologia"
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="Metodologia-contenedor">
-        <div className="Metodologia-info">
+        <motion.div
+          className="Metodologia-info"
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
           <TituloMetodologia titulo={titulo} />
           <TextoMetodologia texto={texto} />
-        </div>
-        <div className="Metodologia-imagen">
+        </motion.div>
+        <motion.div
+          className="Metodologia-imagen"
+          initial={{ x: 50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
           <Carrusel imagenes={imagenes} />
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

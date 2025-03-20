@@ -9,11 +9,12 @@ const Navbar = () => {
 
   // Manejar clics fuera del menú para cerrarlo
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         menuOpen &&
-        !event.target.closest(".menu-desplegable") &&
-        !event.target.closest(".nav-icon")
+        event.target instanceof Node && // Verificar que event.target es un Node
+        !document.querySelector(".menu-desplegable")?.contains(event.target) &&
+        !document.querySelector(".nav-icon")?.contains(event.target)
       ) {
         setMenuOpen(false);
       }
@@ -32,7 +33,9 @@ const Navbar = () => {
           <h2 className="NavBar-nombre-empresa">Empresa</h2>
         </div>
         <div className="nav-links">
-          <a href="/">Home</a>
+          <a translate="no" href="/">
+            Home
+          </a>
           <a href="#">Especialidades</a>
           <a
             target="_blank"
