@@ -80,7 +80,7 @@ function Carrusel({ imagenes }: Props) {
         {imagenes.map((_, index) => (
           <div
             key={index}
-            className={`dot ${currentIndex === index ? "active" : ""}`}
+            className={`dot ${currentIndex === index ? "activeCarrucel" : ""}`}
             onClick={() => handleDotClick(index)}
             role="button"
             aria-label={`Ir a la imagen ${index + 1}`}
