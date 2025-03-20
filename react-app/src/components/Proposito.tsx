@@ -1,20 +1,41 @@
+import { motion } from "framer-motion";
 import "../css/Proposito.css";
 
 type Props = { imagen: string; titulo: string; texto: string };
 
 function Proposito({ imagen, titulo, texto }: Props) {
   return (
-    <div className="Proposito">
+    <motion.div
+      className="Proposito"
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="Proposito-contenedor background">
-        <div className="Proposito-imagen-contenedor">
+        <motion.div
+          className="Proposito-imagen-contenedor"
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
           <ImagenProposito imagen={imagen} />
-        </div>
-        <div className="Proposito-info">
+        </motion.div>
+        <motion.div
+          className="Proposito-info"
+          initial={{ x: 50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
           <TituloProposito titulo={titulo} />
           <TextoProposito texto={texto} />
-        </div>
+        </motion.div>
       </div>
-      <div className="contenedor-opciones">
+      <motion.div
+        className="contenedor-opciones"
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="Proposito-opciones overlay">
           <OpcionProposito opcion="+5 AÑOS DE EXPERIENCIA" />
           <a
@@ -33,8 +54,8 @@ function Proposito({ imagen, titulo, texto }: Props) {
             AGENDA UNA SESIÓN GRATUITA
           </a>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

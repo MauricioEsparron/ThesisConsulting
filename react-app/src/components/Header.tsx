@@ -27,11 +27,19 @@ const Header = () => {
         <div className="TConsulting">
           <div className="content">
             <h1>
-              <span className="title-line">THESIS</span>
-              <span className="title-line">CONSULTING</span>
+              <span className="title-line" translate="no">
+                THESIS
+              </span>
+              <span className="title-line" translate="no">
+                CONSULTING
+              </span>
             </h1>
-            <h3>Tu conocimiento, nuestro impacto</h3>
-            <button className="button" onClick={() => setFormOpen(!formOpen)}>
+            <h3 translate="no">Tu conocimiento, nuestro impacto</h3>
+            <button
+              className="button"
+              onClick={() => setFormOpen(!formOpen)}
+              translate="no"
+            >
               {formOpen ? "Cerrar formulario" : "Haz clic aquí"}
             </button>
           </div>

@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import "../css/Pilares.css";
+
 type Props = {
   imagen1: string;
   imagen2: string;
@@ -11,18 +13,35 @@ type Props = {
 function Pilares({ imagen1, imagen2, imagen3, texto1, texto2, texto3 }: Props) {
   return (
     <div className="Pilares">
-      <div className="Pilares-contenedor Pilar-contenedor1">
+      <motion.div
+        className="Pilares-contenedor Pilar-contenedor1"
+        initial={{ x: -50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         <ImagenPilares imagen={imagen1} />
         <TextoPilares texto={texto1} />
-      </div>
-      <div className="Pilares-contenedor Pilar-contenedor2">
+      </motion.div>
+
+      <motion.div
+        className="Pilares-contenedor Pilar-contenedor2"
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         <ImagenPilares imagen={imagen2} />
         <TextoPilares texto={texto2} />
-      </div>
-      <div className="Pilares-contenedor Pilar-contenedor3">
+      </motion.div>
+
+      <motion.div
+        className="Pilares-contenedor Pilar-contenedor3"
+        initial={{ x: 50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         <ImagenPilares imagen={imagen3} />
         <TextoPilares texto={texto3} />
-      </div>
+      </motion.div>
     </div>
   );
 }
@@ -37,7 +56,6 @@ export function ImagenPilares({ imagen }: ImagenPilaresProps) {
 interface TextoPilaresProps {
   texto: string;
 }
-
 export function TextoPilares({ texto }: TextoPilaresProps) {
   return <p className="Pilares-texto">{texto}</p>;
 }
