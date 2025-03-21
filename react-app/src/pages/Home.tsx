@@ -15,6 +15,11 @@ import imgMetodologia2 from "../img/agencia de Marketing y publicidad.jpg";
 import imgMetodologia3 from "../img/agencia de Marketing y publicidad2.jpg";
 import imgMuestra from "../img/muestra.png";
 import Nosotros from "../components/Nosotros";
+import CulturaOrganizacional from "../components/CulturaOrganizacional";
+import Valores from "../components/Valores";
+import EmailMessage from "../components/EmailMessage";
+import WhatsappIcon from "../components/WhatsappIcon";
+import Footer  from "../components/Footer";
 
 // Arreglo de imágenes
 const imagenesMetodologia = [imgMetodologia1, imgMetodologia2, imgMetodologia3];
@@ -52,6 +57,13 @@ function Home({}: Props) {
         subtitulo="IMPACTO-"
         imagen={imgMuestra}
       />
+
+      <CulturaOrganizacional/>
+      <Valores/>
+      <EmailMessage/> 
+      <WhatsappIcon/>
+      <Footer/>
+      
     </>
   );
 }

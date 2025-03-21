@@ -40,7 +40,7 @@ const Navbar = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://wa.me/936956726"
+            href="https://wa.me/51936956726"
           >
             Contáctanos
           </a>

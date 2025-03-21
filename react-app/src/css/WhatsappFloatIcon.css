@@ -1,0 +1,149 @@
+/* Contenedor principal */
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  
+  /* Botón flotante de WhatsApp */
+  .whatsapp-float {
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+  }
+  
+  .whatsapp-float img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Animación  rebote */
+  @keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+  }
+  
+  /* Globo */
+  .whatsapp-bubble {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    width: 180px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* cerrar */
+  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    border: none;
+    background: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* Texto del globo */
+  .whatsapp-bubble p {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  
+  /* Botón enviar */
+  .send-btn {
+    background: #25D366;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .send-btn:hover {
+    background: #1DA851;
+  }
+  
+
+  @media (max-width: 1024px) {  
+    .whatsapp-container {
+        right: 15px; 
+        bottom: 18px;
+    }
+  
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+    }
+  
+    .whatsapp-bubble {
+        bottom: 75px;
+        width: 170px;
+        padding: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {  /* Tablets */
+    .whatsapp-container {
+        right: 12px;
+        bottom: 16px;
+    }
+  
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+    }
+  
+    .whatsapp-bubble {
+        bottom: 70px;
+        width: 160px;
+        padding: 9px;
+    }
+  }
+  
+  @media (max-width: 480px) {  /* Teléfonos */
+    .whatsapp-container {
+        right: 12px;
+        bottom: 15px;
+    }
+  
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+    }
+  
+    .whatsapp-bubble {
+        bottom: 65px;
+        width: 150px;
+        padding: 8px;
+    }
+  
+    .whatsapp-bubble p, .send-btn, .close-btn {
+        font-size: 12px;
+    }
+  }
+  
+  
+  

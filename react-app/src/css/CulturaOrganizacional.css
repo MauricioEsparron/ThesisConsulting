@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  main{
+    background-color: #fdf8ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cultura-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .cultura-image {
+    position: relative;
+    width: 70%; 
+    max-width: 40%; 
+    height: 600px;
+    overflow: hidden;
+  }
+  
+  .cultura-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  
+  
+  .cultura-text-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .cultura-content {
+    width: 
+    35%;
+    background-color: #7d756d;
+    color: white;
+    padding: 20px;
+    height: 
+    500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .cultura-content p{
+    background-color: #7d756d;
+    color: white;
+    font-size: 
+    23px;
+    line-height: 1.5;
+    text-align: justify; 
+    width: 80%; 
+    margin: auto; 
+  }
+  
+  
+  .cultura-handle {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  
+  
+  
+  
+  
+  /*pantallas medianas */
+  @media screen and (max-width: 1024px) {
+    .cultura-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+    }
+  
+    .cultura-image {
+      width: 80%;
+      max-width: 500px;
+    }
+  
+    .cultura-content {
+      width: 80%;
+      height: auto;
+      padding: 15px;
+    }
+  
+    .cultura-content p {
+      font-size: 20px;
+    }
+  }
+  
+  /*pantallas pequeñas */
+  @media screen and (max-width: 768px) {
+    .cultura-container {
+      flex-direction: column;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .cultura-image {
+      width: 100%;
+      height: auto;
+      max-width: none;
+    }
+    
+    .cultura-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  
+    .cultura-text-overlay {
+      font-size: 16px;
+      bottom: 10px;
+      left: 10px;
+    }
+  
+    .cultura-content {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .cultura-content p:nth-child(1) {
+      font-size: 18px;
+      text-align:center;
+      padding: 10px;
+    }
+    .cultura-content p:nth-child(2) {
+      font-size: 12px;
+    }
+  
+    
+  }
