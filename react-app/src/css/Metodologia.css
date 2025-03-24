@@ -50,7 +50,7 @@
 
   .Metodologia-contenedor {
     width: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,7 +66,7 @@
   }
 
   .Metodologia-titulo {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     font-size: 40px;
     padding: 10px;
     width: 100%;
