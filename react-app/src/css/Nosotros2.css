@@ -237,7 +237,6 @@
 
 .Ndiv1 {
   background-color: #fdbe41;
-  /* border: 2px solid red; */
   width: 100%;
 }
 
@@ -247,23 +246,28 @@
   font-size: 24px;
 }
 
-.Ndiv3 {
-  background-color: #3b4a8b;
-  color: #f4f4f4;
-}
-
-.Ndiv4 {
-  background-color: #cfa85a;
-  color: #f4f4f4;
-}
-
-.Ndiv5 {
-  background-color: #5d5454;
-  color: #f4f4f4;
-}
-
+.Ndiv3,
+.Ndiv4,
+.Ndiv5,
 .Ndiv6 {
-  background-color: #f0f0f0;
+  transition: height 0.5s ease-in-out; /* Transición suave solo en altura */
+  height: 100px; /* Altura base, ajusta según lo necesites */
+}
+
+.Ndiv3:hover {
+  height: 150px; /* Aumenta solo la altura */
+}
+
+.Ndiv4:hover {
+  height: 170px;
+}
+
+.Ndiv5:hover {
+  height: 170px;
+}
+
+.Ndiv6:hover {
+  height: 180px;
 }
 
 /* Subtítulo */

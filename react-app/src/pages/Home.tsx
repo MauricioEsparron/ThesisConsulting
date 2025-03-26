@@ -47,15 +47,13 @@ function Home({}: Props) {
 
   return (
     <>
+      <Navbar />
+      <Header />
       {/* Mostrar la resolución en pantalla */}
       <div style={{ textAlign: "center", padding: "10px", color: "blue" }}>
         <h3>Resolución actual:</h3>
         <p>{`Ancho: ${width}px`}</p>
       </div>
-
-      <Navbar />
-      <Header />
-
       <Pilares
         imagen1={imagen}
         texto1={"Excelencia Académica"}
@@ -78,9 +76,9 @@ function Home({}: Props) {
       />
 
       {/* Condición para mostrar Nosotros o Nosotros2 según la resolución */}
-      {width >= 1457 ? (
+      {width >= 914 ? (
         <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO" />
-      ) : width < 1456 ? (
+      ) : width < 913 ? (
         <Nosotros2 titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO" />
       ) : null}
 
