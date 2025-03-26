@@ -5,69 +5,107 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   /* border: 2px solid red; */
-  padding: 130px 80px 1px 80px;
+  padding: 10% 10% 0% 5%;
+  width: 100%;
 }
 
 .div1 {
-  width: 96%;
+  width: 90%;
   grid-area: 1 / 1 / 2 / 5;
   background-color: #fdbe41;
   border-radius: 110px 0px 0px 0px;
-  margin: 20px;
+  margin: 10px;
 }
 .div2 {
   grid-area: 2 / 1 / 6 / 2;
   /* border: 2px solid black; */
-  /* margin-right: 30px; */
-  /* margin-top: 20px; */
   width: 40%;
-  height: 60%;
+  height: 70%;
   /* display: flex; */
-  padding-top: 400px;
+  padding-top: 125%;
   font-size: 50px;
-  margin: 20px;
+  margin: 10px;
 }
+.div2 h4 {
+  font-size: 50px;
+  /* border: 2px solid black; */
+  width: 100%;
+  height: 100%;
+  padding-left: 100%;
+}
+
 .div3 {
-  width: 500px;
-  height: 60%;
+  width: 120%;
+  height: 70%;
   grid-area: 2 / 2 / 6 / 2;
   background-color: #3b4a8b;
   /* border: 2px solid #3b4a8b; */
-  margin: 20px;
-  padding: 500px 0px 0px 300px;
+  /* background-image: url("https://images.pexels.com/photos/7713176/pexels-photo-7713176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
+  background-image: url("../img/estudiantes.jpg");
+  background-size: cover; /* Ajusta la imagen para cubrir el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita repeticiones */
+  margin: 10px;
+  padding: 160% 10% 10% 60%;
   color: #f4f4f4;
-  font-size: 20px;
+  font-size: 25px;
   margin-left: -110px;
+  filter: contrast(100%) brightness(85%);
 }
+
+.sub-div3 {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
 .div4 {
-  width: 90%;
-  height: 55%;
+  width: 80%;
+  height: 65%;
   grid-area: 2 / 3 / 4 / 5;
   background-color: #cfa85a;
-  /* border: 2px solid green; */
-  margin: 20px;
+  /* background-image: url("https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
+  background-image: url("../img/organizaciones.webp"); /* background-image: url("https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
+  background-size: cover; /* Ajusta la imagen para cubrir el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita repeticiones */
+  margin: 2%;
+  margin-bottom: 30px;
   padding: 30px;
   color: #f4f4f4;
-  font-size: 20px;
+  font-size: 25px;
+  filter: contrast(100%) brightness(85%);
 }
 .div5 {
-  width: 90%;
-  height: 55%;
+  width: 80%;
+  height: 65%;
   grid-area: 4 / 3 / 6 / 5;
-  background-color: #5d5454;
-  /* border: 2px solid purple; */
-  margin: 20px;
+  /* background-image: url("https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
+  background-image: url("../img/profesionales.webp");
+  background-size: cover; /* Ajusta la imagen para cubrir el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita repeticiones */
+  margin: 5% 2% 10%;
   padding: 30px;
-  margin-top: -145px;
+  margin-top: -14%;
   color: #f4f4f4;
-  font-size: 20px;
+  font-size: 25px;
+  filter: contrast(100%) brightness(85%);
 }
+
 .div6 {
-  width: 500px;
-  height: 797px;
+  width: 130%;
+  height: 76%;
   grid-area: 1 / 5 / 6 / 6;
   /* border: 2px solid purple; */
-  margin: 20px;
+  background-image: url("../img/contactanos.jpg");
+  background-size: cover; /* Ajusta la imagen para cubrir el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita repeticiones */
+  margin: 10px 10px 10px;
+  padding: 225% 10% 10% 60%;
+  margin-left: -25%;
+  filter: contrast(100%) brightness(85%);
 }
 
 .Nosotros-titulo {
@@ -97,16 +135,73 @@
   text-align: center;
   opacity: 0;
   visibility: hidden;
-  padding: 20px 200px 10px 200px;
   box-sizing: border-box;
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
   transition-delay: 0.3s; /* ⏳ Retardo al aparecer */
+  padding: 80px;
 }
 
 .Nosotros-titulo:hover::after {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.2s; /* ⏳ Retardo al desaparecer */
+}
+
+.div3,
+.div4,
+.div5,
+.div6 {
+  position: relative; /* Necesario para posicionar el ::after */
+  overflow: hidden;
+}
+
+.div3::after,
+.div4::after,
+.div5::after,
+.div6::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 29, 29, 0.51);
+  backdrop-filter: blur(15px);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  box-sizing: border-box;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transition-delay: 0.3s; /* ⏳ Retardo al aparecer */
+}
+
+.div3:hover::after,
+.div4:hover::after,
+.div5:hover::after,
+.div6:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.2s; /* ⏳ Retardo al desaparecer */
+}
+
+.div3::after {
+  content: "1. Organizaciones este es un mensaje de prueba";
+}
+
+.div4::after {
+  content: "2. Organizaciones este es un mensaje de prueba";
+}
+
+.div5::after {
+  content: "3. Organizaciones este es un mensaje de prueba";
+}
+
+.div6::after {
+  content: "4. Has click para redirigirte al formulario->";
 }
 
 .Nosotros-subtitulo {
@@ -123,6 +218,111 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.subtitulo-efecto {
+  background-color: rgba(34, 29, 29, 0.51);
+  backdrop-filter: blur(1px);
+  font-size: 30px;
+  color: #f4f4f4;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1430px) {
+  /* Contenedor principal */
+  .parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espacio uniforme entre elementos */
+    padding: 10px;
+    width: 95%;
+  }
+
+  /* Título */
+  .Nosotros-titulo {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    color: #f4f4f4;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  .Nosotros-titulo::after {
+    font-size: 16px;
+    padding: 10px;
+    transition-delay: 0.2s; /* Retardo al desaparecer */
+  }
+
+  /* Contenido de las secciones */
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6 {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .div1 {
+    background-color: #fdbe41;
+  }
+
+  .div2 {
+    background-color: #f9f9f9;
+    padding-top: 20px;
+    font-size: 24px;
+  }
+
+  .div3 {
+    background-color: #3b4a8b;
+    color: #f4f4f4;
+  }
+
+  .div4 {
+    background-color: #cfa85a;
+    color: #f4f4f4;
+  }
+
+  .div5 {
+    background-color: #5d5454;
+    color: #f4f4f4;
+  }
+
+  .div6 {
+    background-color: #f0f0f0;
+  }
+
+  span .subtitulo-efecto {
+    font-size: 30px;
+  }
+
+  /* Subtítulo */
+  .Nosotros-subtitulo {
+    rotate: 0deg;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-left: -100%;
+  }
+
+  /* Imagen */
+  .Nosotros-imagen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -195,6 +395,10 @@
 
   .div6 {
     background-color: #f0f0f0;
+  }
+
+  span .subtitulo-efecto {
+    font-size: 30px;
   }
 
   /* Subtítulo */

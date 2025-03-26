@@ -19,7 +19,7 @@ import CulturaOrganizacional from "../components/CulturaOrganizacional";
 import Valores from "../components/Valores";
 import EmailMessage from "../components/EmailMessage";
 import WhatsappIcon from "../components/WhatsappIcon";
-import Footer  from "../components/Footer";
+import Footer from "../components/Footer";
 
 // Arreglo de imágenes
 const imagenesMetodologia = [imgMetodologia1, imgMetodologia2, imgMetodologia3];
@@ -54,16 +54,15 @@ function Home({}: Props) {
 
       <Nosotros
         titulo="¿QUIENES SOMOS?"
-        subtitulo="IMPACTO-"
+        subtitulo="IMPACTO"
         imagen={imgMuestra}
       />
 
-      <CulturaOrganizacional/>
-      <Valores/>
-      <EmailMessage/> 
-      <WhatsappIcon/>
-      <Footer/>
-      
+      <CulturaOrganizacional />
+      <Valores />
+      <EmailMessage />
+      <WhatsappIcon />
+      <Footer />
     </>
   );
 }
