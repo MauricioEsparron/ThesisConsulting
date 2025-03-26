@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import "../css/Nosotros.css";
 
-type Props = { titulo: string; subtitulo: string };
+type Props = { titulo: string; subtitulo?: string };
 
 function Nosotros({ titulo, subtitulo }: Props) {
   const abrirFormulario = (e: React.MouseEvent) => {
@@ -90,7 +90,7 @@ export function TituloNosotros({ titulo }: TituloNosotrosProps) {
 }
 
 interface SubTituloNosotrosProps {
-  subtitulo: string;
+  subtitulo?: string;
 }
 export function SubTituloNosotros({ subtitulo }: SubTituloNosotrosProps) {
   return <h4 className="Nosotros-subtitulo">{subtitulo}</h4>;
