@@ -1,9 +1,19 @@
 import { motion } from "framer-motion";
 import "../css/Nosotros.css";
 
-type Props = { titulo: string; subtitulo: string; imagen: string };
+type Props = { titulo: string; subtitulo: string };
 
-function Nosotros({ titulo, subtitulo, imagen }: Props) {
+function Nosotros({ titulo, subtitulo }: Props) {
+  const abrirFormulario = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event("openForm"));
+    setTimeout(() => {
+      document.getElementById("formulario")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  };
+
   return (
     <motion.div
       className="parent"
@@ -33,7 +43,7 @@ function Nosotros({ titulo, subtitulo, imagen }: Props) {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        Estudiantes
+        <span className="subtitulo-efecto">Estudiantes</span>
       </motion.div>
       <motion.div
         className="div4"
@@ -41,7 +51,7 @@ function Nosotros({ titulo, subtitulo, imagen }: Props) {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.4 }}
       >
-        Organizaciones
+        <span className="subtitulo-efecto">Organizaciones</span>
       </motion.div>
       <motion.div
         className="div5"
@@ -49,15 +59,17 @@ function Nosotros({ titulo, subtitulo, imagen }: Props) {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.5 }}
       >
-        Profesionales
+        <span className="subtitulo-efecto">Profesionales</span>
       </motion.div>
       <motion.div
         className="div6"
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
+        onClick={abrirFormulario} // 🔹 Se abre el formulario al hacer clic
+        style={{ cursor: "pointer" }} // 🔹 Indica que es interactivo
       >
-        <ImagenNosotros imagen={imagen} />
+        <span className="subtitulo-efecto">Contáctanos</span>
       </motion.div>
     </motion.div>
   );
@@ -75,29 +87,6 @@ interface SubTituloNosotrosProps {
 }
 export function SubTituloNosotros({ subtitulo }: SubTituloNosotrosProps) {
   return <h4 className="Nosotros-subtitulo">{subtitulo}</h4>;
-}
-
-interface ImagenNosotrosProps {
-  imagen: string;
-}
-export function ImagenNosotros({ imagen }: ImagenNosotrosProps) {
-  return (
-    <a
-      href="#"
-      className="boton-sesion-gratuita"
-      onClick={(e) => {
-        e.preventDefault();
-        window.dispatchEvent(new Event("openForm"));
-        setTimeout(() => {
-          document.getElementById("formulario")?.scrollIntoView({
-            behavior: "smooth",
-          });
-        }, 100);
-      }}
-    >
-      <img className="Nosotros-imagen" src={imagen} alt="imagen de prueba" />
-    </a>
-  );
 }
 
 export default Nosotros;
