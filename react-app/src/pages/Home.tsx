@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Navbar from "../components/NavBar";
 import "../index.css";
@@ -13,13 +14,13 @@ import Metodologia from "../components/Metodologia";
 import imgMetodologia1 from "../img/Aprendizaje Interactivo y Práctico.jpg";
 import imgMetodologia2 from "../img/agencia de Marketing y publicidad.jpg";
 import imgMetodologia3 from "../img/agencia de Marketing y publicidad2.jpg";
-import imgMuestra from "../img/muestra.png";
 import Nosotros from "../components/Nosotros";
 import CulturaOrganizacional from "../components/CulturaOrganizacional";
 import Valores from "../components/Valores";
 import EmailMessage from "../components/EmailMessage";
 import WhatsappIcon from "../components/WhatsappIcon";
 import Footer from "../components/Footer";
+import Nosotros2 from "../components/Nosotros2";
 
 // Arreglo de imágenes
 const imagenesMetodologia = [imgMetodologia1, imgMetodologia2, imgMetodologia3];
@@ -27,10 +28,34 @@ const imagenesMetodologia = [imgMetodologia1, imgMetodologia2, imgMetodologia3];
 type Props = {};
 
 function Home({}: Props) {
+  // Estado para la resolución
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Función para actualizar el estado cuando la ventana cambie de tamaño
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup: remover el evento al desmontar el componente
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
+      {/* Mostrar la resolución en pantalla */}
+      <div style={{ textAlign: "center", padding: "10px", color: "blue" }}>
+        <h3>Resolución actual:</h3>
+        <p>{`Ancho: ${width}px`}</p>
+      </div>
+
       <Navbar />
       <Header />
+
       <Pilares
         imagen1={imagen}
         texto1={"Excelencia Académica"}
@@ -52,11 +77,12 @@ function Home({}: Props) {
         imagenes={imagenesMetodologia}
       />
 
-      <Nosotros
-        titulo="¿QUIENES SOMOS?"
-        subtitulo="IMPACTO"
-        imagen={imgMuestra}
-      />
+      {/* Condición para mostrar Nosotros o Nosotros2 según la resolución */}
+      {width >= 1457 ? (
+        <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO" />
+      ) : width < 1456 ? (
+        <Nosotros2 titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO" />
+      ) : null}
 
       <CulturaOrganizacional />
       <Valores />

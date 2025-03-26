@@ -29,6 +29,12 @@ function Nosotros({ titulo, subtitulo }: Props) {
       >
         <TituloNosotros titulo={titulo} />
       </motion.div>
+      {/* <motion.div
+        className="parent2"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+      > */}
       <motion.div
         className="div2"
         initial={{ x: -50, opacity: 0 }}
@@ -71,6 +77,7 @@ function Nosotros({ titulo, subtitulo }: Props) {
       >
         <span className="subtitulo-efecto">Contáctanos</span>
       </motion.div>
+      {/* </motion.div> */}
     </motion.div>
   );
 }
