@@ -6,6 +6,9 @@ import "../css/ContactForm.css";
 import Pilares from "../components/Pilares";
 
 import imagen from "../assets/react.svg";
+import icon1 from "../img/icon_libro.png";
+import icon2 from "../img/icon_computadora.png";
+import icon3 from "../img/icon_impacto.png";
 import Proposito from "../components/Proposito";
 import imgProposito from "../img/Aprendizaje Interactivo y Práctico.jpg";
 import Metodologia from "../components/Metodologia";
@@ -54,11 +57,11 @@ function Home({}: Props) {
         <p>{`Ancho: ${width}px`}</p>
       </div>
       <Pilares
-        imagen1={imagen}
+        imagen1={icon1}
         texto1={"Excelencia Académica"}
-        imagen2={imagen}
+        imagen2={icon2}
         texto2={"Tecnología al servicio del conocimiento"}
-        imagen3={imagen}
+        imagen3={icon3}
         texto3={"Impacto Sostenible"}
       />
 
