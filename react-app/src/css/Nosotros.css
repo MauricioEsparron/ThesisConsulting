@@ -150,16 +150,14 @@
 
 .div3,
 .div4,
-.div5,
-.div6 {
+.div5 {
   position: relative; /* Necesario para posicionar el ::after */
   overflow: hidden;
 }
 
 .div3::after,
 .div4::after,
-.div5::after,
-.div6::after {
+.div5::after {
   position: absolute;
   left: 0;
   top: 0;
@@ -182,8 +180,7 @@
 
 .div3:hover::after,
 .div4:hover::after,
-.div5:hover::after,
-.div6:hover::after {
+.div5:hover::after {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.2s; /* ⏳ Retardo al desaparecer */
@@ -199,10 +196,6 @@
 
 .div5::after {
   content: "3. Organizaciones este es un mensaje de prueba";
-}
-
-.div6::after {
-  content: "4. Has click para redirigirte al formulario->";
 }
 
 .Nosotros-subtitulo {

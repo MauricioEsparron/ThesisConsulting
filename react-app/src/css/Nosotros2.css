@@ -208,14 +208,6 @@
   height: 100%;
 }
 
-.Ndiv6::after {
-  content: "4. Has click para redirigirte al formulario->";
-  font-size: 11px;
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-}
-
 /* Contenido de las secciones */
 .Ndiv1 {
   width: 100%;
@@ -248,8 +240,7 @@
 
 .Ndiv3,
 .Ndiv4,
-.Ndiv5,
-.Ndiv6 {
+.Ndiv5 {
   transition: height 0.5s ease-in-out; /* Transición suave solo en altura */
   height: 100px; /* Altura base, ajusta según lo necesites */
 }
@@ -264,10 +255,6 @@
 
 .Ndiv5:hover {
   height: 170px;
-}
-
-.Ndiv6:hover {
-  height: 180px;
 }
 
 /* Subtítulo */
