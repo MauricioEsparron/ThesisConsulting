@@ -42,7 +42,7 @@
   align-items: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1445px) {
   .Metodologia {
     /* border: 2px solid blue; */
     padding: 60px 30px;
