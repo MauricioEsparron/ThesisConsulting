@@ -22,7 +22,6 @@ import WhatsappIcon from "../components/WhatsappIcon";
 import Footer from "../components/Footer";
 import Nosotros2 from "../components/Nosotros2";
 
-// Arreglo de imágenes
 const imagenesMetodologia = [imgMetodologia1, imgMetodologia2, imgMetodologia3];
 
 type Props = {};
