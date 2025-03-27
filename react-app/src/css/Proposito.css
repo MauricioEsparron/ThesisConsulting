@@ -192,7 +192,7 @@
   opacity: 0.92;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1445px) {
   .Proposito {
     width: 100%;
     /* border: 2px solid green; */
@@ -292,11 +292,13 @@
 
   .Proposito .overlay {
     position: absolute;
-    bottom: 40px;
-    left: 45%;
+    bottom: 60px;
+    left: 55%;
     width: 50%;
     padding: 15px;
     z-index: 10;
-    display: block;
+  }
+  .overlay {
+    width: 40% !important;
   }
 }
