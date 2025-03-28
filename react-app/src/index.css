@@ -9,7 +9,6 @@ html,
 body {
   height: 100%;
   font-family: "Alexandria", sans-serif;
-  overflow-x: hidden; /* Evita el scroll horizontal */
 }
 html {
   background-color: #f4f4f4;

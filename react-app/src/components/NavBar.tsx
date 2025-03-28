@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../index.css";
 import "../css/NavBar.css";
 import { FaUser, FaGraduationCap, FaWhatsapp, FaGlobe } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,15 +34,9 @@ const Navbar = () => {
           <h2 className="NavBar-nombre-empresa">Empresa</h2>
         </div>
         <div className="nav-links">
-          <a translate="no" href="/">
-            Home
-          </a>
-          <a href="#">Especialidades</a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://wa.me/51936956726"
-          >
+          <Link translate="no" to="/">Home</Link>
+          <Link to="/especialidades">Especialidades</Link>
+          <a target="_blank" rel="noopener noreferrer" href="https://wa.me/51936956726">
             Contáctanos
           </a>
         </div>
@@ -52,9 +47,9 @@ const Navbar = () => {
         </div>
 
         <div className={`menu-desplegable ${menuOpen ? "active" : ""}`}>
-          <a href="#">
+          <Link to="/especialidades">
             <FaGraduationCap style={{ marginRight: "8px" }} /> Especialidades
-          </a>
+          </Link>
           <a href="#">
             <FaUser style={{ marginRight: "8px" }} /> Acceder
           </a>
