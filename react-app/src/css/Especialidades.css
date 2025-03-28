@@ -11,6 +11,7 @@
 .body-especialidades{
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    color: var(--dark);
     padding: 0;
     line-height: 1.6;
     overflow: hidden; /* Evita el scroll horizontal */
@@ -35,6 +36,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+    filter: none !important;
 }
 
 /* Opción alternativa para recortar más el video verticalmente */
@@ -51,8 +53,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(44, 62, 80, 0.7); /* Color primario con opacidad */
+    background: rgba(44, 62, 80, 0.7); /* Color más azulado con opacidad */
 }
+
 
 .header-content {
     position: relative;
@@ -66,15 +69,16 @@
     margin-bottom: 1.5rem;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     font-weight: 700; /* Negrita */
-    color:var(--light); 
+    color:var(--dark); 
     text-transform: none; 
 }
 
 .header-content p {
     font-size: 1.5rem;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    color: white; /* Asegura contraste */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Más sombra */
+    color: white;
 }
+
 
 /* Contenedor de especialidades */
 .especialidades-container {
@@ -84,6 +88,8 @@
     padding: 3rem;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box; /* Importante: incluye padding en el ancho */
 }
 
 /* Estilo para cada especialidad intercalada */
@@ -95,6 +101,9 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    box-sizing: border-box; /* Importante: incluye padding en el ancho */
+    margin: 0; /* Elimina márgenes que puedan causar desbordamiento */
 }
 
 .especialidad-intercalada:hover {
@@ -249,4 +258,147 @@
     opacity: 0; /* Inicialmente invisibles */
 }
 
-/* [El resto de tus estilos permanece igual] */
+/* Update the header and video styles to match Contactanos */
+.esp-page-wrapper {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Previene scroll horizontal */
+    position: relative;
+}
+
+.esp-header {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    box-sizing: border-box;
+}
+
+.esp-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.esp-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.esp-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.esp-header-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 1rem; /* Añade padding seguro */
+}
+
+.esp-text-center {
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.esp-title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    mix-blend-mode: normal;
+    animation: fadeIn 2s ease-in-out;
+    text-transform: none;
+    color: #f4f4f4;
+}
+
+.esp-subtitle {
+    font-size: 1.5rem;
+    padding: 1px 0 0 0;
+    margin: 0;
+    color: #f4f4f4;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Media queries to match Contactanos responsiveness */
+@media screen and (max-width: 1426px) {
+    .esp-header {
+        height: 400px;
+    }
+
+    .esp-title {
+        font-size: 3rem;
+        margin: 15% auto 5%;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .esp-title {
+        font-size: 40px;
+        margin: 150px auto 5%;
+    }
+
+    .esp-subtitle {
+        font-size: 20px;
+        font-weight: 100;
+        margin: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .esp-title {
+        font-size: 40px;
+        margin: 15% auto 5%;
+    }
+
+    .esp-subtitle {
+        font-size: 20px;
+        font-weight: 100;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .esp-title {
+        font-size: 40px;
+        margin: 200px auto 20px;
+        text-align: center;
+    }
+
+    .esp-subtitle {
+        font-size: 15px;
+        font-weight: 100;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+}
+
+/* Keep your existing card and animation styles below */
+/* ... rest of your existing styles ... */

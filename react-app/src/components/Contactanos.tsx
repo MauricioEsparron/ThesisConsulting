@@ -1,11 +1,12 @@
 import "../css/Contactanos.css";
 import videoContactanos from "../media/Contactanos.mp4";
-
+import NavBar from "./NavBar";
 type Props = {};
 
 function Contactanos({}: Props) {
   return (
     <>
+      <NavBar />
       <div className="Contenedor-contactanos">
         <div className="contenedor-header">
           {/* Video dentro del header */}

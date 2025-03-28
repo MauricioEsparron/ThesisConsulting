@@ -5,9 +5,12 @@ import "../index.css";
 import "../css/ContactForm.css";
 import Pilares from "../components/Pilares";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 60ae812 (se agrego componente Contactanos.tsx, Contactanos.css y se realizaron modificaciones en rutas dentro del componente Navbar.tsx y App.tsx)
+=======
+>>>>>>> bc4f999 (Se agrego el componente Especialidades ahora si)
 import icon1 from "../img/icon_libro.png";
 import icon2 from "../img/icon_computadora.png";
 import icon3 from "../img/icon_impacto.png";
