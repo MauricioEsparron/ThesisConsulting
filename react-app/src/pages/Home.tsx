@@ -51,8 +51,8 @@ function Home({}: Props) {
       <Header />
       {/* Mostrar la resolución en pantalla */}
       <div style={{ textAlign: "center", padding: "10px", color: "blue" }}>
-        <h3>Resolución actual:</h3>
-        <p>{`Ancho: ${width}px`}</p>
+        {/* <h3>Resolución actual:</h3> */}
+        {/* <p>{`Ancho: ${width}px`}</p> */}
       </div>
       <Pilares
         imagen1={icon1}
