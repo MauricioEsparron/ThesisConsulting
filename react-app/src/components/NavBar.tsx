@@ -34,22 +34,17 @@ const Navbar = () => {
           <h2 className="NavBar-nombre-empresa">Empresa</h2>
         </div>
         <div className="nav-links">
-<<<<<<< HEAD
           <Link translate="no" to="/">Home</Link>
           <Link to="/especialidades">Especialidades</Link>
           <a target="_blank" rel="noopener noreferrer" href="https://wa.me/51936956726">
-=======
-          <a translate="no" href="/">
-            Home
+            Contáctanos
           </a>
-          <a href="/Especialidades">Especialidades</a>
           <a
             target="_blank"
-            // rel="noopener noreferrer"
+            // rel="noopener noreferrer"                  
             // href="https://wa.me/51936956726"
             href="/Contactanos"
           >
->>>>>>> 60ae812cef57091383de335f092acba5789ff790
             Contáctanos
           </a>
         </div>
@@ -60,11 +55,7 @@ const Navbar = () => {
         </div>
 
         <div className={`menu-desplegable ${menuOpen ? "active" : ""}`}>
-<<<<<<< HEAD
           <Link to="/especialidades">
-=======
-          <a href="/Especialidades">
->>>>>>> 60ae812cef57091383de335f092acba5789ff790
             <FaGraduationCap style={{ marginRight: "8px" }} /> Especialidades
           </Link>
           <a href="#">

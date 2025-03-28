@@ -14,21 +14,23 @@ const Especialidades: React.FC = () => {
     }, []);
 
     return (
-        <>
+        <div style={{ overflow: 'hidden', width: '100%' }}>
             <NavBar />
-            <body className="body-especialidades">
-                <header className="header-especialidades">
-                    <div className="video-background">
-                        <video autoPlay muted loop playsInline>
+            <div className="esp-page-wrapper">
+                <header className="esp-header">
+                    <div className="esp-video-bg">
+                        <video autoPlay muted loop playsInline className="esp-video">
                             <source src={video3} type="video/mp4" />
                             <img src={header2} alt="Fondo alternativo" />
                         </video>
-                        <div className="video-overlay"></div>
+                        <div className="esp-overlay"></div>
                     </div>
 
-                    <div className="header-content">
-                        <h1>Nuestras Especialidades</h1>
-                        <p>Servicios diseñados para potenciar tu impacto social y académico</p>
+                    <div className="esp-header-content">
+                        <div className="esp-text-center">
+                            <h1 className="esp-title">Nuestras Especialidades</h1>
+                            <p className="esp-subtitle">Servicios diseñados para potenciar tu impacto social y académico</p>
+                        </div>
                     </div>
                 </header>
 
@@ -55,9 +57,8 @@ const Especialidades: React.FC = () => {
                         </section>
                     ))}
                 </main>
-            </body>
-        </>
-
+            </div>
+        </div>
     );
 };
 
