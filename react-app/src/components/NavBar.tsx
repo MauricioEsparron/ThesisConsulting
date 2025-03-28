@@ -36,11 +36,12 @@ const Navbar = () => {
           <a translate="no" href="/">
             Home
           </a>
-          <a href="#">Especialidades</a>
+          <a href="/Especialidades">Especialidades</a>
           <a
             target="_blank"
-            rel="noopener noreferrer"
-            href="https://wa.me/51936956726"
+            // rel="noopener noreferrer"
+            // href="https://wa.me/51936956726"
+            href="/Contactanos"
           >
             Contáctanos
           </a>
@@ -52,7 +53,7 @@ const Navbar = () => {
         </div>
 
         <div className={`menu-desplegable ${menuOpen ? "active" : ""}`}>
-          <a href="#">
+          <a href="/Especialidades">
             <FaGraduationCap style={{ marginRight: "8px" }} /> Especialidades
           </a>
           <a href="#">
@@ -60,8 +61,9 @@ const Navbar = () => {
           </a>
           <a
             target="_blank"
-            rel="noopener noreferrer"
-            href="https://wa.me/51936956726"
+            // rel="noopener noreferrer"
+            // href="https://wa.me/51936956726"
+            href="/Contactanos"
           >
             <FaWhatsapp style={{ marginRight: "8px" }} /> Contáctanos
           </a>
