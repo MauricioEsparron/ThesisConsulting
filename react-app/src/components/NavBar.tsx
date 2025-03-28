@@ -34,9 +34,22 @@ const Navbar = () => {
           <h2 className="NavBar-nombre-empresa">Empresa</h2>
         </div>
         <div className="nav-links">
+<<<<<<< HEAD
           <Link translate="no" to="/">Home</Link>
           <Link to="/especialidades">Especialidades</Link>
           <a target="_blank" rel="noopener noreferrer" href="https://wa.me/51936956726">
+=======
+          <a translate="no" href="/">
+            Home
+          </a>
+          <a href="/Especialidades">Especialidades</a>
+          <a
+            target="_blank"
+            // rel="noopener noreferrer"
+            // href="https://wa.me/51936956726"
+            href="/Contactanos"
+          >
+>>>>>>> 60ae812 (se agrego componente Contactanos.tsx, Contactanos.css y se realizaron modificaciones en rutas dentro del componente Navbar.tsx y App.tsx)
             Contáctanos
           </a>
         </div>
@@ -47,7 +60,11 @@ const Navbar = () => {
         </div>
 
         <div className={`menu-desplegable ${menuOpen ? "active" : ""}`}>
+<<<<<<< HEAD
           <Link to="/especialidades">
+=======
+          <a href="/Especialidades">
+>>>>>>> 60ae812 (se agrego componente Contactanos.tsx, Contactanos.css y se realizaron modificaciones en rutas dentro del componente Navbar.tsx y App.tsx)
             <FaGraduationCap style={{ marginRight: "8px" }} /> Especialidades
           </Link>
           <a href="#">
@@ -55,8 +72,9 @@ const Navbar = () => {
           </a>
           <a
             target="_blank"
-            rel="noopener noreferrer"
-            href="https://wa.me/51936956726"
+            // rel="noopener noreferrer"
+            // href="https://wa.me/51936956726"
+            href="/Contactanos"
           >
             <FaWhatsapp style={{ marginRight: "8px" }} /> Contáctanos
           </a>
