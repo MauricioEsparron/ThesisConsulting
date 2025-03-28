@@ -1,9 +1,22 @@
 import "../css/Contactanos.css";
 import videoContactanos from "../media/Contactanos.mp4";
+import { useNavigate } from "react-router-dom";
+
 import NavBar from "./NavBar";
+
 type Props = {};
 
 function Contactanos({}: Props) {
+  const navigate = useNavigate(); // Inicializar useNavigate
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault(); // Evita el recargo de la página
+
+    // Aquí podrías agregar lógica para enviar los datos del formulario...
+
+    // Redirigir a la página de agradecimiento
+    navigate("/Gracias");
+  };
   return (
     <>
       <NavBar />
@@ -33,7 +46,7 @@ function Contactanos({}: Props) {
           <div className="contenedor-bloque1">
             <div className="contenedor-formulario">
               <h2 className="titulo-formulario">Envíanos un mensaje</h2>
-              <form className="formulario-contactanos">
+              <form className="formulario-contactanos" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label className="campo">Nombre Completo:</label>
                   <input
