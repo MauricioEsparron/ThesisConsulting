@@ -4,6 +4,10 @@ import Navbar from "../components/NavBar";
 import "../index.css";
 import "../css/ContactForm.css";
 import Pilares from "../components/Pilares";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 60ae812cef57091383de335f092acba5789ff790
 import icon1 from "../img/icon_libro.png";
 import icon2 from "../img/icon_computadora.png";
 import icon3 from "../img/icon_impacto.png";
