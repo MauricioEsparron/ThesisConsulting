@@ -3,14 +3,6 @@
     box-sizing: border-box;
   }
   
-  main{
-    background-color: #fdf8ec;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
   .cultura-container {
     display: flex;
     align-items: stretch;
@@ -20,6 +12,14 @@
     width: 100%;
     height: 100vh;
   }
+  main{
+    background-color: #fdf8ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
   
   .cultura-image {
     position: relative;
