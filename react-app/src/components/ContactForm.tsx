@@ -1,10 +1,15 @@
+import { forwardRef } from "react";
 import "../index.css";
 import "../css/ContactForm.css";
 
-const ContactForm = () => {
+// 🛠 Definir correctamente la referencia y los props
+const ContactForm = forwardRef<
+  HTMLFormElement,
+  React.HTMLProps<HTMLFormElement>
+>((props, ref) => {
   return (
     <div className="form-container">
-      <form className="form">
+      <form className="form" ref={ref} id="contact-form" {...props}>
         <h2>Contáctanos</h2>
         <div className="form-group">
           <label htmlFor="nombre">Nombre Completo</label>
@@ -46,6 +51,6 @@ const ContactForm = () => {
       </form>
     </div>
   );
-};
+});
 
 export default ContactForm;

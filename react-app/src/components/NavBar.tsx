@@ -34,17 +34,18 @@ const Navbar = () => {
           <h2 className="NavBar-nombre-empresa">Empresa</h2>
         </div>
         <div className="nav-links">
-          <Link translate="no" to="/">Home</Link>
+          <Link translate="no" to="/">
+            Home
+          </Link>
           <Link to="/especialidades">Especialidades</Link>
-          <a target="_blank" rel="noopener noreferrer" href="https://wa.me/51936956726">
-            Contáctanos
-          </a>
-          <a
+          {/* <a
             target="_blank"
-            // rel="noopener noreferrer"                  
-            // href="https://wa.me/51936956726"
-            href="/Contactanos"
+            rel="noopener noreferrer"
+            href="https://wa.me/51936956726"
           >
+            Contáctanos
+          </a> */}
+          <a target="_blank" href="/Contactanos">
             Contáctanos
           </a>
         </div>
