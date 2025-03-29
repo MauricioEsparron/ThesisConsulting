@@ -46,9 +46,10 @@ function Proposito({ imagen, titulo, texto }: Props) {
               e.preventDefault();
               window.dispatchEvent(new Event("openForm"));
               setTimeout(() => {
-                document.getElementById("formulario")?.scrollIntoView({
-                  behavior: "smooth",
-                });
+                const formElement =
+                  document.getElementById("formulario") ||
+                  document.getElementById("contact-form");
+                formElement?.scrollIntoView({ behavior: "smooth" });
               }, 100);
             }}
           >
