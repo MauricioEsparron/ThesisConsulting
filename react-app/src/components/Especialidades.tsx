@@ -19,7 +19,7 @@ const Especialidades: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ overflow: "hidden", width: "100%" }}>
+    <div style={{ overflow: "hidden", width: "100%" }} >
       <NavBar />
       <div className="esp-page-wrapper">
         <header className="esp-header">
@@ -33,7 +33,7 @@ const Especialidades: React.FC = () => {
 
           <div className="esp-header-content">
             <div className="esp-text-center">
-              <h1 className="esp-title">Nuestras Especialidades</h1>
+              <h1 className="esp-title" style={{ textShadow: 'none' }}>Nuestras Especialidades</h1>
               <p className="esp-subtitle">
                 Servicios diseñados para potenciar tu impacto social y académico
               </p>
