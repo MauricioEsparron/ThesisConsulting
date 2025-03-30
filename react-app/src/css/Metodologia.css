@@ -13,7 +13,6 @@
 
 .Metodologia-info {
   width: 50%;
-  /* border: 2px solid blue; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,15 +21,15 @@
 
 .Metodologia-titulo {
   color: #f4f4f4;
-  /* border: 2px solid blue; */
   font-size: 80px;
-  width: 600px;
+  width: 80%;
+  text-align: center;
 }
 .Metodologia-texto {
   color: #f4f4f4;
   margin-top: 50px;
-  width: 500px;
-  /* border: 2px solid blue; */
+  width: 60%;
+  font-size: 1.5rem;
 }
 
 .Metodologia-imagen {
@@ -66,19 +65,17 @@
   }
 
   .Metodologia-titulo {
-    /* border: 2px solid blue; */
-    font-size: 40px;
-    padding: 10px;
-    width: 100%;
-    text-align: left;
+    color: #f4f4f4;
+
+    font-size: 50px;
+    width: 55%;
+    text-align: center;
   }
   .Metodologia-texto {
-    margin: 10px;
-    width: 100%;
-    font-size: 18px;
-    padding: 20px;
-    width: 100%;
-    /* border: 2px solid blue; */
+    margin-top: 40px;
+    width: 50%;
+    font-size: 1.5rem;
+    text-align: justify;
   }
 
   .Metodologia-imagen {
