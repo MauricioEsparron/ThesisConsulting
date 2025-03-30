@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion"; // Importar Framer Motion
 import "../index.css";
 import "../css/Header.css";
 import videoBanner from "../media/banner.mp4";
@@ -28,20 +29,22 @@ const Header = () => {
           <div className="content">
             <h1>
               <span className="title-line" translate="no">
-                THESIS
-              </span>
-              <span className="title-line" translate="no">
-                CONSULTING
+                THESIS CONSULTING
               </span>
             </h1>
             <h3 translate="no">Tu conocimiento, nuestro impacto</h3>
-            <button
+
+            {/* Botón con efecto de rebote */}
+            <motion.button
               className="button"
               onClick={() => setFormOpen(!formOpen)}
               translate="no"
+              whileTap={{ scale: 0.8 }} // Rebote al hacer clic
+              animate={{ scale: [1, 1.2, 1] }} // Animación de rebote
+              transition={{ duration: 0.2, type: "spring", stiffness: 300 }}
             >
               {formOpen ? "Cerrar formulario" : "Haz clic aquí"}
-            </button>
+            </motion.button>
           </div>
         </div>
 
