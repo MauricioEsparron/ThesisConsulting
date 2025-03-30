@@ -12,7 +12,7 @@ import imgProposito from "../img/Aprendizaje Interactivo y Práctico.jpg";
 import Metodologia from "../components/Metodologia";
 import imgMetodologia1 from "../img/Aprendizaje Interactivo y Práctico.jpg";
 import imgMetodologia2 from "../img/agencia de Marketing y publicidad.jpg";
-import imgMetodologia3 from "../img/agencia de Marketing y publicidad2.jpg";
+import imgMetodologia3 from "../img/organizaciones.webp";
 import Nosotros from "../components/Nosotros";
 import CulturaOrganizacional from "../components/CulturaOrganizacional";
 import Valores from "../components/Valores";

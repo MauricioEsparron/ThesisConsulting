@@ -1,14 +1,15 @@
 .carrusel-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 2rem auto;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .carrusel-imagen {
   width: 100%;
-  height: 320px;
+  height: 400px;
   object-fit: cover;
   border-radius: 12px 12px 0px 0px;
   margin-bottom: 0px;
