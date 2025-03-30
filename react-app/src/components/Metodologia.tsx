@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
-import Carrusel from "./Carrusel";
 import "../css/Metodologia.css";
+import Carrusel2 from "./Carrusel";
 
-type Props = { titulo: string; texto: string; imagenes: string[] };
+type Imagen = { src: string; descripcion: string };
+
+type Props = { titulo: string; texto: string; imagenes: Imagen[] };
 
 function Metodologia({ titulo, texto, imagenes }: Props) {
   return (
@@ -28,7 +30,7 @@ function Metodologia({ titulo, texto, imagenes }: Props) {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <Carrusel imagenes={imagenes} />
+          <Carrusel2 imagenes={imagenes} />
         </motion.div>
       </div>
     </motion.div>

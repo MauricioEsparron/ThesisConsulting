@@ -23,7 +23,23 @@ import Nosotros2 from "../components/Nosotros2";
 import HeaderResponsive from "../components/HeaderResponsive";
 import ContactForm from "../components/ContactForm";
 
-const imagenesMetodologia = [imgMetodologia1, imgMetodologia2, imgMetodologia3];
+const imagenesMetodologia2 = [
+  {
+    src: imgMetodologia1,
+    alt: "Aprendizaje Interactivo y Práctico",
+    descripcion: "Descripción de la imagen 1",
+  },
+  {
+    src: imgMetodologia2,
+    alt: "Agencia de Marketing y Publicidad",
+    descripcion: "Descripción de la imagen 222",
+  },
+  {
+    src: imgMetodologia3,
+    alt: "Publicidad Digital",
+    descripcion: "Descripción de la imagen 3",
+  },
+];
 
 type Props = {};
 
@@ -45,7 +61,6 @@ function Home({}: Props) {
     <>
       <Navbar />
       {width >= 914 ? <Header /> : <HeaderResponsive formRef={formRef} />}
-      {/* 🔹 Pasamos `formRef` como prop */}
       <Pilares
         imagen1={icon1}
         texto1={"Excelencia Académica"}
@@ -62,16 +77,14 @@ function Home({}: Props) {
       <Metodologia
         titulo="METODOLOGÍA"
         texto="Un enfoque innovador para investigaciones de alto impacto. Nuestro método combina tecnología, sostenibilidad y personalización:"
-        imagenes={imagenesMetodologia}
+        imagenes={imagenesMetodologia2}
       />
       {width >= 914 ? (
         <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO" />
       ) : (
         <Nosotros2 titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO" />
       )}
-      {width <= 913 && <ContactForm ref={formRef} />}{" "}
-      {/* 🔹 Referencia en ContactForm */}
-      <CulturaOrganizacional />
+      {width <= 913 && <ContactForm ref={formRef} />} <CulturaOrganizacional />
       <Valores />
       <EmailMessage />
       <WhatsappIcon />
