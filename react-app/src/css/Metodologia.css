@@ -87,3 +87,19 @@
     align-items: center;
   }
 }
+
+@media screen and (max-width: 675px) {
+  .Metodologia-titulo {
+    color: #f4f4f4;
+
+    font-size: 40px;
+    width: 80%;
+    text-align: center;
+  }
+  .Metodologia-texto {
+    margin-top: 40px;
+    width: 80%;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}
