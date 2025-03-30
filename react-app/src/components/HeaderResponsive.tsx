@@ -9,8 +9,14 @@ type HeaderResponsiveProps = {
 const HeaderResponsive: React.FC<HeaderResponsiveProps> = ({ formRef }) => {
   const scrollToForm = () => {
     if (formRef.current) {
-      formRef.current.scrollIntoView({ behavior: "smooth" }); // 🔹 Hacer scroll al formulario
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "start" }); // Asegura que la vista se alinee con el inicio del formulario
     }
+
+    // const scrollToForm = () => {
+    //   if (formRef.current) {
+    //     const offsetTop = formRef.current.offsetTop + 3300;
+    //     window.scrollTo({ top: offsetTop, behavior: "smooth" });
+    //   }
   };
 
   return (

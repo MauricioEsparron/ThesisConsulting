@@ -123,7 +123,7 @@ function Contactanos({}: Props) {
                     </div>
                     <div className="subcontenedor-info-contacto ms-3">
                       <h5>Teléfono</h5>
-                      <p>+51 000 000 000</p>
+                      <p>+51 948 211 128</p>
                     </div>
                   </div>
 
@@ -133,7 +133,7 @@ function Contactanos({}: Props) {
                     </div>
                     <div className="subcontenedor-info-contacto ms-3">
                       <h5>Email</h5>
-                      <p>contacto@miempresa.com</p>
+                      <p>latambusinessconsulting@gmail.com</p>
                     </div>
                   </div>
 

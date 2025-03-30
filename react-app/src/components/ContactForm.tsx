@@ -8,43 +8,50 @@ const ContactForm = forwardRef<
   React.HTMLProps<HTMLFormElement>
 >((props, ref) => {
   return (
-    <div className="form-container">
+    <div className="form-container form-page">
       <form className="form" ref={ref} id="contact-form" {...props}>
         <h2>Contáctanos</h2>
         <div className="form-group">
-          <label htmlFor="nombre">Nombre Completo</label>
-          <input type="text" id="nombre" name="nombre" required />
+          <label>Nombre Completo</label>
+          <input type="text" placeholder="Tu nombre" required />
         </div>
+
         <div className="form-group-row">
           <div className="form-group">
-            <label htmlFor="dni">DNI</label>
-            <input type="text" id="dni" name="dni" required />
+            <label>DNI</label>
+            <input type="text" placeholder="DNI" required />
           </div>
           <div className="form-group">
-            <label htmlFor="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" required />
+            <label>Teléfono</label>
+            <input type="text" placeholder="Teléfono" required />
           </div>
         </div>
+
         <div className="form-group">
-          <label htmlFor="institucion">Nombre de la Institución</label>
-          <input type="text" id="institucion" name="institucion" required />
+          <label>Nombre de la Institución</label>
+          <input type="text" placeholder="Institución" required />
         </div>
+
         <div className="form-group">
-          <label htmlFor="correo">Correo Electrónico</label>
-          <input type="email" id="correo" name="correo" required />
+          <label>Correo Electrónico</label>
+          <input type="email" placeholder="Correo" required />
         </div>
+
         <div className="form-group">
-          <label htmlFor="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" required></textarea>
+          <label>Mensaje</label>
+          <textarea placeholder="Escribe tu mensaje aquí"></textarea>
         </div>
+
         <div className="form-group-checkbox">
-          <input type="checkbox" id="terminos" name="terminos" required />
-          <label htmlFor="terminos">Acepto los Términos y Condiciones</label>
+          <input type="checkbox" required />
+          <label>Acepto los Términos y Condiciones</label>
         </div>
+
         <div className="form-group-checkbox">
-          <input type="checkbox" id="datos" name="datos" />
-          <label htmlFor="datos">Autorizo el uso de mis datos</label>
+          <input type="checkbox" />
+          <label>Autorizo el uso de mis datos</label>
         </div>
+
         <button type="submit" className="submit-button">
           Enviar
         </button>

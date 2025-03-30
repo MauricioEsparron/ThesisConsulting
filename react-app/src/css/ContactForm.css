@@ -21,7 +21,15 @@
   padding: 20px;
 }
 
+.form-page {
+  margin: 80px 0;
+  padding: 40px 0 20px;
+  /* border: 2px solid red; */
+  background-image: none; /* Ruta de la imagen */
+}
+
 .form {
+  scroll-margin-top: 100px; /* Ajusta según la altura del header */
   width: 80%;
   max-width: 600px;
   padding: 50px;
