@@ -27,17 +27,17 @@ const imagenesMetodologia2 = [
   {
     src: imgMetodologia1,
     alt: "Aprendizaje Interactivo y Práctico",
-    descripcion: "Descripción de la imagen 1",
+    descripcion: "Desarrollo inicial y definición de objetivos",
   },
   {
     src: imgMetodologia2,
     alt: "Agencia de Marketing y Publicidad",
-    descripcion: "Descripción de la imagen 222",
+    descripcion: "Desarrollo de contenidos personalizados",
   },
   {
     src: imgMetodologia3,
     alt: "Publicidad Digital",
-    descripcion: "Descripción de la imagen 3",
+    descripcion: "Implementación colaborativa",
   },
 ];
 
