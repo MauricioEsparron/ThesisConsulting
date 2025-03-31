@@ -37,7 +37,7 @@ const Navbar = () => {
           <Link translate="no" to="/">
             Home
           </Link>
-          <Link to="/especialidades">Especialidades</Link>
+          <Link to="/Especialidades">Especialidades</Link>
           {/* <a
             target="_blank"
             rel="noopener noreferrer"

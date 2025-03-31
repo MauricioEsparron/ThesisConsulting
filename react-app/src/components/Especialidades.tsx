@@ -2,42 +2,77 @@ import React, { useEffect } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import "../css/Especialidades.css";
-import asesoria2 from "../img/asesoria 2.jpg";
 import asesoria1 from "../img/asesoria.jpg";
+import asesoria2 from "../img/asesoria 2.jpg";
 import video3 from "../img/video3.mp4";
 import header2 from "../img/header2.jpg";
-import NavBar from "./NavBar";
+import Navbar from "./NavBar";
 
 const Especialidades: React.FC = () => {
   useEffect(() => {
     AOS.init({
-      duration: 800,
-      easing: "ease-in-out",
+      duration: 600,
+      easing: "ease-out",
       once: true,
       mirror: false,
+      offset: 150
+    });
+  
+    const animatedElements = document.querySelectorAll(".slide-in-left, .slide-in-right");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            requestAnimationFrame(() => {
+              entry.target.classList.add("active");
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: "50px 0px"
+      }
+    );
+  
+    animatedElements.forEach((el) => observer.observe(el));
+  
+    const cards = document.querySelectorAll(".especialidad-intercalada");
+    cards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        const icon = card.querySelector(".icono") as HTMLElement;
+        if (icon) {
+          icon.style.transform = "rotate(15deg) scale(1.1)";
+          icon.style.boxShadow = "0 8px 25px rgba(0, 0, 0, 0.2)";
+        }
+      });
+
+      card.addEventListener("mouseleave", () => {
+        const icon = card.querySelector(".icono") as HTMLElement;
+        if (icon) {
+          icon.style.transform = "rotate(0) scale(1)";
+          icon.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.1)";
+        }
+      });
     });
   }, []);
 
   return (
-    <div style={{ overflow: "hidden", width: "100%" }} >
-      <NavBar />
-      <div className="esp-page-wrapper">
-        <header className="esp-header">
-          <div className="esp-video-bg">
-            <video autoPlay muted loop playsInline className="esp-video">
+    <>
+      <Navbar />
+      <div className="especialidades-page" style={{ overflowX: "hidden" }}>
+        <header className="especialidades-header">
+          <div className="video-background-especialidades">
+            <video autoPlay muted loop playsInline>
               <source src={video3} type="video/mp4" />
               <img src={header2} alt="Fondo alternativo" />
             </video>
-            <div className="esp-overlay"></div>
+            <div className="video-overlay-especialidades"></div>
           </div>
-
-          <div className="esp-header-content">
-            <div className="esp-text-center">
-              <h1 className="esp-title" style={{ textShadow: 'none' }}>Nuestras Especialidades</h1>
-              <p className="esp-subtitle">
-                Servicios diseñados para potenciar tu impacto social y académico
-              </p>
-            </div>
+          <div className="header-content">
+            <h1>Nuestras Especialidades</h1>
+            <p>Servicios diseñados para potenciar tu impacto social y académico</p>
           </div>
         </header>
 
@@ -45,9 +80,7 @@ const Especialidades: React.FC = () => {
           {especialidadesData.map((especialidad, index) => (
             <section
               key={index}
-              className={`especialidad-intercalada ${
-                index % 2 !== 0 ? "izquierda" : ""
-              } ${index % 2 === 0 ? "slide-in-left" : "slide-in-right"}`}
+              className={`especialidad-intercalada ${index % 2 !== 0 ? "izquierda" : ""} slide-in-${index % 2 === 0 ? "left" : "right"}`}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
@@ -67,7 +100,8 @@ const Especialidades: React.FC = () => {
           ))}
         </main>
       </div>
-    </div>
+    </>
+
   );
 };
 
