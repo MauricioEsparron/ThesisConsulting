@@ -40,7 +40,9 @@
   color: white;
 }
 
-h1 {
+h1 .title-line {
+  display: block;
+  margin: auto 30px;
   font-size: 8rem;
   margin: 0;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
@@ -53,12 +55,7 @@ h1 {
   gap: 10px;
 }
 
-h1 .title-line {
-  display: block;
-  margin: auto 30px;
-}
-
-h3 {
+.subtitulo-header {
   font-size: 1.8rem;
   color: white;
   text-align: center;

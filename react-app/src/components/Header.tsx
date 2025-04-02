@@ -32,7 +32,9 @@ const Header = () => {
                 THESIS CONSULTING
               </span>
             </h1>
-            <h3 translate="no">Tu conocimiento, nuestro impacto</h3>
+            <h3 className="subtitulo-header" translate="no">
+              Tu conocimiento, nuestro impacto
+            </h3>
 
             {/* Botón con efecto de rebote */}
             <motion.button
