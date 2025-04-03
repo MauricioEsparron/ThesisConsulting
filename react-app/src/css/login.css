@@ -319,7 +319,7 @@
     width: 70%;
   }
 }
-@media screen and (max-width: 1365px) {
+@media screen and (max-width: 1366px) {
   .contenedor-login2 {
     background-size: cover;
     background-position: center;
@@ -330,7 +330,7 @@
   }
 
   .subcontenedor-login2-global {
-    margin: 150px auto;
+    margin: 170px auto;
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -429,13 +429,13 @@
 }
 @media screen and (max-width: 977px) {
   .subcontenedor-login2-global {
-    margin: 180px auto;
+    margin: 190px auto;
     width: 90%;
   }
 }
 @media screen and (max-width: 842px) {
   .subcontenedor-login2-global {
-    margin: 180px auto;
+    margin: 200px auto;
     width: 90%;
   }
   .contendor_titulo-login2 {
@@ -500,7 +500,6 @@
     font-weight: 600;
   }
 }
-
 @media screen and (max-width: 588px) {
   .subcontenedor-login2-global {
     margin: 30px auto;
