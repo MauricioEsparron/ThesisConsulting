@@ -106,7 +106,7 @@ const Login2 = () => {
                   </div>
                   <div className="contenedor-button-login2">
                     <button type="submit" className="submit-button-login2">
-                      Login
+                      <a href="/"> Login</a>
                     </button>
                   </div>
                 </div>

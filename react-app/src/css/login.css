@@ -284,6 +284,9 @@
   color: #304086;
   font-weight: 600;
 }
+.contenedor-reset-login2 a:hover {
+  transform: translateY(-2px);
+}
 
 .contenedor-button-login2 button {
   font-size: 15px;
@@ -291,7 +294,6 @@
   text-transform: uppercase;
   font-weight: 600;
   background-color: #304086;
-  color: white;
   border-radius: 15px;
   border: none;
   /* Asegurar centrado de texto */
@@ -300,6 +302,15 @@
   align-items: center;
   text-align: center;
   width: 100%;
+}
+.contenedor-button-login2 button a {
+  text-decoration: none;
+  color: white;
+}
+.contenedor-button-login2 button:hover {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1),
+    0 15px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
 }
 
 @media screen and (max-width: 1366px) {
