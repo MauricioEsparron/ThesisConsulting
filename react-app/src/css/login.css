@@ -500,10 +500,12 @@
     font-weight: 600;
   }
 }
+
 @media screen and (max-width: 588px) {
   .subcontenedor-login2-global {
     margin: 30px auto;
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -514,7 +516,7 @@
     height: 0px;
   }
   .imagen-fondo-login2 {
-    filter: none !important; /* Elimina el desenfoque */
+    filter: none !important;
   }
 
   .contenedor-img-login2 {
@@ -525,11 +527,15 @@
   }
   .subcontenedor-login2 {
     width: 100%;
+    height: 100;
+    margin-bottom: 10px;
     border-radius: 10px;
     backdrop-filter: blur(3px);
     border-radius: 50px 50px 0px 0px;
-    min-height: 558px;
-    max-height: 558px;
+    min-height: 550px;
+    max-height: 550px;
+    /* border: 2px solid red; */
+    bottom: 0;
   }
 
   .contenedor-input-login2 input {
@@ -575,6 +581,7 @@
     font-weight: 600;
   }
 }
+
 /* @media screen and (max-width: 414px) {
   .subcontenedor-login2-global {
     margin: 180px auto;

@@ -6,7 +6,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import "../css/login2.css";
+import "../css/login.css";
 
 // Importamos las imágenes
 import img1 from "../img/montañas1.jpg";

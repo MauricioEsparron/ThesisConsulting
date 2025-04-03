@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Especialidades from "./components/Especialidades.tsx";
 import Gracias from "./components/Gracias";
 import Contactanos from "./components/Contactanos";
-import Login2 from "./components/Login2.tsx";
+import Login from "./components/Login.tsx";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path="/Especialidades" element={<Especialidades />} />
         <Route path="/Contactanos" element={<Contactanos />} />
         <Route path="/Gracias" element={<Gracias />} />
-        <Route path="/Login2" element={<Login2 />} />
+        <Route path="/Login" element={<Login />} />
       </Routes>
     </Router>
   );

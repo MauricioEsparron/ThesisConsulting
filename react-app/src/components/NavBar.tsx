@@ -59,7 +59,7 @@ const Navbar = () => {
           <Link to="/Especialidades">
             <FaGraduationCap style={{ marginRight: "8px" }} /> Especialidades
           </Link>
-          <a href="/Login2">
+          <a href="/Login">
             <FaUser style={{ marginRight: "8px" }} /> Acceder
           </a>
           <a
