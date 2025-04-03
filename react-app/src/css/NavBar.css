@@ -71,11 +71,19 @@ nav {
 
 .menu-desplegable a {
   color: #ffffff;
-
   text-decoration: none;
   font-size: 1.2em;
   margin: 10px 0;
   transition: color 0.3s ease;
+}
+
+.menu-desplegable {
+  padding-top: 10px;
+}
+
+.cerrar-opcion-menu-desplegable {
+  margin-bottom: 60px;
+  display: block;
 }
 
 .menu-desplegable a:hover {

@@ -56,22 +56,26 @@ const Navbar = () => {
         </div>
 
         <div className={`menu-desplegable ${menuOpen ? "active" : ""}`}>
-          <Link to="/Especialidades">
+          <div className="nav-icon" onClick={() => setMenuOpen(!menuOpen)}>
+            <i
+              className=" cerrar-opcion-menu-desplegable bi bi-list"
+              id="menu-icon"
+            >
+              ☰
+            </i>
+          </div>
+          <Link className="opcion1-navbar" to="/Especialidades">
             <FaGraduationCap style={{ marginRight: "8px" }} /> Especialidades
           </Link>
-          <a href="/Login">
+          <Link to="/Login">
             <FaUser style={{ marginRight: "8px" }} /> Acceder
-          </a>
-          <a
-            target="_blank"
-            // rel="noopener noreferrer"
-            // href="https://wa.me/51936956726"
-            href="/Contactanos"
-          >
+          </Link>
+          <Link to="/Contactanos">
             <FaWhatsapp style={{ marginRight: "8px" }} /> Contáctanos
-          </a>
-
+          </Link>
           <a href="#">
+            {" "}
+            {/* Si Redes Sociales es un enlace externo, usa <a> */}
             <FaGlobe style={{ marginRight: "8px" }} /> Redes sociales
           </a>
         </div>
