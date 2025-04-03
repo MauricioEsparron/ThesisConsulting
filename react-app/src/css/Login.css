@@ -1,0 +1,126 @@
+/* Variables de color */
+:root {
+  --titulo: white;
+  --labels: white;
+}
+.contenedor-login {
+  /* background-image: url("../img/bohoartMinimalistlandscapemountains.webp"); */
+  background-image: url("../img/montañas.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  padding-top: 30px;
+}
+
+.sub-contenedor-login {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.247
+  ); /* Color claro con más transparencia */
+  width: 25%;
+  min-height: 200px;
+  display: block;
+  margin: 180px auto 0;
+  padding: 20px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* border: 2px solid red;  */
+}
+
+.contenedor-titulo-login {
+  color: var(--titulo);
+  font-weight: 600;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.contenedor-form-login {
+  padding: 50px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-label-login {
+  color: var(--labels);
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.contenedor-input-login {
+  color: black;
+  font-weight: 600;
+  margin: 5px 0;
+}
+.contenedor-input-login input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.contenedor-options-login {
+  display: flex;
+  flex-direction: row;
+}
+
+.contenedor-checkbox-login {
+  width: 50%;
+}
+
+.contenedor-checkbox-login input {
+  margin-right: 10px;
+  /* cursor: pointer; */
+}
+
+.contenedor-checkbox-login label {
+  font-size: 0.8rem;
+  color: #232e60;
+  cursor: pointer;
+}
+
+.contenedor-reset-login {
+  /* border: 1px solid red; */
+  width: 50%;
+  text-align: right !important;
+}
+
+.contenedor-reset-login a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: #232e60;
+  cursor: pointer;
+}
+
+.contenedor-button-login {
+  /* border: 1px solid blue; */
+  width: 100%;
+  margin: 10px 0;
+}
+.submit-button-login {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #232e60;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 978px) {
+  .sub-contenedor-login {
+    width: 50%;
+    display: block;
+    margin: 180px auto 0;
+  }
+}

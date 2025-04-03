@@ -56,10 +56,10 @@ const Navbar = () => {
         </div>
 
         <div className={`menu-desplegable ${menuOpen ? "active" : ""}`}>
-          <Link to="/especialidades">
+          <Link to="/Especialidades">
             <FaGraduationCap style={{ marginRight: "8px" }} /> Especialidades
           </Link>
-          <a href="#">
+          <a href="/Login">
             <FaUser style={{ marginRight: "8px" }} /> Acceder
           </a>
           <a
