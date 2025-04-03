@@ -302,23 +302,13 @@
   width: 100%;
 }
 
-@media screen and (max-width: 1406px) {
-  .subcontenedor-login2-global {
-    margin: 15px auto;
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-radius: 10px;
-  }
-}
 @media screen and (max-width: 1366px) {
   .subcontenedor-login2-global {
     margin: 50px auto;
     width: 70%;
   }
 }
-@media screen and (max-width: 978px) {
+@media screen and (max-width: 1365px) {
   .contenedor-login2 {
     background-size: cover;
     background-position: center;
@@ -426,7 +416,7 @@
     border: none;
   }
 }
-@media screen and (max-width: 958px) {
+@media screen and (max-width: 977px) {
   .subcontenedor-login2-global {
     margin: 180px auto;
     width: 90%;
@@ -437,11 +427,10 @@
     margin: 180px auto;
     width: 90%;
   }
-}
-@media screen and (max-width: 842px) {
-  .subcontenedor-login2-global {
-    margin: 180px auto;
-    width: 90%;
+  .contendor_titulo-login2 {
+    text-align: center;
+    font-size: 1rem;
+    padding: 70px 0 20px;
   }
   .contenedor-img-login2 {
     width: 50%;
@@ -581,103 +570,3 @@
     font-weight: 600;
   }
 }
-
-/* @media screen and (max-width: 414px) {
-  .subcontenedor-login2-global {
-    margin: 180px auto;
-    width: 90%;
-  }
-
-  .contenedor-img-login2 {
-    display: none;
-  }
-
-  .subcontenedor-login2 {
-    width: 100%;
-    min-height: 355px;
-    max-height: 355px;
-    height: 100%;
-    border-radius: 10px;
-    backdrop-filter: blur(1px);
-  }
-
-  .contenedor-options-login2 {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100%;
-    margin-top: 20px;
-  }
-  .contenedor-reset-login2 {
-    width: 50%;
-    text-align: center;
-    padding-top: 10px;
-  }
-  .contenedor-reset-login2 a {
-    font-weight: 600;
-    font-size: 12px;
-    color: #304086;
-    width: 100%;
-  }
-
-  .contenedor-button-login2 {
-    width: 50%;
-  }
-
-  .contenedor-button-login2 button {
-    width: 100%;
-    font-size: 12px;
-    padding: 12px 50px;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .subcontenedor-login2-global {
-    margin: 80px auto;
-    width: 90%;
-  }
-
-  .contenedor-img-login2 {
-    display: none;
-  }
-
-  .subcontenedor-login2 {
-    width: 100%;
-    min-height: 355px;
-    max-height: 355px;
-    height: 100%;
-    border-radius: 10px;
-    backdrop-filter: blur(1px);
-  }
-
-  .contenedor-options-login2 {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100%;
-    margin-top: 20px;
-  }
-  .contenedor-reset-login2 {
-    width: 50%;
-    text-align: center;
-    padding-top: 10px;
-  }
-  .contenedor-reset-login2 a {
-    font-weight: 600;
-    font-size: 12px;
-    color: #304086;
-    width: 100%;
-  }
-
-  .contenedor-button-login2 {
-    width: 50%;
-  }
-
-  .contenedor-button-login2 button {
-    width: 100%;
-    font-size: 12px;
-    padding: 12px 50px;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-} */
