@@ -1,3 +1,58 @@
+/* Contenedor de imagen relativo para posicionar flechas */
+.contenedor-img-login2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Estilos para las flechas del carrusel */
+.carrusel-button {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carrusel-button.left {
+  left: 15px;
+}
+
+.carrusel-button.right {
+  right: 15px;
+}
+
+.carrusel-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+/* Efectos de transición para la imagen */
+.fade-image {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+/* Mantén tus otros estilos existentes... */ /* Mantén tus estilos existentes para el resto del formulario */
 /* Controles del slideshow */
 .slideshow-controls {
   position: absolute;
@@ -114,41 +169,58 @@
 }
 
 .subcontenedor-login2-global {
-  margin: 140px auto;
-  width: 70%;
+  margin: 110px auto;
+  width: 85%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+
+  /* Elimina el borde rojo y agrega sombra negra profesional */
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08),
+    0 10px 25px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efecto hover sutil */
+.subcontenedor-login2-global:hover {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1),
+    0 15px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.contenedor-img-login2,
+.contenedor-img-login2 img,
+.subcontenedor-login2 {
+  min-height: 660px;
+  max-height: 660px;
 }
 
 .contenedor-img-login2 {
   width: 50%;
   height: 100%;
-  min-height: 550px;
-  max-height: 550px;
 }
 .contenedor-img-login2 img {
   width: 100%;
-  border-radius: 10px 0px 0px 10px;
-  min-height: 550px;
-  max-height: 550px;
+  border-radius: 15px 0px 0px 15px;
 }
 
 .subcontenedor-login2 {
   width: 50%;
-  min-height: 550px;
-  max-height: 550px;
   height: 100%;
-  background-color: #fdfafa8e;
-  border-radius: 0px 10px 10px 0px;
+  background-color: #fdfafab9;
+  border-radius: 0px 15px 15px 0px;
   backdrop-filter: blur(1px);
 }
 
 .contendor_titulo-login2 {
   text-align: center;
   font-size: 1.5rem;
-  padding: 80px 0 30px;
+  padding: 130px 0 20px;
 }
 
 .contenedor-input-login2 {
@@ -161,18 +233,19 @@
 }
 
 .contenedor-input-login2 input {
-  width: 80%;
-  padding: 20px 20px 20px 50px;
+  width: 95%;
+  padding: 25px 25px 25px 70px;
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 16px;
+  font-weight: 300;
 }
 
 .contenedor-input-login2 .icono-input {
   position: absolute;
-  left: 76px;
+  left: 45px;
   font-size: 18px;
-  color: #888;
+  color: #747474;
 }
 
 .contenedor-input-login2 input:focus {
@@ -184,33 +257,43 @@
   width: 100%;
   margin-top: 30px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
   text-align: center;
-}
-.contenedor-reset-login2 {
-  width: 40%;
-}
-.contenedor-reset-login2 a {
-  text-decoration: none;
-  font-size: 13px;
-  color: #304086;
+  padding: 10px;
+  gap: 10px; /* Espaciado entre elementos */
 }
 
+.contenedor-reset-login2,
 .contenedor-button-login2 {
   width: 40%;
+  display: flex;
+  justify-content: center; /* Centra el contenido interno */
+  align-items: center;
 }
+
+.contenedor-reset-login2 {
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  text-align: left;
+  padding-left: 10px; /* Opcional: Ajusta el espaciado */
+}
+
+.contenedor-reset-login2 a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #304086;
+  font-weight: 600;
+}
+
 .contenedor-button-login2 button {
-  font-size: 13px;
-  padding: 15px 65px;
+  font-size: 15px;
+  padding: 15px 35px;
   text-transform: uppercase;
   font-weight: 600;
   background-color: #304086;
   color: white;
-  border-radius: 20px;
+  border-radius: 15px;
   border: none;
-
   /* Asegurar centrado de texto */
   display: flex;
   justify-content: center;
@@ -421,12 +504,19 @@
   .subcontenedor-login2-global {
     margin: 30px auto;
     width: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(0px);
+    border-radius: 0px;
+    height: 0px;
   }
+  .imagen-fondo-login2 {
+    filter: none !important; /* Elimina el desenfoque */
+  }
+
   .contenedor-img-login2 {
     width: 100%;
   }
@@ -436,10 +526,10 @@
   .subcontenedor-login2 {
     width: 100%;
     border-radius: 10px;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(3px);
     border-radius: 50px 50px 0px 0px;
-    min-height: 438px;
-    max-height: 438px;
+    min-height: 558px;
+    max-height: 558px;
   }
 
   .contenedor-input-login2 input {
@@ -485,7 +575,7 @@
     font-weight: 600;
   }
 }
-@media screen and (max-width: 414px) {
+/* @media screen and (max-width: 414px) {
   .subcontenedor-login2-global {
     margin: 180px auto;
     width: 90%;
@@ -583,4 +673,4 @@
     text-transform: uppercase;
     font-weight: 600;
   }
-}
+} */

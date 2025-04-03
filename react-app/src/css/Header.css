@@ -102,13 +102,13 @@ html {
 }
 
 @media screen and (max-width: 1395px) {
-  .title-line {
+  h1 .title-line {
     font-size: 6rem;
   }
 }
 
 @media screen and (max-width: 914px) {
-  .title-line {
+  h1 .title-line {
     font-size: 60px;
   }
   h3 {
@@ -117,7 +117,7 @@ html {
 }
 
 @media screen and (max-width: 768px) {
-  .title-line {
+  h1 .title-line {
     font-size: 50px;
   }
 

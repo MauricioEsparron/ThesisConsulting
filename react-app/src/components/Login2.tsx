@@ -1,6 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faLock,
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import "../css/login2.css";
 
 // Importamos las imágenes
@@ -15,25 +20,21 @@ const images = [img1, img2, img3, img4, img5, img6];
 
 const Login2 = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [fade, setFade] = useState(false);
 
-  // Cambia la imagen cada 5 segundos con efecto de fade
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(true); // Activamos fade-out
-      setTimeout(() => {
-        setCurrentImage((prev) => (prev + 1) % images.length);
-        setFade(false); // Activamos fade-in
-      }, 1); // 1.5s para la transición
-    }, 20000);
-
-    return () => clearInterval(interval);
-  }, []);
+  // Función simplificada para cambio inmediato
+  const changeImage = (direction: "prev" | "next") => {
+    if (direction === "next") {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    } else {
+      setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+    }
+  };
 
   return (
     <div>
-      {/* 🔹 Fondo con transición suave */}
+      {/* Fondo con efecto blur - sin transición */}
       <div
+        className="imagen-fondo-login2"
         style={{
           backgroundImage: `url(${images[currentImage]})`,
           backgroundSize: "cover",
@@ -44,9 +45,7 @@ const Login2 = () => {
           left: 0,
           width: "100%",
           height: "100vh",
-          filter: "blur(3px)",
-          transition: "opacity 1.5s ease-in-out",
-          opacity: fade ? 0 : 1,
+          filter: "blur(2px)",
           zIndex: -1,
         }}
       ></div>
@@ -54,15 +53,35 @@ const Login2 = () => {
       {/* Contenedor principal */}
       <div className="contenedor-login2">
         <div className="subcontenedor-login2-global">
-          {/* 🔹 Imagen del formulario con efecto de fade */}
+          {/* Contenedor de imagen con flechas */}
           <div className="contenedor-img-login2">
+            {/* Flecha izquierda */}
+            <button
+              className="carrusel-button left"
+              onClick={() => changeImage("prev")}
+              aria-label="Imagen anterior"
+            >
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+
+            {/* Imagen del formulario - sin clases de fade */}
             <img
               src={images[currentImage]}
               alt="imagen-formulario"
-              className={`fade-image ${fade ? "fade-out" : "fade-in"}`}
+              className="imagen-formulario"
             />
+
+            {/* Flecha derecha */}
+            <button
+              className="carrusel-button right"
+              onClick={() => changeImage("next")}
+              aria-label="Siguiente imagen"
+            >
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
           </div>
 
+          {/* Formulario de login */}
           <div className="subcontenedor-login2">
             <div className="contendor_titulo-login2">
               <h1>Welcome !</h1>
