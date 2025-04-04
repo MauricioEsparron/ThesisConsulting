@@ -91,15 +91,14 @@
 @media screen and (max-width: 675px) {
   .Metodologia-titulo {
     color: #f4f4f4;
-
     font-size: 40px;
-    width: 80%;
-    text-align: center;
+    width: 95%;
+    text-align: left;
   }
   .Metodologia-texto {
     margin-top: 40px;
-    width: 80%;
-    font-size: 1.5rem;
+    width: 95%;
+    font-size: 18px;
     text-align: left;
   }
 }
