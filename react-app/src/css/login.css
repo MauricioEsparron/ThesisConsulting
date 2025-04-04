@@ -219,8 +219,9 @@
 
 .contendor_titulo-login2 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 3rem;
   padding: 130px 0 20px;
+  font-weight: 600;
 }
 
 .contenedor-input-login2 {
@@ -276,6 +277,7 @@
   justify-content: flex-start; /* Alinea el contenido a la izquierda */
   text-align: left;
   padding-left: 10px; /* Opcional: Ajusta el espaciado */
+  font-weight: 600;
 }
 
 .contenedor-reset-login2 a {
@@ -440,8 +442,8 @@
   }
   .contendor_titulo-login2 {
     text-align: center;
-    font-size: 1rem;
-    padding: 70px 0 20px;
+    font-size: 1.6rem;
+    padding: 60px 0 20px;
   }
   .contenedor-img-login2 {
     width: 50%;
