@@ -71,7 +71,7 @@ const Especialidades: React.FC = () => {
             <div className="video-overlay-especialidades"></div>
           </div>
           <div className="header-content">
-            <h1>Nuestras Especialidades</h1>
+            <h1>Nuestras  <span>Especialidades</span></h1>
             <p>Servicios diseñados para potenciar tu impacto social y académico</p>
           </div>
         </header>
