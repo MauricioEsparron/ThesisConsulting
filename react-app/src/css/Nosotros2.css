@@ -1,6 +1,6 @@
 /* Variables de color y tipografía */
 :root {
-  --color-primary: #3b4a8b;
+  --color-primary: #f4f4f4;
   --color-secondary: #fdbe41;
   --color-accent: #cfa85a;
   --color-light: #f4f4f4;
@@ -144,7 +144,7 @@
 }
 
 .Ndiv6::after {
-  content: "Contáctanos para más información";
+  content: "has click aquí para contáctarnos";
 }
 
 /* Efectos hover - Oculta subtítulo y muestra mensaje */
@@ -178,12 +178,18 @@
 }
 
 /* Efecto especial para el título */
+.Nosotros2-titulo {
+  position: relative; /* Asegúrate de que el contenedor tenga posicionamiento relativo */
+}
+
 .Nosotros2-titulo::after {
   content: "Somos la unidad de Latam Business Consulting especializada en asesorar investigaciones académicas con un enfoque en sostenibilidad, innovación y excelencia.";
   position: absolute;
-  left: 0;
-  bottom: -100%;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra en ambos ejes */
+  width: max-content;
+  max-width: 90%;
   background-color: var(--color-secondary);
   color: white;
   padding: 1rem;
@@ -193,14 +199,19 @@
   transition: all 0.5s ease;
   font-size: 0.9rem;
   text-align: center;
+  border-radius: 10px;
+  z-index: 10;
 }
 
 .Nosotros2-titulo:hover::after {
   opacity: 1;
   visibility: visible;
-  bottom: -120%;
 }
 
+.Nosotros2-titulo {
+  width: 500px;
+  font-size: 2.2rem;
+}
 /* Diseño responsive */
 @media (min-width: 768px) {
   .parentNosotros2_2 {

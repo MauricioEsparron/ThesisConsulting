@@ -47,7 +47,7 @@
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita repeticiones */
   margin: 10px;
-  padding: 160% 10% 10% 70%;
+  padding: 160% 10% 10% 50%;
   color: #f4f4f4;
   font-size: 25px;
   margin-left: -110px;
@@ -104,7 +104,7 @@
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita repeticiones */
   margin: 10px 10px 10px;
-  padding: 228% 10% 10% 80%;
+  padding: 227% 10% 10% 60%;
   margin-left: -25%;
   filter: contrast(100%) brightness(85%);
 }
