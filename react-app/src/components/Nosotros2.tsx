@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import "../css/Nosotros2.css";
 
-type Props = { titulo: string; subtitulo: string };
+type Props = { titulo: string };
 
-function Nosotros2({ titulo, subtitulo }: Props) {
+function Nosotros2({ titulo }: Props) {
   const abrirFormulario = (e: React.MouseEvent) => {
     e.preventDefault();
     window.dispatchEvent(new Event("openForm"));
@@ -36,20 +36,12 @@ function Nosotros2({ titulo, subtitulo }: Props) {
         transition={{ duration: 0.8 }}
       >
         <motion.div
-          className="Ndiv2"
-          initial={{ scale: 0.8, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <SubTituloNosotros subtitulo={subtitulo} />
-        </motion.div>
-        <motion.div
           className="Ndiv3"
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <span className="subtitulo-efecto">Estudiantes</span>
+          <span className="subtitulo2-efecto">Estudiantes</span>
         </motion.div>
         <motion.div
           className="Ndiv4"
@@ -57,7 +49,7 @@ function Nosotros2({ titulo, subtitulo }: Props) {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.5 }}
         >
-          <span className="subtitulo-efecto">Organizaciones</span>
+          <span className="subtitulo2-efecto">Organizaciones</span>
         </motion.div>
         <motion.div
           className="Ndiv5"
@@ -65,7 +57,7 @@ function Nosotros2({ titulo, subtitulo }: Props) {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <span className="subtitulo-efecto">Profesionales</span>
+          <span className="subtitulo2-efecto">Profesionales</span>
         </motion.div>
         <motion.div
           className="Ndiv6"
@@ -75,7 +67,7 @@ function Nosotros2({ titulo, subtitulo }: Props) {
           onClick={abrirFormulario} // 🔹 Se abre el formulario al hacer clic
           style={{ cursor: "pointer" }} // 🔹 Indica que es interactivo
         >
-          <span className="subtitulo-efecto">Contáctanos</span>
+          <span className="subtitulo2-efecto">Contáctanos</span>
         </motion.div>
       </motion.div>
     </motion.div>
@@ -87,13 +79,6 @@ interface TituloNosotrosProps {
 }
 export function TituloNosotros({ titulo }: TituloNosotrosProps) {
   return <h2 className="Nosotros2-titulo">{titulo}</h2>;
-}
-
-interface SubTituloNosotrosProps {
-  subtitulo: string;
-}
-export function SubTituloNosotros({ subtitulo }: SubTituloNosotrosProps) {
-  return <h4 className="Nosotros2-subtitulo">{subtitulo}</h4>;
 }
 
 export default Nosotros2;

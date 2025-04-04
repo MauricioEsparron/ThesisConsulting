@@ -82,7 +82,7 @@ function Home({}: Props) {
       {width >= 914 ? (
         <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO" />
       ) : (
-        <Nosotros2 titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO" />
+        <Nosotros2 titulo="¿QUIENES SOMOS?" />
       )}
       {width <= 913 && <ContactForm ref={formRef} />} <CulturaOrganizacional />
       <Valores />
