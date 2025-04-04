@@ -101,9 +101,31 @@ html {
   animation: bounce 2.5s infinite ease-in-out; /* Aumenté la duración a 2.5s */
 }
 
-@media screen and (max-width: 1395px) {
+@media screen and (max-width: 17827px) {
+  h1 .title-line {
+    font-size: 6.5rem;
+  }
+}
+@media screen and (max-width: 1764px) {
+  h1 .title-line {
+    font-size: 6.5rem;
+  }
+}
+
+@media screen and (max-width: 1536px) {
   h1 .title-line {
     font-size: 6rem;
+  }
+}
+@media screen and (max-width: 1536px) {
+  h1 .title-line {
+    font-size: 5.5rem;
+  }
+}
+
+@media screen and (max-width: 1395px) {
+  h1 .title-line {
+    font-size: 5.5rem;
   }
 }
 
@@ -113,18 +135,40 @@ html {
   }
 }
 
+@media screen and (max-width: 1180px) {
+  h1 .title-line {
+    font-size: 4.5rem;
+  }
+}
+
 @media screen and (max-width: 1080px) {
   h1 .title-line {
     font-size: 4.5rem;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  h1 .title-line {
+    font-size: 4.3rem;
+  }
+}
+
 @media screen and (max-width: 997px) {
   h1 .title-line {
     font-size: 4.3rem;
   }
-
   .subtitulo-header {
     font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 970px) {
+  h1 .title-line {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 938px) {
+  h1 .title-line {
+    font-size: 2em;
   }
 }
 @media screen and (max-width: 914px) {
