@@ -67,7 +67,24 @@ function Nosotros2({ titulo }: Props) {
           onClick={abrirFormulario} // 🔹 Se abre el formulario al hacer clic
           style={{ cursor: "pointer" }} // 🔹 Indica que es interactivo
         >
-          <span className="subtitulo2-efecto">Contáctanos</span>
+          <span id="enlace-to-form-nosotros2" className="subtitulo2-efecto">
+            <a
+              href="#"
+              className="boton-sesion-gratuita"
+              onClick={(e) => {
+                e.preventDefault();
+                window.dispatchEvent(new Event("openForm"));
+                setTimeout(() => {
+                  const formElement =
+                    document.getElementById("formulario") ||
+                    document.getElementById("contact-form");
+                  formElement?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
+            >
+              Contáctanos
+            </a>
+          </span>
         </motion.div>
       </motion.div>
     </motion.div>

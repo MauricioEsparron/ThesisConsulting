@@ -86,11 +86,15 @@
   transition: all 0.5s ease;
 }
 
+#enlace-to-form-nosotros2 a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
 /* Efecto overlay base */
 .Ndiv3::before,
 .Ndiv4::before,
-.Ndiv5::before,
-.Ndiv6::before {
+.Ndiv5::before {
   content: "";
   position: absolute;
   top: 0;
@@ -108,8 +112,7 @@
 /* Contenido del hover (mensajes) */
 .Ndiv3::after,
 .Ndiv4::after,
-.Ndiv5::after,
-.Ndiv6::after {
+.Ndiv5::after {
   content: "";
   position: absolute;
   top: 0;
@@ -143,15 +146,10 @@
   content: "3. Organizaciones este es un mensaje de prueba";
 }
 
-.Ndiv6::after {
-  content: "has click aquí para contáctarnos";
-}
-
 /* Efectos hover - Oculta subtítulo y muestra mensaje */
 .Ndiv3:hover .subtitulo2-efecto,
 .Ndiv4:hover .subtitulo2-efecto,
-.Ndiv5:hover .subtitulo2-efecto,
-.Ndiv6:hover .subtitulo2-efecto {
+.Ndiv5:hover .subtitulo2-efecto {
   opacity: 0;
   visibility: hidden;
 }
@@ -162,8 +160,7 @@
 .Ndiv6:hover::before,
 .Ndiv3:hover::after,
 .Ndiv4:hover::after,
-.Ndiv5:hover::after,
-.Ndiv6:hover::after {
+.Ndiv5:hover::after {
   opacity: 1;
   visibility: visible;
 }
@@ -171,8 +168,7 @@
 /* Efectos hover generales */
 .Ndiv3:hover,
 .Ndiv4:hover,
-.Ndiv5:hover,
-.Ndiv6:hover {
+.Ndiv5:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
