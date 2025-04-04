@@ -34,101 +34,97 @@
   color: black;
   font-size: 80px;
   margin-bottom: 20px;
-  .Proposito {
-    width: 100%;
-    background-color: #f4f4f4;
-  }
+  font-weight: 600;
+}
 
-  .Proposito-contenedor {
-    width: 100%;
-    padding: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.Proposito {
+  width: 100%;
+  background-color: #f4f4f4;
+}
 
-  .Proposito-imagen-contenedor {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
+.Proposito-contenedor {
+  width: 100%;
+  padding: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .Proposito-imagen {
-    width: 100%;
-    max-width: 800px;
-    height: 650px;
-    border-radius: 200px 0px 0px 0px;
-  }
+.Proposito-imagen-contenedor {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
 
-  .Proposito-info {
-    flex: 1;
-    padding: 20px;
-    text-align: left;
-  }
+.Proposito-imagen {
+  width: 100%;
+  max-width: 800px;
+  height: 650px;
+  border-radius: 200px 0px 0px 0px;
+}
 
-  .Proposito-titulo {
-    color: black;
-    font-size: 80px;
-    margin-bottom: 20px;
-  }
+.Proposito-info {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
 
-  .Proposito-info p {
-    font-size: 25px;
-    width: 80%;
-    line-height: 1.5;
-    padding: 20px;
-  }
+.Proposito-info p {
+  font-size: 25px;
+  width: 80%;
+  line-height: 1.5;
+  padding: 20px;
+}
 
-  .contenedor-opciones {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
+.contenedor-opciones {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
 
-  .Proposito-opciones {
-    display: flex;
-    width: 50%;
-    background-color: #f5db86;
-    backdrop-filter: blur(5px);
-    padding: 15px;
-    justify-content: space-between;
-    align-items: center;
-  }
+.Proposito-opciones {
+  display: flex;
+  width: 50%;
+  background-color: #f5db86;
+  backdrop-filter: blur(5px);
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .Proposito-opciones p {
-    color: #f4f4f4;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 20px;
-  }
+.Proposito-opciones p {
+  color: #f4f4f4;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px;
+}
 
-  .Proposito-opciones a {
-    color: #f4f4f4;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 20px;
-    background-color: transparent;
-  }
+.Proposito-opciones a {
+  color: #f4f4f4;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  background-color: transparent;
+}
 
-  .overlay {
-    position: absolute;
-    bottom: 100px;
-    left: 30%;
-    width: 40%;
-    height: auto;
-    background-color: #ebb403;
-    color: #f4f4f4;
-    text-align: center;
-    padding: 15px;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0.92;
-  }
+.overlay {
+  position: absolute;
+  bottom: 100px;
+  left: 30%;
+  width: 40%;
+  height: auto;
+  background-color: #ebb403;
+  color: #f4f4f4;
+  text-align: center;
+  padding: 15px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.92;
 }
 
 .Proposito-info p {
@@ -303,10 +299,10 @@
   }
 }
 
-@media screen and (max-width: 636px) {
+@media screen and (max-width: 655px) {
   .Proposito .overlay {
     position: absolute;
-    bottom: 60px;
+    bottom: 35px;
     left: 44%;
     width: 50%;
     padding: 15px;
@@ -316,7 +312,21 @@
     width: 50% !important;
   }
 }
-@media screen and (max-width: 521px) {
+
+@media screen and (max-width: 636px) {
+  .Proposito .overlay {
+    position: absolute;
+    bottom: 50px;
+    left: 44%;
+    width: 50%;
+    padding: 15px;
+    z-index: 10;
+  }
+  .overlay {
+    width: 50% !important;
+  }
+}
+@media screen and (max-width: 525px) {
   .Proposito .overlay {
     position: absolute;
     bottom: 45px;
@@ -346,7 +356,7 @@
 @media screen and (max-width: 394px) {
   .Proposito .overlay {
     position: absolute;
-    bottom: 45px;
+    bottom: 35px;
     left: 35%;
     width: 50%;
     padding: 15px;

@@ -22,7 +22,7 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
 .nav-links a {
@@ -75,6 +75,9 @@ nav {
   font-size: 1.2em;
   margin: 10px 0;
   transition: color 0.3s ease;
+  font-weight: 200;
+  display: flex;
+  flex-direction: row;
 }
 
 .menu-desplegable {
@@ -92,10 +95,12 @@ nav {
 
 @media screen and (max-width: 768px) {
   .NavBar-nombre-empresa {
-    font-size: 15px;
+    font-size: 12px;
+    font-weight: 800;
   }
   .nav-links a {
-    font-size: 11px;
+    font-size: 10px;
     padding: 0px;
+    font-weight: 600;
   }
 }

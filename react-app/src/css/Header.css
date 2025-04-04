@@ -45,6 +45,7 @@ h1 .title-line {
   margin: auto 30px;
   font-size: 8rem;
   margin: 0;
+  font-weight: 600;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   mix-blend-mode: difference;
   animation: fadeIn 2s ease-in-out;
@@ -168,7 +169,7 @@ html {
 }
 @media screen and (max-width: 938px) {
   h1 .title-line {
-    font-size: 2em;
+    font-size: 3.5em;
   }
 }
 @media screen and (max-width: 914px) {

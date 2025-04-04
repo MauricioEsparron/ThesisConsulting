@@ -1,18 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"], // Ajusta esto según tu estructura
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  prefix: "tw-", // Todas las clases requerirán tw-
+  important: "#tailwind-container", // Solo afecta dentro de este contenedor
   theme: {
-    extend: {
-      keyframes: {
-        shimmer: {
-          "0%": { backgroundPosition: "0% 50%" },
-          "100%": { backgroundPosition: "-200% 50%" },
-        },
-      },
-      animation: {
-        shimmer: "shimmer 2s linear infinite",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
