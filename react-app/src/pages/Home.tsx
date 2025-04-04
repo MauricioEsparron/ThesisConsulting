@@ -61,12 +61,7 @@ function Home({}: Props) {
     <>
       <Navbar />
       {width >= 914 ? <Header /> : <HeaderResponsive formRef={formRef} />}
-      <div id="tailwind-container">
-        {/* Solo los elementos dentro de este div serán afectados por Tailwind */}
-        <h6 className="tw-text-3xl tw-font-bold tw-text-blue-500">
-          ¡Tailwind está funcionando!
-        </h6>
-      </div>
+      <div id="tailwind-container"></div>
       <Pilares
         imagen1={icon1}
         texto1={"Excelencia Académica"}
