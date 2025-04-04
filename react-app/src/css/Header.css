@@ -107,6 +107,26 @@ html {
   }
 }
 
+@media screen and (max-width: 1314px) {
+  h1 .title-line {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  h1 .title-line {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (max-width: 997px) {
+  h1 .title-line {
+    font-size: 4.3rem;
+  }
+
+  .subtitulo-header {
+    font-size: 1.5rem;
+  }
+}
 @media screen and (max-width: 914px) {
   h1 .title-line {
     font-size: 60px;
