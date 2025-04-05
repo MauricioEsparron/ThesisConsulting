@@ -18,7 +18,7 @@ import img6 from "../img/montañas6.jpg";
 
 const images = [img1, img2, img3, img4, img5, img6];
 
-const Login2 = () => {
+const Login = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   // Función simplificada para cambio inmediato
@@ -119,4 +119,4 @@ const Login2 = () => {
   );
 };
 
-export default Login2;
+export default Login;
