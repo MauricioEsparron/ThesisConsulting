@@ -822,8 +822,8 @@
   .contenedor-footer {
     border-radius: 20px;
     width: 80%;
-    margin: 20px auto 50px;
-    padding: 15px;
+    margin: 20px auto 0px;
+    padding: 15px 0px 70px;
   }
 }
 
