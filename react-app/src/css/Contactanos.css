@@ -829,12 +829,13 @@
 
 @media (max-width: 768px) {
   .contenedor-header {
-    padding: 1 rem 1.5rem;
-    min-height: 70vh; /* Slightly reduced to ensure better spacing */
+    min-height: 85vh; /* Slightly reduced to ensure better spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .titulo-contactanos {
-    margin-bottom: 2rem;
     font-size: 2.5rem; /* Adjust if needed */
   }
 
@@ -850,6 +851,7 @@
 }
 
 @media screen and (max-width: 390px) {
+
   .contenedor-bloque1,
   .contenedor-bloque2 {
     width: 95% !important;
@@ -906,6 +908,7 @@
 /* Fix for very small screens */
 @media screen and (max-width: 375px) {
   .contenedor-header {
+
     padding: 15px;
   }
 
