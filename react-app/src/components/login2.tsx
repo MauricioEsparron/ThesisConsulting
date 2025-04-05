@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
-import "../css/login.css";
 
 // Importamos las imágenes
 import img1 from "../img/montañas1.jpg";
@@ -17,7 +16,7 @@ const Login2 = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [fade, setFade] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<string[]>([]); // Tipo explícito
+  const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
   // Pre-cargar imágenes
   useEffect(() => {
@@ -25,7 +24,6 @@ const Login2 = () => {
       const loaded = await Promise.all(
         images.map((src) => {
           return new Promise<string | null>((resolve) => {
-            // Tipo explícito para el Promise
             const img = new Image();
             img.src = src;
             img.onload = () => resolve(src);
@@ -33,7 +31,7 @@ const Login2 = () => {
           });
         })
       );
-      setLoadedImages(loaded.filter((img): img is string => img !== null)); // Type guard
+      setLoadedImages(loaded.filter((img): img is string => img !== null));
     };
 
     loadImages();
@@ -44,134 +42,122 @@ const Login2 = () => {
     if (loadedImages.length === 0) return;
 
     const interval = setInterval(() => {
-      // Calcular la siguiente imagen
       const nextIndex = (currentImageIndex + 1) % loadedImages.length;
       setNextImageIndex(nextIndex);
-
-      // Iniciar transición
       setFade(true);
 
-      // Cambiar la imagen actual después de la transición
       setTimeout(() => {
         setCurrentImageIndex(nextIndex);
         setFade(false);
-      }, 1000); // Duración del fade
-    }, 5000); // Intervalo entre cambios
+      }, 1000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [loadedImages, currentImageIndex]);
 
   if (loadedImages.length === 0) {
-    return <div className="loading-screen">Cargando imágenes...</div>;
+    return (
+      <div className="tw-flex tw-items-center tw-justify-center tw-h-screen">
+        Cargando imágenes...
+      </div>
+    );
   }
 
   return (
-    <div>
+    <div id="tailwind-container" className="tw-relative tw-min-h-screen">
       {/* Fondo con dos capas superpuestas */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100vh",
-          zIndex: -1,
-          overflow: "hidden",
-        }}
-      >
+      <div className="tw-absolute tw-inset-0 tw-z-[-1] tw-overflow-hidden">
         {/* Capa con la imagen actual */}
         <div
-          style={{
-            backgroundImage: `url(${loadedImages[currentImageIndex]})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            filter: "blur(3px)",
-            opacity: fade ? 0 : 1,
-            transition: "opacity 1s ease-in-out",
-          }}
+          className={`tw-absolute tw-inset-0 tw-bg-cover tw-bg-center tw-filter tw-blur-sm ${
+            fade ? "tw-opacity-0" : "tw-opacity-100"
+          } tw-transition-opacity tw-duration-1000 tw-ease-in-out`}
+          style={{ backgroundImage: `url(${loadedImages[currentImageIndex]})` }}
         />
 
         {/* Capa con la siguiente imagen */}
         <div
-          style={{
-            backgroundImage: `url(${loadedImages[nextImageIndex]})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            filter: "blur(3px)",
-            opacity: fade ? 1 : 0,
-            transition: "opacity 1s ease-in-out",
-          }}
+          className={`tw-absolute tw-inset-0 tw-bg-cover tw-bg-center tw-filter tw-blur-sm ${
+            fade ? "tw-opacity-100" : "tw-opacity-0"
+          } tw-transition-opacity tw-duration-1000 tw-ease-in-out`}
+          style={{ backgroundImage: `url(${loadedImages[nextImageIndex]})` }}
         />
       </div>
 
       {/* Contenedor principal */}
-      <div className="contenedor-login2">
-        <div className="subcontenedor-login2-global">
+      <div className="tw-flex tw-items-center tw-justify-center tw-min-h-screen tw-p-4">
+        <div className="tw-w-full tw-max-w-4xl tw-bg-white tw-bg-opacity-90 tw-rounded-xl tw-overflow-hidden tw-shadow-2xl tw-flex tw-flex-col md:tw-flex-row">
           {/* Imagen del formulario con dos capas */}
-          <div className="contenedor-img-login2">
-            {/* Imagen actual */}
+          <div className="tw-relative tw-w-full tw-h-64 md:tw-h-auto md:tw-w-1/2">
             <img
               src={loadedImages[currentImageIndex]}
               alt="imagen-formulario"
-              style={{
-                position: "absolute",
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                opacity: fade ? 0 : 1,
-                transition: "opacity 1s ease-in-out",
-              }}
+              className={`tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover ${
+                fade ? "tw-opacity-0" : "tw-opacity-100"
+              } tw-transition-opacity tw-duration-1000 tw-ease-in-out`}
             />
-
-            {/* Siguiente imagen */}
             <img
               src={loadedImages[nextImageIndex]}
               alt="imagen-formulario-next"
-              style={{
-                position: "absolute",
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                opacity: fade ? 1 : 0,
-                transition: "opacity 1s ease-in-out",
-              }}
+              className={`tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover ${
+                fade ? "tw-opacity-100" : "tw-opacity-0"
+              } tw-transition-opacity tw-duration-1000 tw-ease-in-out`}
             />
           </div>
 
-          <div className="subcontenedor-login2">
-            <div className="contendor_titulo-login2">
-              <h1>Welcome !</h1>
+          {/* Formulario */}
+          <div className="tw-w-full tw-p-8 md:tw-w-1/2">
+            <div className="tw-text-center tw-mb-8">
+              <h1 className="tw-text-3xl tw-font-bold tw-text-gray-800">
+                Welcome !
+              </h1>
             </div>
-            <div className="contenedor-form-login2">
-              <div className="contenedor-inputs-login2">
-                <div className="form-group-login2">
-                  <div className="contenedor-input-login2">
-                    <FontAwesomeIcon icon={faUser} className="icono-input" />
-                    <input type="text" placeholder="@username" required />
-                  </div>
+
+            <div className="tw-space-y-6">
+              <div className="tw-space-y-4">
+                <div className="tw-flex tw-items-center tw-border-b tw-border-gray-300 tw-py-2">
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className="tw-text-gray-500 tw-mr-3"
+                  />
+                  <input
+                    type="text"
+                    placeholder="@username"
+                    required
+                    className="tw-w-full tw-bg-transparent tw-outline-none tw-placeholder-gray-400"
+                  />
                 </div>
-                <div className="form-group-login2">
-                  <div className="contenedor-input-login2">
-                    <FontAwesomeIcon icon={faLock} className="icono-input" />
-                    <input type="password" placeholder="Password" required />
-                  </div>
+
+                <div className="tw-flex tw-items-center tw-border-b tw-border-gray-300 tw-py-2">
+                  <FontAwesomeIcon
+                    icon={faLock}
+                    className="tw-text-gray-500 tw-mr-3"
+                  />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    required
+                    className="tw-w-full tw-bg-transparent tw-outline-none tw-placeholder-gray-400"
+                  />
                 </div>
-                <div className="contenedor-options-login2">
-                  <div className="contenedor-reset-login2">
-                    <a href="#">Olvidaste tu contraseña?</a>
-                  </div>
-                  <div className="contenedor-button-login2">
-                    <button type="submit" className="submit-button-login2">
-                      Login
-                    </button>
-                  </div>
+              </div>
+
+              <div className="tw-flex tw-flex-col tw-space-y-4">
+                <div className="tw-text-right">
+                  <a
+                    href="#"
+                    className="tw-text-sm tw-text-blue-600 hover:tw-text-blue-800"
+                  >
+                    Olvidaste tu contraseña?
+                  </a>
                 </div>
+
+                <button
+                  type="submit"
+                  className="tw-w-full tw-bg-blue-600 hover:tw-bg-blue-700 tw-text-white tw-py-2 tw-px-4 tw-rounded tw-transition tw-duration-300"
+                >
+                  Login
+                </button>
               </div>
             </div>
           </div>
