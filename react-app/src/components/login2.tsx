@@ -17,14 +17,15 @@ const Login2 = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [fade, setFade] = useState(false);
-  const [loadedImages, setLoadedImages] = useState([]);
+  const [loadedImages, setLoadedImages] = useState<string[]>([]); // Tipo explícito
 
   // Pre-cargar imágenes
   useEffect(() => {
     const loadImages = async () => {
       const loaded = await Promise.all(
         images.map((src) => {
-          return new Promise((resolve) => {
+          return new Promise<string | null>((resolve) => {
+            // Tipo explícito para el Promise
             const img = new Image();
             img.src = src;
             img.onload = () => resolve(src);
@@ -32,7 +33,7 @@ const Login2 = () => {
           });
         })
       );
-      setLoadedImages(loaded.filter(Boolean));
+      setLoadedImages(loaded.filter((img): img is string => img !== null)); // Type guard
     };
 
     loadImages();
