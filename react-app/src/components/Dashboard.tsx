@@ -78,7 +78,7 @@ function Dashboard() {
           </div>
         </div>
 
-        <div className="contenedor-opciones">
+        <div className="contenedor-opciones-dashboard">
           {[
             { icon: iconHome, text: "Home" },
             { icon: iconHoja, text: "Consultoría" },

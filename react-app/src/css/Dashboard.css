@@ -108,7 +108,7 @@
   }
 
   /* Opciones del menú */
-  .contenedor-opciones {
+  .contenedor-opciones-dashboard {
     flex-grow: 1;
     padding: 0 20px;
     margin-top: 20px;
@@ -120,7 +120,7 @@
     transition-delay: calc(var(--transition-speed) - var(--fade-speed));
   }
 
-  .contenedor-dashboard.abierto .contenedor-opciones {
+  .contenedor-dashboard.abierto .contenedor-opciones-dashboard {
     opacity: 1;
     visibility: visible;
   }
