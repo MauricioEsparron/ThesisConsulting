@@ -1,10 +1,10 @@
 import { useState } from "react";
-import "../css/Dashboard.css";
-import iconHome from "../img/icons/icon_home_black.png";
-import iconHoja from "../img/icons/icon_hoja_black.png";
-import iconLogOut from "../img/icons/icon_logout_black.png";
-import iconGlobe from "../img/icons/icon_globe_black.png";
-import iconSettings from "../img/icons/icon_settings_black.png";
+import "../css/Dasboard2.css";
+import iconHome from "../img/icons/icon_home_b.png";
+import iconHoja from "../img/icons/icon_hoja_b.png";
+import iconLogOut from "../img/icons/icon_logout_b.png";
+import iconGlobe from "../img/icons/icon_globe_b.png";
+import iconSettings from "../img/icons/icon_settings_b.png";
 import Consultas from "./Consultas";
 import Actividades from "./Actividades";
 import Settings from "./Configuracion";

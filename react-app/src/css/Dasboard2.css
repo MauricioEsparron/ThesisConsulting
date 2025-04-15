@@ -1,6 +1,6 @@
-:root {
-  /* Colores principales */
-  --primary: #2c3e50;
+/* :root { */
+/* Colores principales */
+/* --primary: #2c3e50;
   --primary-hover: #34495e;
   --primary-light: #3d566e;
   --secondary: #f8f9fa;
@@ -9,32 +9,32 @@
   --accent: #3498db;
   --accent-hover: #2980b9;
   --danger: #e74c3c;
-  --danger-hover: #c0392b;
+  --danger-hover: #c0392b; */
 
-  /* Transiciones */
-  --transition-speed: 0.3s;
-  --transition-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+/* Transiciones */
+/* --transition-speed: 0.3s;
+  --transition-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94); */
 
-  /* Sombras */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+/* Sombras */
+/* --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1); */
 
-  /* Bordes */
-  --border-radius: 8px;
+/* Bordes */
+/* --border-radius: 8px;
   --border-radius-sm: 4px;
-}
+} */
 
 /* Estructura principal */
-.contenedor-global-dashboard-slide {
+/* .contenedor-global-dashboard-slide {
   display: flex;
   min-height: 100vh;
   font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--secondary);
-}
+} */
 
 /* Sidebar principal */
-.contenedor-dashboard {
+/* .contenedor-dashboard {
   background: linear-gradient(180deg, var(--primary), var(--primary-light));
   width: 280px;
   min-height: 100vh;
@@ -45,15 +45,15 @@
   position: relative;
   z-index: 100;
   color: var(--text-light);
-}
+} */
 
 /* Versión compacta del sidebar */
-.contenedor-dashboard.compact {
+/* .contenedor-dashboard.compact {
   width: 80px;
-}
+} */
 
 /* Sección de perfil */
-.contenedor-perfil {
+/* .contenedor-perfil {
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
@@ -113,10 +113,10 @@
   font-size: 1rem;
   font-weight: 500;
   margin: 0.5rem 0 0;
-}
+} */
 
 /* Menú de opciones */
-.contenedor-opciones {
+/* .contenedor-opciones {
   padding: 1.5rem 1rem;
   flex-grow: 1;
   display: flex;
@@ -174,10 +174,10 @@
 .contenedor-dashboard.compact .opcion-texto {
   opacity: 0;
   margin-left: -10px;
-}
+} */
 
 /* Estilo especial para logout */
-.icon-logout {
+/* .icon-logout {
   margin-top: auto;
   margin-bottom: 1rem;
 }
@@ -192,10 +192,10 @@
 
 .icon-logout.active:hover {
   background-color: var(--danger-hover);
-}
+} */
 
 /* Tooltips para modo compacto */
-.opcion-dashboard::after {
+/* .opcion-dashboard::after {
   content: attr(data-tooltip);
   position: absolute;
   left: calc(100% + 10px);
@@ -217,10 +217,10 @@
 .contenedor-dashboard.compact .opcion-dashboard:hover::after {
   opacity: 1;
   transition-delay: 0.3s;
-}
+} */
 
 /* Botón para expandir/contraer */
-.toggle-btn {
+/* .toggle-btn {
   position: absolute;
   right: -12px;
   top: 20px;
@@ -247,10 +247,10 @@
 
 .contenedor-dashboard.compact .toggle-btn {
   transform: rotate(180deg);
-}
+} */
 
 /* Área de contenido principal */
-.contenedor-slider {
+/* .contenedor-slider {
   flex-grow: 1;
   background-color: var(--secondary);
   padding: 2rem;
@@ -259,10 +259,10 @@
 
 .contenedor-dashboard.compact ~ .contenedor-slider {
   margin-left: 80px;
-}
+} */
 
 /* Responsive Design */
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   .contenedor-dashboard {
     position: fixed;
     left: 0;
@@ -301,10 +301,10 @@
     margin-left: 0 !important;
     padding: 1rem;
   }
-}
+} */
 
 /* Animaciones */
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -333,4 +333,4 @@
 }
 .icon-logout {
   animation-delay: 0.5s !important;
-}
+} */
