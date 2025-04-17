@@ -160,12 +160,13 @@
   transition: opacity 1s ease-in-out;
 }
 .contenedor-login2 {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   width: 100%;
-  height: 100%;
-  padding-top: 30px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .subcontenedor-login2-global {
@@ -317,7 +318,7 @@
 
 @media screen and (max-width: 1366px) {
   .subcontenedor-login2-global {
-    margin: 50px auto;
+    margin: 0px auto;
     width: 70%;
   }
 }
@@ -332,7 +333,7 @@
   }
 
   .subcontenedor-login2-global {
-    margin: 170px auto;
+    margin: 50px auto;
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -365,7 +366,8 @@
 
   .contendor_titulo-login2 {
     text-align: center;
-    padding: 80px 0 20px;
+    font-size: 1.9rem;
+    padding: 60px 0 20px;
   }
 
   .contenedor-input-login2 {
@@ -431,13 +433,19 @@
 }
 @media screen and (max-width: 977px) {
   .subcontenedor-login2-global {
-    margin: 190px auto;
+    margin: 65px auto;
     width: 90%;
+  }
+
+  .contendor_titulo-login2 {
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 60px 0 20px;
   }
 }
 @media screen and (max-width: 842px) {
   .subcontenedor-login2-global {
-    margin: 200px auto;
+    margin: 120px auto;
     width: 90%;
   }
   .contendor_titulo-login2 {
@@ -502,11 +510,41 @@
     font-weight: 600;
   }
 }
+@media screen and (max-width: 680px) {
+  .subcontenedor-login2-global {
+    margin: 120px auto;
+    width: 90%;
+  }
+  .contendor_titulo-login2 {
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 60px 0 20px;
+  }
+  .contenedor-img-login2 {
+    width: 50%;
+    height: 100%;
+    min-height: 350px;
+    max-height: 350px;
+  }
+  .contenedor-img-login2 img {
+    width: 100%;
+    min-height: 350px;
+    max-height: 350px;
+  }
+
+  .subcontenedor-login2 {
+    width: 50%;
+    min-height: 350px;
+    max-height: 350px;
+    height: 100%;
+  }
+}
+
 @media screen and (max-width: 588px) {
   .subcontenedor-login2-global {
-    margin: 30px auto;
+    margin: 5px auto;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -528,15 +566,13 @@
   }
   .subcontenedor-login2 {
     width: 100%;
-    height: 100;
+    height: 100vh;
     margin-bottom: 10px;
     border-radius: 10px;
     backdrop-filter: blur(3px);
     border-radius: 50px 50px 0px 0px;
     min-height: 550px;
     max-height: 550px;
-    /* border: 2px solid red; */
-    bottom: 0;
   }
 
   .contenedor-input-login2 input {
@@ -580,5 +616,22 @@
     padding: 15px 50px;
     text-transform: uppercase;
     font-weight: 600;
+  }
+
+  .carrusel-button {
+    position: absolute;
+    background: rgba(243, 241, 241, 0.541);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    bottom: 40px;
   }
 }
