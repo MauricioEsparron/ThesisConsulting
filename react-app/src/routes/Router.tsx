@@ -8,21 +8,50 @@ import Login2 from "../pages/auth/Login/login2";
 import Dashboard from "../pages/auth/Dashboard/Dashboard";
 import Dashboard2 from "../pages/auth/Dashboard/Dashboard2";
 import Pruebas from "../pages/auth/Dashboard/components/Pruebas/Pruebas";
+import { ProtectedRoute } from "./ProtectedRoute"; // <- agrega esta línea
+import { AuthProvider } from "../stores/Auth.store"; // <- agrega esta línea
 
 export const AppRouter = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Especialidades" element={<Especialidades />} />
-        <Route path="/Contactanos" element={<Contactanos />} />
-        <Route path="/Gracias" element={<Gracias />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Login2" element={<Login2 />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/Dashboard2" element={<Dashboard2 />} />
-        <Route path="/Pruebas" element={<Pruebas />} />
-      </Routes>
+      <AuthProvider>
+        {/* 🔥 Aquí envuelves todo para que use el contexto de login */}
+        <Routes>
+          {/* Rutas públicas */}
+          <Route path="/" element={<Home />} />
+          <Route path="/Especialidades" element={<Especialidades />} />
+          <Route path="/Contactanos" element={<Contactanos />} />
+          <Route path="/Gracias" element={<Gracias />} />
+          <Route path="/auth/Login" element={<Login />} />
+          <Route path="/Login2" element={<Login2 />} />
+
+          {/* Rutas protegidas */}
+          <Route
+            path="/Dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/Dashboard2"
+            element={
+              <ProtectedRoute>
+                <Dashboard2 />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/Pruebas"
+            element={
+              <ProtectedRoute>
+                <Pruebas />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </AuthProvider>
     </Router>
   );
 };
