@@ -13,48 +13,39 @@ import img3 from "../../../img/montañas3.webp";
 import img4 from "../../../img/montañas4.webp";
 import img5 from "../../../img/montañas5.webp";
 import img6 from "../../../img/montañas6.webp";
-import axios from "axios";
+
+import { login } from "../../../auth/Auth.service";
 
 const images = [img1, img2, img3, img4, img5, img6];
 
-const API_URL = "http://localhost:8080/dashboard/api/v1/auth";
-
 const Login = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [username, setUsername] = useState(""); // CAPTURAMOS USUARIO
-  const [password, setPassword] = useState(""); // CAPTURAMOS PASSWORD
-  const [loading, setLoading] = useState(false); // Indicador de carga
-  const [error, setError] = useState(""); // Para mostrar errores
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const changeImage = (direction: "prev" | "next") => {
-    if (direction === "next") {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    } else {
-      setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
-    }
+    setCurrentImage((prev) =>
+      direction === "next"
+        ? (prev + 1) % images.length
+        : (prev - 1 + images.length) % images.length
+    );
   };
 
-  // Función para manejar el login
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     try {
-      const response = await axios.post(`${API_URL}/login`, {
-        username,
-        password,
-      });
+      const data = await login(username, password);
 
-      const { token } = response.data; // Asumimos que backend devuelve { token: "..." }
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("username", username);
+      localStorage.setItem("nombre", data.nombre);
 
-      // Guardar el token en localStorage para futuras peticiones
-      localStorage.setItem("token", token);
-      localStorage.setItem("username", username); // Guardar el nombre de usuario
-      localStorage.setItem("nombre", response.data.nombre);
-
-      // Redireccionar o hacer algo más
-      window.location.href = "/dashboard"; // <-- CAMBIA si quieres ir a otra página
+      window.location.href = "/dashboard";
     } catch (err: any) {
       console.error(err);
       setError("Credenciales inválidas. Inténtalo de nuevo.");
@@ -65,7 +56,6 @@ const Login = () => {
 
   return (
     <div>
-      {/* Fondo con efecto blur */}
       <div
         className="imagen-fondo-login2"
         style={{
@@ -83,10 +73,8 @@ const Login = () => {
         }}
       ></div>
 
-      {/* Contenedor principal */}
       <div className="contenedor-login2">
         <div className="subcontenedor-login2-global">
-          {/* Contenedor de imagen con flechas */}
           <div className="contenedor-img-login2">
             <button
               className="carrusel-button left"
@@ -109,7 +97,6 @@ const Login = () => {
             </button>
           </div>
 
-          {/* Formulario de login */}
           <div className="subcontenedor-login2">
             <div className="contendor_titulo-login2">
               <h1>Welcome !</h1>
