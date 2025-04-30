@@ -13,19 +13,18 @@ import img3 from "../../../img/montañas3.webp";
 import img4 from "../../../img/montañas4.webp";
 import img5 from "../../../img/montañas5.webp";
 import img6 from "../../../img/montañas6.webp";
-import axios from "axios"; // << AÑADIMOS AXIOS
+import axios from "axios";
 
 const images = [img1, img2, img3, img4, img5, img6];
 
-// API URL que conecta a tu backend
 const API_URL = "http://localhost:8080/dashboard/api/v1/auth";
 
 const Login = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [username, setUsername] = useState(""); // << CAPTURAMOS USUARIO
-  const [password, setPassword] = useState(""); // << CAPTURAMOS PASSWORD
-  const [loading, setLoading] = useState(false); // << Indicador de carga
-  const [error, setError] = useState(""); // << Para mostrar errores
+  const [username, setUsername] = useState(""); // CAPTURAMOS USUARIO
+  const [password, setPassword] = useState(""); // CAPTURAMOS PASSWORD
+  const [loading, setLoading] = useState(false); // Indicador de carga
+  const [error, setError] = useState(""); // Para mostrar errores
 
   const changeImage = (direction: "prev" | "next") => {
     if (direction === "next") {
@@ -51,6 +50,8 @@ const Login = () => {
 
       // Guardar el token en localStorage para futuras peticiones
       localStorage.setItem("token", token);
+      localStorage.setItem("username", username); // Guardar el nombre de usuario
+      localStorage.setItem("nombre", response.data.nombre);
 
       // Redireccionar o hacer algo más
       window.location.href = "/dashboard"; // <-- CAMBIA si quieres ir a otra página
