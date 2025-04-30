@@ -14,7 +14,8 @@ const Configuracion = lazy(
   () => import("./components/Configuration/Configuracion")
 );
 
-function Dashboard() {
+const Dashboard = () => {
+  const [nombre, setNombre] = useState<string>(""); // CAMBIO 1: Cambié de username a nombre
   const [abierto, setAbierto] = useState(false);
   const [vistaActiva, setVistaActiva] = useState("Home");
   const sidebarRef = useRef<HTMLDivElement>(null);
@@ -27,6 +28,7 @@ function Dashboard() {
     import("./components/Configuration/Configuracion");
   }, []);
 
+  // Cerrar el menú si se hace click fuera de él
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -42,6 +44,22 @@ function Dashboard() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Obtener nombre desde localStorage
+  useEffect(() => {
+    const storedNombre = localStorage.getItem("nombre"); // CAMBIO 2: Ahora obtiene "nombre" en vez de "username"
+    if (storedNombre) {
+      setNombre(storedNombre);
+    }
+  }, []);
+
+  // Función para cerrar sesión
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("nombre"); // CAMBIO 3: También eliminamos "nombre" al cerrar sesión
+    window.location.href = "/auth/Login"; // Redirigir a login después de cerrar sesión
+  };
 
   return (
     <div className="contenedor-global-dashboard-slide">
@@ -76,19 +94,34 @@ function Dashboard() {
             />
           </div>
           <div className="contenedor-nombre-usuario">
-            <h4 className="nombre-usuario">Bienvenido Tilin</h4>
+            <h4 className="nombre-usuario">Bienvenido {nombre || "Usuario"}</h4>
+
+            {/* CAMBIO 4: Mostramos nombre aquí */}
           </div>
         </div>
 
         <div className="contenedor-opciones-dashboard">
           {[
-            { icon: iconHome, text: "Home" },
-            { icon: iconHoja, text: "Consultoría" },
-            { icon: iconGlobe, text: "Actividades" },
-            { icon: iconSettings, text: "Configuración" },
+            {
+              icon: iconHome,
+              text: "Home",
+            },
+            {
+              icon: iconHoja,
+              text: "Consultoría",
+            },
+            {
+              icon: iconGlobe,
+              text: "Actividades",
+            },
+            {
+              icon: iconSettings,
+              text: "Configuración",
+            },
             {
               icon: iconLogOut,
               text: "Cerrar sesión",
+              onClick: handleLogout,
               className: "icon-logout",
             },
           ].map((item, index) => (
@@ -96,8 +129,11 @@ function Dashboard() {
               key={index}
               className={`opcion-dashboard ${item.className || ""}`}
               onClick={() => {
-                setVistaActiva(item.text);
+                if (item.text !== "Cerrar sesión") {
+                  setVistaActiva(item.text);
+                }
                 setAbierto(false);
+                if (item.onClick) item.onClick();
               }}
             >
               <img className="icon-dashboard" src={item.icon} alt={item.text} />
@@ -113,19 +149,18 @@ function Dashboard() {
           {vistaActiva === "Home" && (
             <>
               <h1>Contenido Principal</h1>
+              <h1>Bienvenido, {nombre}</h1>{" "}
+              {/* CAMBIO 5: También en el contenido principal */}
               <p>El navbar lateral ahora aparece debajo del navbar superior.</p>
             </>
           )}
           {vistaActiva === "Consultoría" && <Consultoria />}
           {vistaActiva === "Actividades" && <Actividades />}
           {vistaActiva === "Configuración" && <Configuracion />}
-          {vistaActiva === "Cerrar sesión" && (
-            <h2>Sesión cerrada (aquí podrías redirigir o limpiar datos)</h2>
-          )}
         </Suspense>
       </div>
     </div>
   );
-}
+};
 
 export default Dashboard;
