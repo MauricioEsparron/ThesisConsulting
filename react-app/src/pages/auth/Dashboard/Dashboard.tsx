@@ -6,6 +6,7 @@ import iconLogOut from "../../../img/icons/icon_logout_w.png";
 import iconGlobe from "../../../img/icons/icon_globe_w.png";
 import iconSettings from "../../../img/icons/icon_settings_w.png";
 import iconBurger from "../../../img/icons/icon_burger_w.png";
+import { logout } from "../../../auth/Auth.service"; // Asegúrate de que la ruta sea correcta
 
 // Lazy loading de componentes
 const Actividades = lazy(() => import("./components/Actividades/Actividades"));
@@ -55,10 +56,8 @@ const Dashboard = () => {
 
   // Función para cerrar sesión
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    localStorage.removeItem("nombre"); // CAMBIO 3: También eliminamos "nombre" al cerrar sesión
-    window.location.href = "/auth/Login"; // Redirigir a login después de cerrar sesión
+    logout(); // Llamar a la función logout centralizada
+    window.location.href = "/auth/Login"; // Redirigir a la página de login después de cerrar sesión
   };
 
   return (
