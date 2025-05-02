@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../../../../../css/Consultorias.css"; // Incluye tu archivo CSS
 import imgPrueba from "../../../../../img/montañas1.webp"; // Imágenes de ejemplo
 
