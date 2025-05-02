@@ -11,6 +11,8 @@ nav {
   left: 0;
   right: 0;
   z-index: 100; /* Asegurar que esté por encima de todo */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .NavBar-nombre-empresa {
