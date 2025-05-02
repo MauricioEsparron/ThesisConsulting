@@ -6,7 +6,7 @@ import Gracias from "../pages/Gracias/Gracias";
 import Login from "../pages/auth/Login/Login";
 import Login2 from "../pages/auth/Login/login2";
 import Dashboard from "../pages/auth/Dashboard/Dashboard";
-import Dashboard2 from "../pages/auth/Dashboard/Dashboard2";
+// import Dashboard2 from "../pages/auth/Dashboard/Dashboard2";
 import Pruebas from "../pages/auth/Dashboard/components/Pruebas/Pruebas";
 import { ProtectedRoute } from "./ProtectedRoute"; // <- agrega esta línea
 import { AuthProvider } from "../stores/Auth.store"; // <- agrega esta línea
@@ -34,14 +34,14 @@ export const AppRouter = () => {
               </ProtectedRoute>
             }
           />
-          <Route
+          {/* <Route
             path="/Dashboard2"
             element={
               <ProtectedRoute>
                 <Dashboard2 />
               </ProtectedRoute>
             }
-          />
+          /> */}
           <Route
             path="/Pruebas"
             element={

@@ -94,8 +94,6 @@ const Dashboard = () => {
           </div>
           <div className="contenedor-nombre-usuario">
             <h4 className="nombre-usuario">Bienvenido {nombre || "Usuario"}</h4>
-
-            {/* CAMBIO 4: Mostramos nombre aquí */}
           </div>
         </div>
 
@@ -148,9 +146,7 @@ const Dashboard = () => {
           {vistaActiva === "Home" && (
             <>
               <h1>Contenido Principal</h1>
-              <h1>Bienvenido, {nombre}</h1>{" "}
-              {/* CAMBIO 5: También en el contenido principal */}
-              <p>El navbar lateral ahora aparece debajo del navbar superior.</p>
+              <h2 className="Titulo-home-dashboard">CONSULTAS</h2>
             </>
           )}
           {vistaActiva === "Consultoría" && <Consultoria />}
