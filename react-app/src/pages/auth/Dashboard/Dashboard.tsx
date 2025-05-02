@@ -64,7 +64,7 @@ const Dashboard = () => {
     <div className="contenedor-global-dashboard-slide">
       {/* Navbar superior */}
       <div className="navbar-superior">
-        <div className="navbar-titulo">Mi Aplicación</div>
+        <div className="navbar-titulo">InvexiaLab</div>
         <button
           ref={buttonRef}
           className="boton-desplegable"
