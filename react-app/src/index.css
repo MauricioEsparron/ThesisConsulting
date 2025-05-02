@@ -1,4 +1,23 @@
 /* Reset básico */
+@tailwind base; /* 1. Inyecta estilos base de Tailwind */
+@tailwind components; /* 2. Inyecta clases de componentes */
+@tailwind utilities; /* 3. Inyecta clases utilitarias */
+
+/* Protección contra Tailwind */
+.not-tailwind,
+.not-tailwind * {
+  all: revert; /* 4. Reset para navegadores modernos */
+  all: initial; /* 5. Reset más agresivo (fallback) */
+}
+/* Tus estilos anidados aquí */
+/* .parent {
+  color: black;
+
+  & .child {
+    color: white;
+  }
+} */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +26,9 @@
 
 html,
 body {
-  height: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto; /* o simplemente no lo pongas */
   font-family: "Alexandria", sans-serif;
 }
 html {

@@ -1,0 +1,637 @@
+/* Contenedor de imagen relativo para posicionar flechas */
+.contenedor-img-login2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Estilos para las flechas del carrusel */
+.carrusel-button {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carrusel-button.left {
+  left: 15px;
+}
+
+.carrusel-button.right {
+  right: 15px;
+}
+
+.carrusel-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+/* Efectos de transición para la imagen */
+.fade-image {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+/* Mantén tus otros estilos existentes... */ /* Mantén tus estilos existentes para el resto del formulario */
+/* Controles del slideshow */
+.slideshow-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+.control-play-pause {
+  background: rgba(255, 255, 255, 0.2);
+  width: 50px;
+  height: 50px;
+  font-size: 1.3rem;
+}
+
+.control-play-pause:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Contador de imágenes */
+.slideshow-counter {
+  color: white;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Efecto de tooltip */
+.control-btn::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.control-btn:hover::after {
+  opacity: 1;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 1.5rem;
+  z-index: 1000;
+}
+
+.contenedor-img-login2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+.contenedor-login2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.subcontenedor-login2-global {
+  margin: 110px auto;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+
+  /* Elimina el borde rojo y agrega sombra negra profesional */
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08),
+    0 10px 25px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efecto hover sutil */
+.subcontenedor-login2-global:hover {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1),
+    0 15px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.contenedor-img-login2,
+.contenedor-img-login2 img,
+.subcontenedor-login2 {
+  min-height: 660px;
+  max-height: 660px;
+}
+
+.contenedor-img-login2 {
+  width: 50%;
+  height: 100%;
+}
+.contenedor-img-login2 img {
+  width: 100%;
+  border-radius: 15px 0px 0px 15px;
+}
+
+.subcontenedor-login2 {
+  width: 50%;
+  height: 100%;
+  background-color: #fdfafab9;
+  border-radius: 0px 15px 15px 0px;
+  backdrop-filter: blur(1px);
+}
+
+.contendor_titulo-login2 {
+  text-align: center;
+  font-size: 3rem;
+  padding: 130px 0 20px;
+  font-weight: 600;
+}
+
+.contenedor-input-login2 {
+  position: relative;
+  width: 85%;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra horizontalmente */
+}
+
+.contenedor-input-login2 input {
+  width: 95%;
+  padding: 25px 25px 25px 70px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.contenedor-input-login2 .icono-input {
+  position: absolute;
+  left: 45px;
+  font-size: 18px;
+  color: #747474;
+}
+
+.contenedor-input-login2 input:focus {
+  outline: 1px solid #304086;
+  border-color: #304086;
+}
+
+.contenedor-options-login2 {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  text-align: center;
+  padding: 10px;
+  gap: 10px; /* Espaciado entre elementos */
+}
+
+.contenedor-reset-login2,
+.contenedor-button-login2 {
+  width: 40%;
+  display: flex;
+  justify-content: center; /* Centra el contenido interno */
+  align-items: center;
+}
+
+.contenedor-reset-login2 {
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  text-align: left;
+  padding-left: 10px; /* Opcional: Ajusta el espaciado */
+  font-weight: 600;
+}
+
+.contenedor-reset-login2 a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #304086;
+  font-weight: 600;
+}
+.contenedor-reset-login2 a:hover {
+  transform: translateY(-2px);
+}
+
+.contenedor-button-login2 button {
+  font-size: 15px;
+  padding: 15px 35px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #304086;
+  border-radius: 15px;
+  border: none;
+  /* Asegurar centrado de texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.contenedor-button-login2 button a {
+  text-decoration: none;
+  color: white;
+}
+.contenedor-button-login2 button:hover {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1),
+    0 15px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 1366px) {
+  .subcontenedor-login2-global {
+    margin: 0px auto;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .contenedor-login2 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding-top: 30px;
+  }
+
+  .subcontenedor-login2-global {
+    margin: 50px auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  .contenedor-img-login2 {
+    width: 50%;
+    height: 100%;
+    min-height: 450px;
+    max-height: 450px;
+  }
+  .contenedor-img-login2 img {
+    width: 100%;
+    border-radius: 10px 0px 0px 10px;
+    min-height: 450px;
+    max-height: 450px;
+  }
+
+  .subcontenedor-login2 {
+    width: 50%;
+    min-height: 450px;
+    max-height: 450px;
+    height: 100%;
+    background-color: #fdfafa8e;
+    border-radius: 0px 10px 10px 0px;
+    backdrop-filter: blur(1px);
+  }
+
+  .contendor_titulo-login2 {
+    text-align: center;
+    font-size: 1.9rem;
+    padding: 60px 0 20px;
+  }
+
+  .contenedor-input-login2 {
+    position: relative;
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .contenedor-input-login2 input {
+    width: 100%;
+    padding: 15px 15px 15px 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+
+  .contenedor-input-login2 .icono-input {
+    position: absolute;
+    left: 10px;
+    font-size: 18px;
+    color: #888;
+  }
+
+  .contenedor-input-login2 input:focus {
+    outline: 1px solid #304086;
+    border-color: #304086;
+  }
+
+  .contenedor-options-login2 {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .contenedor-reset-login2 {
+    width: 40%;
+  }
+  .contenedor-reset-login2 a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #304086;
+  }
+
+  .contenedor-button-login2 {
+    width: 40%;
+  }
+  .contenedor-button-login2 button {
+    text-align: center !important;
+    width: 100%;
+    font-size: 13px;
+    padding: 15px 65px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #304086;
+    color: white;
+    border-radius: 5px;
+    border: none;
+  }
+}
+@media screen and (max-width: 977px) {
+  .subcontenedor-login2-global {
+    margin: 65px auto;
+    width: 90%;
+  }
+
+  .contendor_titulo-login2 {
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 60px 0 20px;
+  }
+}
+@media screen and (max-width: 842px) {
+  .subcontenedor-login2-global {
+    margin: 120px auto;
+    width: 90%;
+  }
+  .contendor_titulo-login2 {
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 60px 0 20px;
+  }
+  .contenedor-img-login2 {
+    width: 50%;
+    height: 100%;
+    min-height: 350px;
+    max-height: 350px;
+  }
+  .contenedor-img-login2 img {
+    width: 100%;
+    min-height: 350px;
+    max-height: 350px;
+  }
+
+  .subcontenedor-login2 {
+    width: 50%;
+    min-height: 350px;
+    max-height: 350px;
+    height: 100%;
+  }
+
+  .contenedor-input-login2 input {
+    padding: 10px 10px 10px 40px;
+    border-radius: 10px;
+    margin: 0px;
+    font-size: 13px;
+  }
+
+  .contenedor-options-login2 {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .contenedor-reset-login2 {
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 0px;
+  }
+  .contenedor-reset-login2 a {
+    font-weight: 600;
+    font-size: 12px;
+    color: #304086;
+    width: 100%;
+  }
+
+  .contenedor-button-login2 {
+    width: 50%;
+  }
+
+  .contenedor-button-login2 button {
+    width: 100%;
+    font-size: 12px;
+    padding: 12px 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 680px) {
+  .subcontenedor-login2-global {
+    margin: 120px auto;
+    width: 90%;
+  }
+  .contendor_titulo-login2 {
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 60px 0 20px;
+  }
+  .contenedor-img-login2 {
+    width: 50%;
+    height: 100%;
+    min-height: 350px;
+    max-height: 350px;
+  }
+  .contenedor-img-login2 img {
+    width: 100%;
+    min-height: 350px;
+    max-height: 350px;
+  }
+
+  .subcontenedor-login2 {
+    width: 50%;
+    min-height: 350px;
+    max-height: 350px;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 588px) {
+  .subcontenedor-login2-global {
+    margin: 5px auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(0px);
+    border-radius: 0px;
+    height: 0px;
+  }
+  .imagen-fondo-login2 {
+    filter: none !important;
+  }
+
+  .contenedor-img-login2 {
+    width: 100%;
+  }
+  .contenedor-img-login2 img {
+    visibility: hidden;
+  }
+  .subcontenedor-login2 {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    border-radius: 50px 50px 0px 0px;
+    min-height: 550px;
+    max-height: 550px;
+  }
+
+  .contenedor-input-login2 input {
+    padding: 20px 20px 20px 60px;
+    border-radius: 20px;
+    margin: 10px;
+    font-size: 15px;
+  }
+
+  .contenedor-input-login2 .icono-input {
+    position: absolute;
+    left: 35px;
+    font-size: 18px;
+    color: #888;
+  }
+  .contenedor-options-login2 {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .contenedor-reset-login2 {
+    width: 50%;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .contenedor-reset-login2 a {
+    font-weight: 600;
+    font-size: 12px;
+    color: #304086;
+    width: 100%;
+  }
+
+  .contenedor-button-login2 {
+    width: 50%;
+  }
+
+  .contenedor-button-login2 button {
+    width: 100%;
+    font-size: 12px;
+    padding: 15px 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .carrusel-button {
+    position: absolute;
+    background: rgba(243, 241, 241, 0.541);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    bottom: 40px;
+  }
+}

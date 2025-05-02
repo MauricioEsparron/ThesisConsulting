@@ -11,6 +11,8 @@ nav {
   left: 0;
   right: 0;
   z-index: 100; /* Asegurar que esté por encima de todo */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .NavBar-nombre-empresa {
@@ -18,11 +20,12 @@ nav {
   font-size: 1.5em;
   text-transform: uppercase;
   font-weight: bold;
+  font-weight: 800;
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
 .nav-links a {
@@ -30,6 +33,7 @@ nav {
   text-decoration: none;
   font-size: 1em;
   transition: color 0.3s ease;
+  font-weight: 600;
 }
 
 .nav-links a:hover {
@@ -71,11 +75,22 @@ nav {
 
 .menu-desplegable a {
   color: #ffffff;
-
   text-decoration: none;
   font-size: 1.2em;
   margin: 10px 0;
   transition: color 0.3s ease;
+  font-weight: 200;
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-desplegable {
+  padding-top: 10px;
+}
+
+.cerrar-opcion-menu-desplegable {
+  margin-bottom: 60px;
+  display: block;
 }
 
 .menu-desplegable a:hover {
@@ -85,9 +100,23 @@ nav {
 @media screen and (max-width: 768px) {
   .NavBar-nombre-empresa {
     font-size: 15px;
+    font-weight: 800;
   }
   .nav-links a {
-    font-size: 11px;
+    font-size: 15px;
     padding: 0px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .NavBar-nombre-empresa {
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .nav-links a {
+    font-size: 10px;
+    padding: 0px;
+    font-weight: 600;
   }
 }

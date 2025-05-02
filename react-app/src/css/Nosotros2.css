@@ -1,272 +1,339 @@
-/* .parentNosotros2_1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px;
-  width: 100%;
-} */
+/* Variables de color y tipografía */
+:root {
+  --color-primary: #f4f4f4;
+  --color-secondary: #fdbe41;
+  --color-accent: #cfa85a;
+  --color-light: #f4f4f4;
+  --color-dark: #333;
+  --font-main: "Segoe UI", Roboto, sans-serif;
+  --transition-speed: 0.3s;
+}
 
-/* Contenedor principal */
+/* Reset y estilos base */
 .parentNosotros2_1 {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px;
-  width: 100%;
-  /* border: 2px solid red; */
-}
-
-.parentNosotros2_2 {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 5px;
-  width: 50%;
-  /* border: 2px solid violet; */
+  width: 100%;
+  padding: 2rem 1rem;
+  background-color: var(--color-light);
+  font-family: var(--font-main);
+  box-sizing: border-box;
 }
 
+/* Contenedor principal - Grid Layout */
+.parentNosotros2_2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Títulos */
 .Nosotros2-titulo {
-  color: #f4f4f4;
-  padding: 50% 0px 50% 0px;
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  font-weight: 700;
   text-align: center;
-  font-size: 20px;
-  margin: 20% 0%;
+  margin: 1rem 0;
   position: relative;
   cursor: pointer;
-  /* border: 2px solid red; */
-}
-.Ndiv3 {
-  width: 120%;
-  height: 70%;
-  grid-area: 2 / 2 / 6 / 2;
-  background-color: #3b4a8b;
-  /* border: 2px solid #3b4a8b; */
-  /* background-image: url("https://images.pexels.com/photos/7713176/pexels-photo-7713176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
-  background-image: url("../img/estudiantes.jpg");
-  background-size: cover; /* Ajusta la imagen para cubrir el div */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita repeticiones */
-  margin: 10px;
-  padding: 160% 10% 10% 60%;
-  color: #f4f4f4;
-  font-size: 25px;
-  margin-left: -110px;
-  filter: contrast(100%) brightness(85%);
+  transition: color var(--transition-speed);
 }
 
-.sub-div3 {
-  width: 100%;
-  height: 100%;
-}
-
-.Ndiv4 {
-  width: 80%;
-  height: 65%;
-  grid-area: 2 / 3 / 4 / 5;
-  background-color: #cfa85a;
-  /* background-image: url("https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
-  background-image: url("../img/organizaciones.webp"); /* background-image: url("https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
-  background-size: cover; /* Ajusta la imagen para cubrir el div */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita repeticiones */
-  margin: 2%;
-  margin-bottom: 30px;
-  padding: 30px;
-  color: #f4f4f4;
-  font-size: 25px;
-  filter: contrast(100%) brightness(85%);
-}
-.Ndiv5 {
-  width: 80%;
-  height: 65%;
-  grid-area: 4 / 3 / 6 / 5;
-  /* background-image: url("https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
-  background-image: url("../img/profesionales.webp");
-  background-size: cover; /* Ajusta la imagen para cubrir el div */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita repeticiones */
-  margin: 5% 2% 10%;
-  padding: 30px;
-  margin-top: -15%;
-  color: #f4f4f4;
-  font-size: 25px;
-  filter: contrast(100%) brightness(85%);
-}
-
-.Ndiv6 {
-  width: 130%;
-  height: 76%;
-  grid-area: 1 / 5 / 6 / 6;
-  /* border: 2px solid purple; */
-  background-image: url("../img/contactanos.jpg");
-  background-size: cover; /* Ajusta la imagen para cubrir el div */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita repeticiones */
-  margin: 10px 10px 10px;
-  padding: 225% 10% 10% 60%;
-  margin-left: -25%;
-  filter: contrast(100%) brightness(85%);
-}
-
-.Nosotros2-titulo::after {
-  content: "Somos la unidad de Latam Business Consulting especializada en asesorar investigaciones académicas con un enfoque en sostenibilidad, innovación y excelencia.";
-  position: absolute;
-  left: 50%;
-  bottom: 0px;
-  transform: translateX(-50%);
-  background-color: #fdbe41;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.Nosotros2-subtitulo {
+  font-size: 1.2rem;
+  color: var(--color-dark);
   text-align: center;
-  opacity: 0;
-  visibility: hidden;
-  box-sizing: border-box;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-  transition-delay: 0.3s; /* ⏳ Retardo al aparecer */
-  font-size: 11px;
-  padding: 10px;
-  width: 100%;
-  height: 100%;
+  margin: 0.5rem 0 1.5rem;
+  line-height: 1.5;
 }
 
-.Nosotros2-titulo:hover::after {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0.2s; /* ⏳ Retardo al desaparecer */
-}
-
-.Ndiv3,
-.Ndiv4,
-.Ndiv5,
-.Ndiv6 {
-  position: relative; /* Necesario para posicionar el ::after */
-  overflow: hidden;
-}
-
-.Ndiv3::after,
-.Ndiv4::after,
-.Ndiv5::after,
-.Ndiv6::after {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(34, 29, 29, 0.51);
-  backdrop-filter: blur(15px);
-  color: white;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  opacity: 0;
-  visibility: hidden;
-  box-sizing: border-box;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-  transition-delay: 0.3s; /* ⏳ Retardo al aparecer */
-}
-
-.Ndiv3:hover::after,
-.Ndiv4:hover::after,
-.Ndiv5:hover::after,
-.Ndiv6:hover::after {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0.2s; /* ⏳ Retardo al desaparecer */
-}
-
-.Ndiv3::after {
-  content: "1. Organizaciones este es un mensaje de prueba";
-  font-size: 11px;
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-}
-
-.Ndiv4::after {
-  content: "2. Organizaciones este es un mensaje de prueba";
-  font-size: 11px;
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-}
-
-.Ndiv5::after {
-  content: "3. Organizaciones este es un mensaje de prueba";
-  font-size: 11px;
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-}
-
-/* Contenido de las secciones */
-.Ndiv1 {
-  width: 100%;
-  border-radius: 20px;
-}
-
+/* Tarjetas de contenido */
+.Ndiv1,
 .Ndiv2,
 .Ndiv3,
 .Ndiv4,
 .Ndiv5,
 .Ndiv6 {
-  width: 100%;
-  margin: 5px 0px;
-  text-align: center;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-speed) ease;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
 }
 
-.Ndiv1 {
-  background-color: #fdbe41;
+/* Texto en tarjetas (subtítulo inicial) */
+.subtitulo2-efecto {
+  position: relative;
+  z-index: 2;
+  color: var(--color-light);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.5rem;
   width: 100%;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+}
+
+#enlace-to-form-nosotros2 a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+/* Efecto overlay base */
+.Ndiv3::before,
+.Ndiv4::before,
+.Ndiv5::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 29, 29, 0.51);
+  backdrop-filter: blur(15px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+/* Contenido del hover (mensajes) */
+.Ndiv3::after,
+.Ndiv4::after,
+.Ndiv5::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  z-index: 3;
+  text-align: center;
+}
+
+/* Mensajes específicos para cada tarjeta */
+.Ndiv3::after {
+  content: "1. Organizaciones este es un mensaje de prueba";
+}
+
+.Ndiv4::after {
+  content: "2. Organizaciones este es un mensaje de prueba";
+}
+
+.Ndiv5::after {
+  content: "3. Organizaciones este es un mensaje de prueba";
+}
+
+/* Efectos hover - Oculta subtítulo y muestra mensaje */
+.Ndiv3:hover .subtitulo2-efecto,
+.Ndiv4:hover .subtitulo2-efecto,
+.Ndiv5:hover .subtitulo2-efecto {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.Ndiv3:hover::before,
+.Ndiv4:hover::before,
+.Ndiv5:hover::before,
+.Ndiv6:hover::before,
+.Ndiv3:hover::after,
+.Ndiv4:hover::after,
+.Ndiv5:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Efectos hover generales */
+.Ndiv3:hover,
+.Ndiv4:hover,
+.Ndiv5:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto especial para el título */
+.Nosotros2-titulo {
+  position: relative; /* Asegúrate de que el contenedor tenga posicionamiento relativo */
+}
+
+.Nosotros2-titulo::after {
+  content: "Somos la unidad de Latam Business Consulting especializada en asesorar investigaciones académicas con un enfoque en sostenibilidad, innovación y excelencia.";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra en ambos ejes */
+  width: max-content;
+  max-width: 90%;
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 1rem;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  font-size: 0.9rem;
+  text-align: center;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.Nosotros2-titulo:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.Nosotros2-titulo {
+  width: 500px;
+  font-size: 2.2rem;
+}
+/* Diseño responsive */
+@media (min-width: 768px) {
+  .parentNosotros2_2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Nosotros2-titulo {
+    font-size: 2.2rem;
+  }
+
+  .Nosotros2-subtitulo {
+    font-size: 1.3rem;
+  }
+
+  .subtitulo2-efecto {
+    font-size: 1.6rem;
+  }
+
+  .Ndiv1 {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 992px) {
+  .parentNosotros2_2 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto repeat(2, 1fr);
+  }
+
+  .Ndiv1 {
+    grid-column: span 3;
+  }
+
+  .Ndiv2 {
+    grid-column: span 3;
+  }
+
+  .Ndiv3 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .Ndiv4 {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .Ndiv5 {
+    grid-column: 3;
+    grid-row: 3;
+  }
+
+  .Ndiv6 {
+    grid-column: span 3;
+    grid-row: 4;
+  }
+
+  .Nosotros2-titulo {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+  }
+}
+
+/* Estilos específicos para cada tarjeta */
+.Ndiv1 {
+  background-color: var(--color-secondary);
+  padding: 2rem;
+  height: auto;
 }
 
 .Ndiv2 {
-  background-color: #f9f9f9;
-  padding-top: 20px;
-  font-size: 24px;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  height: auto;
+  padding: 1.5rem;
 }
 
-.Ndiv3,
-.Ndiv4,
+.Ndiv3 {
+  background-image: url("../img/estudiantes.jpg");
+}
+
+.Ndiv4 {
+  background-image: url("../img/organizaciones.webp");
+}
+
 .Ndiv5 {
-  transition: height 0.5s ease-in-out; /* Transición suave solo en altura */
-  height: 100px; /* Altura base, ajusta según lo necesites */
+  background-image: url("../img/profesionales.webp");
 }
 
-.Ndiv3:hover {
-  height: 150px; /* Aumenta solo la altura */
+.Ndiv6 {
+  background-image: url("../img/contactanos.jpg");
+  cursor: pointer;
 }
 
-.Ndiv4:hover {
-  height: 170px;
-}
+/* Optimización para móviles pequeños */
+@media (max-width: 480px) {
+  .parentNosotros2_1 {
+    padding: 1rem 0.5rem;
+  }
 
-.Ndiv5:hover {
-  height: 170px;
-}
+  .Nosotros2-titulo {
+    font-size: 1.5rem;
+  }
 
-/* Subtítulo */
-.Nosotros2-subtitulo {
-  width: 100%;
-  rotate: 0deg;
-  font-size: 20px;
-  /* border: 2px solid red; */
-  margin: 0px;
-  padding: 0px;
-}
+  .Nosotros2-subtitulo {
+    font-size: 1rem;
+  }
 
-.subtitulo-efecto {
-  font-size: 15px;
+  .subtitulo2-efecto {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .Ndiv3,
+  .Ndiv4,
+  .Ndiv5,
+  .Ndiv6 {
+    height: 180px;
+  }
+
+  .Ndiv3::after,
+  .Ndiv4::after,
+  .Ndiv5::after,
+  .Ndiv6::after {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
 }

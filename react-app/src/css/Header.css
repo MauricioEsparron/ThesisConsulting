@@ -40,31 +40,30 @@
   color: white;
 }
 
-h1 {
-  font-size: 4rem;
+h1 .title-line {
+  display: block;
+  margin: auto 30px;
+  font-size: 8rem;
   margin: 0;
+  font-weight: 600;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   mix-blend-mode: difference;
   animation: fadeIn 2s ease-in-out;
-  text-transform: uppercase; /* Texto en mayúsculas */
+  text-transform: uppercase;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; /* Espacio entre las líneas */
+  gap: 10px;
 }
 
-h1 .title-line {
-  display: block;
-}
-
-/* Estilos para el h3 */
-h3 {
-  font-size: 1.5rem; /* Tamaño de fuente */
-  color: white; /* Color del texto */
-  text-align: center; /* Alineación centrada */
-  margin-top: 10px; /* Espacio superior */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra de texto */
-  animation: fadeIn 2.5s ease-in-out; /* Animación de entrada */
+.subtitulo-header {
+  font-size: 1.8rem;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 2.5s ease-in-out;
 }
 
 .button {
@@ -81,7 +80,7 @@ h3 {
 }
 
 .button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(133, 94, 94, 0.2);
   transform: scale(1.05);
 }
 
@@ -89,13 +88,106 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.button {
+  animation: bounce 2.5s infinite ease-in-out; /* Aumenté la duración a 2.5s */
+}
+
+@media screen and (max-width: 17827px) {
+  h1 .title-line {
+    font-size: 6.5rem;
+  }
+}
+@media screen and (max-width: 1764px) {
+  h1 .title-line {
+    font-size: 6.5rem;
+  }
+}
+
+@media screen and (max-width: 1536px) {
+  h1 .title-line {
+    font-size: 6rem;
+  }
+}
+@media screen and (max-width: 1536px) {
+  h1 .title-line {
+    font-size: 5.5rem;
+  }
+}
+
+@media screen and (max-width: 1395px) {
+  h1 .title-line {
+    font-size: 5.5rem;
+  }
+}
+
+@media screen and (max-width: 1314px) {
+  h1 .title-line {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  h1 .title-line {
+    font-size: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  h1 .title-line {
+    font-size: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  h1 .title-line {
+    font-size: 4.3rem;
+  }
+}
+
+@media screen and (max-width: 997px) {
+  h1 .title-line {
+    font-size: 4.3rem;
+  }
+  .subtitulo-header {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 970px) {
+  h1 .title-line {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 938px) {
+  h1 .title-line {
+    font-size: 3.5em;
+  }
+}
+@media screen and (max-width: 914px) {
+  h1 .title-line {
+    font-size: 60px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+}
+
 @media screen and (max-width: 768px) {
-  .title-line {
-    font-size: 40px;
+  h1 .title-line {
+    font-size: 50px;
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   /* #formulario {
