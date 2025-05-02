@@ -34,31 +34,11 @@ const Navbar = () => {
           <h2 className="NavBar-nombre-empresa">InvexiaLab</h2>
         </div>
         <div className="nav-links">
-<<<<<<< HEAD:react-app/src/components/NavBar.tsx
-          <Link translate="no" to="/">
-            Home
-          </Link>
-          <Link to="/especialidades">Especialidades</Link>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://wa.me/51936956726"
-          >
-            Contáctanos
-          </a>
-          <a
-            target="_blank"
-            // rel="noopener noreferrer"
-            // href="https://wa.me/51936956726"
-            href="/Contactanos"
-          >
-=======
           <a translate="no" href="/">
             Home
           </a>
           <a href="/Especialidades">Especialidades</a>
           <a target="_blank" href="/Contactanos">
->>>>>>> feature:react-app/src/components/shared/NavBar.tsx
             Contáctanos
           </a>
         </div>
