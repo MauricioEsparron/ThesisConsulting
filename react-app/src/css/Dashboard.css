@@ -91,21 +91,6 @@
   color: var(--primary-color);
 }
 
-/* Estilos del botón hamburguesa */
-.icon-dashboard {
-  width: 24px;
-  height: 24px;
-  transition: var(--transition);
-  margin-right: 10px;
-}
-.opcion-dashboard:hover .icon-dashboard {
-  transform: scale(1.1);
-}
-
-.icono-girado {
-  transform: rotate(90deg);
-}
-
 /* Opción de cerrar sesión */
 .icon-logout {
   margin-top: auto;
@@ -149,6 +134,7 @@
 /* Efectos y transiciones */
 .opcion-dashboard span {
   transition: var(--transition);
+  margin-left: 20px;
 }
 
 .Titulo-home-dashboard {
@@ -178,6 +164,7 @@
   width: 280px;
   height: calc(100vh - 60px);
   background-color: #aba9bb85;
+  border-radius: 0px 0px 40px 0px;
   box-shadow: var(--shadow);
   transition: var(--transition);
   z-index: 999;
@@ -200,7 +187,7 @@
   background-color: var(--primary-color);
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   padding: 0 20px;
   box-shadow: var(--shadow);
@@ -211,29 +198,49 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
+  padding: 5px 0px !important;
   transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 20px;
+}
+
+/* Estilos del botón hamburguesa */
+.icon-dashboard {
+  width: 24px;
+  height: 24px;
+  margin: 5px;
+  transition: var(--transition);
+  /* border: 1px solid blue; */
+}
+
+.opcion-dashboard:hover .icon-dashboard {
+  transform: scale(1.1);
+}
+
+.icono-girado {
+  transform: rotate(90deg);
 }
 
 .boton-desplegable:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
 }
 
 /* Contenido principal */
 .contenedor-slider {
   flex-grow: 1;
   margin-top: 60px;
-  padding: 20px;
+  padding: 10px 5px;
   transition: var(--transition);
   min-height: calc(100vh - 60px);
   background-color: #f1edff;
   width: 100%;
-  flex: 1;
   margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Para permitir scroll si el contenido excede el alto */
 }
 
 /* Ajuste cuando el sidebar está abierto */

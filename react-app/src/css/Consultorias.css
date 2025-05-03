@@ -1,13 +1,23 @@
 /* Estilo general del contenedor de la sección */
+body {
+  background-color: #f1edff;
+}
+.main-container {
+  margin: 0px;
+  padding: 0px;
+}
+.contenedor-slider {
+  padding: 10px;
+}
+
 .consultoria-container {
-  margin: 20px;
-  padding: 0 5%;
+  margin: 10px;
   font-family: "Arial", sans-serif;
 }
 
 .consultoria-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .titulo-consultoria {
@@ -28,6 +38,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
+  padding: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Tarjeta individual de consultoría */

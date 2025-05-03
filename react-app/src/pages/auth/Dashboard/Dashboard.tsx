@@ -64,7 +64,7 @@ const Dashboard = () => {
     <div className="contenedor-global-dashboard-slide">
       {/* Navbar superior */}
       <div className="navbar-superior">
-        <div className="navbar-titulo">InvexiaLab</div>
+        {" "}
         <button
           ref={buttonRef}
           className="boton-desplegable"
@@ -77,6 +77,7 @@ const Dashboard = () => {
             alt="Menú"
           />
         </button>
+        <div className="navbar-titulo">InvexiaLab</div>
       </div>
 
       {/* Navbar lateral */}
@@ -145,8 +146,7 @@ const Dashboard = () => {
         <Suspense fallback={<div className="cargando">Cargando vista...</div>}>
           {vistaActiva === "Home" && (
             <>
-              <h1>Contenido Principal</h1>
-              <h2 className="Titulo-home-dashboard">CONSULTAS</h2>
+              <Consultoria />
             </>
           )}
           {vistaActiva === "Consultoría" && <Consultoria />}

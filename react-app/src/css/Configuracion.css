@@ -1,0 +1,27 @@
+.main-contenedor-configuracion {
+  border: 2px solid red;
+}
+.configuracion-header {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 80px;
+}
+
+.title-configuracion {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.titulo-form-configuracion {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.form-configuracion {
+  border: 2px solid blue;
+  margin: 80px;
+  padding: 5% 10%;
+}
