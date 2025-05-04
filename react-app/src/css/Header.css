@@ -1,3 +1,14 @@
+/* Variables de color */
+:root {
+  --primary: #aac2fd;
+  --primary2: #5184b6;
+  --secondary: #003a88;
+  --secondary2: #0c2461;
+  --secondary3: #01005d;
+  --accent: #e74c3c;
+  --text-light: #ffffff;
+  --text-dark: #000000;
+}
 /* Contenedor principal */
 .top-header {
   position: relative;

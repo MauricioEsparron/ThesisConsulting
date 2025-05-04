@@ -1,3 +1,14 @@
+/* Variables de color */
+:root {
+  --primary: #aac2fd;
+  --primary2: #5184b6;
+  --secondary: #003a88;
+  --secondary2: #0c2461;
+  --secondary3: #01005d;
+  --accent: #e74c3c;
+  --text-light: #ffffff;
+  --text-dark: #000000;
+}
 /* Navbar */
 nav {
   display: flex;
@@ -16,7 +27,7 @@ nav {
 }
 
 .NavBar-nombre-empresa {
-  color: #ffffff;
+  color: white;
   font-size: 1.5em;
   text-transform: uppercase;
   font-weight: bold;
@@ -29,7 +40,7 @@ nav {
 }
 
 .nav-links a {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
   font-size: 1em;
   transition: color 0.3s ease;
@@ -45,10 +56,11 @@ nav {
   font-size: 1.5em;
   cursor: pointer;
   transition: color 0.3s ease;
+  padding-left: 20px;
 }
 
 .nav-icon i:hover {
-  color: #ffa902;
+  color: var(--secondary2);
 }
 
 /* Menú desplegable */
@@ -58,12 +70,11 @@ nav {
   right: -100%;
   width: 250px;
   height: 100vh;
-  background-color: rgba(255, 169, 2, 0.79);
+  background-color: #aac2fd;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
-  padding: 20px;
   transition: right 0.3s ease;
   z-index: 200; /* Asegurar que esté por encima del formulario */
 }
@@ -74,14 +85,16 @@ nav {
 }
 
 .menu-desplegable a {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
   font-size: 1.2em;
-  margin: 10px 0;
+  padding: 15px 15px 15px 20px !important;
   transition: color 0.3s ease;
   font-weight: 200;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: left;
 }
 
 .menu-desplegable {
@@ -93,8 +106,15 @@ nav {
   display: block;
 }
 
+.menu-desplegable a {
+  padding: 5px;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+}
 .menu-desplegable a:hover {
-  color: #232e60;
+  color: white;
+  background-color: #232e60;
 }
 
 @media screen and (max-width: 768px) {
