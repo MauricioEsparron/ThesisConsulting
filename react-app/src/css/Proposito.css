@@ -1,3 +1,13 @@
+/* Variables de color */
+:root {
+  --primary: #aac2fd;
+  --primary2: #0c2461;
+  --primary3: #5184b6;
+  --secondary: #003a88;
+  --accent: #e74c3c;
+  --text-light: #ecf0f1;
+  --text-dark: #000000;
+}
 .Proposito {
   width: 100%;
   background-color: #f4f4f4;
@@ -110,23 +120,6 @@
   background-color: transparent;
 }
 
-.overlay {
-  position: absolute;
-  bottom: 100px;
-  left: 30%;
-  width: 40%;
-  height: auto;
-  background-color: #ebb403;
-  color: #f4f4f4;
-  text-align: center;
-  padding: 15px;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  opacity: 0.92;
-}
-
 .Proposito-info p {
   font-size: 25px;
   width: 80%;
@@ -177,7 +170,7 @@
   left: 30%;
   width: 40%;
   height: auto;
-  background-color: #ebb403;
+  background-color: var(--primary2);
   color: #f4f4f4;
   text-align: center;
   padding: 15px;
