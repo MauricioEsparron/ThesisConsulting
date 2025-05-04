@@ -111,6 +111,7 @@ nav {
   min-width: 100%;
   display: flex;
   align-items: center;
+  transition: color 0.3s ease;
 }
 .menu-desplegable a:hover {
   color: white;
