@@ -38,6 +38,7 @@ const Navbar = () => {
             Home
           </a>
           <a href="/Especialidades">Especialidades</a>
+          <a href="/Nosotros">Nosotros</a>
           <a target="_blank" href="/Contactanos">
             Contáctanos
           </a>
