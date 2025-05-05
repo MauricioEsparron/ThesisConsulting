@@ -10,6 +10,7 @@ import Dashboard from "../pages/auth/Dashboard/Dashboard";
 import Pruebas from "../pages/auth/Dashboard/components/Pruebas/Pruebas";
 import { ProtectedRoute } from "./ProtectedRoute"; // <- agrega esta línea
 import { AuthProvider } from "../stores/Auth.store"; // <- agrega esta línea
+import Nosotros from "../pages/Nosotros/Nosotros";
 
 export const AppRouter = () => {
   return (
@@ -23,7 +24,8 @@ export const AppRouter = () => {
           <Route path="/Contactanos" element={<Contactanos />} />
           <Route path="/Gracias" element={<Gracias />} />
           <Route path="/auth/Login" element={<Login />} />
-          <Route path="/Login2" element={<Login2 />} />
+          <Route path="/auth/Login2" element={<Login2 />} />
+          <Route path="/Nosotros" element={<Nosotros />} />
 
           {/* Rutas protegidas */}
           <Route
