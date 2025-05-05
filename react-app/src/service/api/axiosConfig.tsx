@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Crear instancia de Axios
 const api = axios.create({
-  baseURL: "http://localhost:8080/dashboard/api/v1", // Ajusta si usas otra ruta base
+  baseURL: "http://localhost:8080/dashboard/api/v1",
   headers: {
     "Content-Type": "application/json",
   },
@@ -27,8 +27,7 @@ api.interceptors.response.use(
     if (error.response?.status === 401) {
       console.warn("Sesión expirada o token inválido");
       alert("Tu token es inválido o las credenciales son incorrectas.");
-      // Puedes decidir no redirigir aquí, sino en tu lógica de login
-      // window.location.href = "/auth/login"; (si decides redirigir)
+      // window.location.href = "/auth/login"; (para redirigir)
     }
 
     // Manejo de errores de red (por ejemplo, si la API no responde o está caída)
