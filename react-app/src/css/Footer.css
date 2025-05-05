@@ -1,82 +1,123 @@
 /* Variables de color */
 :root {
-  --primary: #aac2fd;
-  --primary2: #5184b6;
-  --secondary: #003a88;
-  --secondary2: #0c2461;
-  --secondary3: #01005d;
-  --accent: #e74c3c;
+  --primary: #003a88;
+  --secondary: #c5b9ba;
+  --secondary2: #d4c8c8;
+  --accent: #4b3d3d;
   --text-light: #ffffff;
-  --text-dark: #000000;
-}
-.footer {
-  background-color: var(--secondary3);
-  color: #ffffff;
-  height: 112px;
-  padding: 20px 0;
-  width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-}
-.footer-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  --dark: #2c3e50;
 }
 
-.footer-title {
-  font-size: 16px;
-  font-weight: bold;
+.contenedor-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #003a88;
+}
+
+.subcontenedor-bloque1-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.subcontenedor-bloque2-footer {
+  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 40px;
+}
+.subcontenedor-bloque2-footer a {
+  border-left: 2px solid var(--text-light);
+  color: var(--text-light);
+  margin-left: auto; /* <-- Esto empuja el <a> a la derecha */
+  display: block;
+  width: 20%;
+  margin-right: 150px;
+}
+
+.subcontenedor-footer-info {
   width: 30%;
+}
+
+.subcontenedor-footer-info p {
+  padding: 10px 30px 10px 50px;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.contenedor-footer-enlaces {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-enlaces {
+  width: 50%;
+}
+.footer-iconos {
+  width: 50%;
+  padding: 40px;
+}
+
+.subcontenedor-footer-enlaces {
+  width: 100%;
+  padding: 40px;
+}
+
+.sub-subcontenedor-footer-enlaces {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+}
+
+.subcontenedor-footer-enlaces,
+a {
+  color: var(--text-light);
+  text-align: center;
+  font-size: 18px;
+}
+
+.footer-enlaces-bloque1,
+.footer-enlaces-bloque2 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.slogan-footer p,
+.footer-enlaces-bloque1 a,
+.footer-enlaces-bloque2 a {
+  font-weight: 200;
+  color: var(--text-light);
+}
+
+.titulo-footer1,
+.titulo-footer2 {
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--text-light);
   text-align: center;
 }
 
-.footer-links {
+.footer-iconos-redes {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  width: 60%;
-  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
 }
 
-.footer-link {
+.footer-iconos-redes a {
+  width: 15%;
+  height: 50px;
+  margin: 10px;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
 }
-
-@media (max-width: 767px) {
-  .footer {
-    width: 100%;
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .footer-title {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .footer-links {
-    width: 100%;
-    flex-direction: column;
-    gap: 20px;
-  }
+.icono-footer:hover {
+  color: #fcbe06;
+  transition: 0.3s ease;
 }

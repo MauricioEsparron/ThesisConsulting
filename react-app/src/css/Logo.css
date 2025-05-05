@@ -1,0 +1,50 @@
+.logo-footer {
+  background-color: #003a88;
+  padding: 5px 10px 5px 40px;
+  position: relative;
+  width: fit-content;
+  width: 100%;
+}
+
+.contenedor-logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.Footer-nombre-empresa1 {
+  color: var(--text-light);
+  font-size: 3.5em;
+  text-transform: none;
+  font-weight: 900;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Opcional: centrado horizontal */
+  height: 100px; /* Asegura altura para alinear verticalmente */
+}
+
+.Footer-nombre-empresa2 {
+  color: var(--text-light);
+  font-size: 2.9em;
+  text-transform: none;
+  font-weight: 900;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Opcional */
+  margin-left: -11px;
+  height: 103px; /* Ajusta según tu layout */
+}
+
+.desc-footer {
+  color: var(--text-light);
+  margin-left: 160px;
+  font-size: 0.7em;
+  text-transform: none;
+  font-weight: 600;
+  position: absolute;
+  top: 61px;
+  left: 130px;
+  z-index: 1;
+  pointer-events: none;
+}
