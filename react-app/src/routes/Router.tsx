@@ -11,6 +11,7 @@ import Pruebas from "../pages/auth/Dashboard/components/Pruebas/Pruebas";
 import { ProtectedRoute } from "./ProtectedRoute"; // <- agrega esta línea
 import { AuthProvider } from "../stores/Auth.store"; // <- agrega esta línea
 import Nosotros from "../pages/Nosotros/Nosotros";
+// import Dashboard2 from "../pages/auth/Dashboard/Dashboard2";
 
 export const AppRouter = () => {
   return (
