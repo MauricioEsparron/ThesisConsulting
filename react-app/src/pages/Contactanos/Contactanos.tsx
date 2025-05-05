@@ -1,190 +1,148 @@
+import Footer from "../../components/shared/Footer";
 import "../../css/Contactanos.css";
-import videoContactanos from "../../media/Contactanos.mp4";
-import { useNavigate } from "react-router-dom";
-
-import NavBar from "../../components/shared/NavBar";
-
+import imgContacto from "../../img/contactanos.jpg";
+import video3 from "../../img/video3.mp4";
+import header2 from "../../img/header2.jpg";
 type Props = {};
 
 function Contactanos({}: Props) {
-  const navigate = useNavigate(); // Inicializar useNavigate
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault(); // Evita el recargo de la página
-
-    // Aquí podrías agregar lógica para enviar los datos del formulario...
-
-    // Redirigir a la página de agradecimiento
-    navigate("/Gracias");
-  };
   return (
-    <>
-      <NavBar />
-      <div className="Contenedor-contactanos">
-        <div className="contenedor-header">
-          {/* Video dentro del header */}
-          <video className="Contactanos-video-background" autoPlay muted loop>
-            <source src={videoContactanos} type="video/mp4" />
-            Tu navegador no soporta videos HTML5.
-          </video>
-          <div className="video-overlay"></div>
-
-          <h1 className="titulo-contactanos">Transforma tu Proyecto</h1>
-          <h2 className="subtitulo-contactanos">
-            Contáctanos. Escríbenos por WhatsApp para una respuesta rápida
-          </h2>
-          <div className="contenedor-btn-wsp">
-            <a
-              href="https://wa.me/1234567890"
-              className="btn btn-success btn-lg mt-3 btn-wsp"
-            >
-              <i className="fab fa-whatsapp me-2"></i> Hablar por WhatsApp
-            </a>
+    <div>
+      <div className="contenedor-header-contactanos">
+        <header className="especialidades-header">
+          <div className="video-background-especialidades">
+            <video autoPlay muted loop playsInline>
+              <source src={video3} type="video/mp4" />
+              <img src={header2} alt="Fondo alternativo" />
+            </video>
+            <div className="video-overlay-especialidades"></div>
+          </div>
+          <div className="header-content">
+            <h1>Contactanos</h1>
+            <p>
+              Servicios diseñados para potenciar tu impacto social y académico
+            </p>
+          </div>
+        </header>
+      </div>
+      <div className="contact-container">
+        <div className="form-section">
+          <div className="form-left">
+            <h1 className="form-title">
+              <span className="blue-rectangle">|</span> Transforma tu proyecto!
+            </h1>
+            <form className="contact-form">
+              <div className="form-row">
+                <input type="text" placeholder="Nombre y apellidos" required />
+                <input type="text" placeholder="DNI" required />
+              </div>
+              <div className="form-row">
+                <input type="email" placeholder="Correo" required />
+                <input type="text" placeholder="Universidad" required />
+                <input type="text" placeholder="Carrera" required />
+              </div>
+              <textarea
+                placeholder="Mensaje"
+                className="message-box"
+                required
+              ></textarea>
+              <button type="submit" className="submit-btn">
+                Enviar
+              </button>
+            </form>
+          </div>
+          <div className="form-right">
+            <img
+              src={imgContacto}
+              alt="Imagen de contacto"
+              className="contact-image"
+            />
           </div>
         </div>
-        <div className="contenedor-final">
-          <div className="contenedor-secundario">
-            <div className="contenedor-bloque1">
-              <div className="contenedor-formulario">
-                <h2 className="titulo-formulario">Envíanos un mensaje</h2>
-                <form
-                  className="formulario-contactanos"
-                  onSubmit={handleSubmit}
-                >
-                  <div className="form-group">
-                    <label className="campo">Nombre Completo:</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Ingresa tu nombre"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label className="campo">Correo Electrónico:</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      placeholder="Tu correo"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label className="campo">Teléfono:</label>
-                    <input
-                      type="tel"
-                      className="form-control"
-                      placeholder="Ingresa tu teléfono"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label className="campo">Mensaje:</label>
-                    <textarea
-                      className="form-control"
-                      rows={4}
-                      placeholder="Escribe tu mensaje"
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="boton-enviar btn btn-primary btn-lg w-100 hover-effect submit-btn"
-                  >
-                    <i className="fas fa-paper-plane me-2"></i> Enviar mensaje
-                  </button>
-                </form>
-              </div>
-            </div>
-            <div className="contenedor-bloque2">
-              <div className="col-lg-5">
-                <div className="info-container h-100">
-                  <h2 className="titulo-info-contacto mb-4">
-                    Información de contacto
-                  </h2>
 
-                  <div className="whatsapp-card hover-effect-card mb-4 p-3 text-center">
-                    <div className="contenedor-icono-wsp-card  mx-auto mb-3 bg-success">
-                      <i className="icono-wsp-card fab fa-whatsapp fa-2x"></i>
-                    </div>
-                    <h4 className="titulo-card mb-2">Atención inmediata</h4>
-                    <p className="texto-card mb-3">
-                      Contáctanos directamente por WhatsApp para una respuesta
-                      rápida
-                    </p>
-                    <div className="contenedor-btn-escribir">
-                      <a
-                        href="https://wa.me/1234567890"
-                        className="btn-card-escribir btn btn-outline-success hover-effect"
-                      >
-                        <i className="icono-card-escribir fab fa-whatsapp me-2"></i>
-                        Escribir ahora
-                      </a>
-                    </div>
-                  </div>
+        <div className="info-cards">
+          <div className="card linkedin-card">
+            <i className="bi bi-linkedin"></i>
+            <h3>linkedin</h3>
+            <p>Explora nuestros proyectos y alianzas en LinkedIn.</p>
+            <p>www.aaa.com</p>
+          </div>
+          <div className="card schedule-card">
+            <i className="bi bi-clock"></i>
+            <h3>Horario de Atención</h3>
+            <p>Lunes a sábado, 9:00 a.m. – 6:00 p.m.</p>
+          </div>
+          <div className="card whatsapp-card">
+            <i className="bi bi-whatsapp"></i>
+            <h3>whatsapp</h3>
+            <p>¿Listo para empezar? Escríbenos ahora</p>
+            <p>999 999 99</p>
+          </div>
+        </div>
 
-                  {/* Tarjetas de contacto */}
-                  <div className="contenedor-info-contacto">
-                    <div className="contact-method">
-                      <div className="icon-circle">
-                        <i className="fas fa-phone"></i>
-                      </div>
-                      <div className="subcontenedor-info-contacto ms-3">
-                        <h5>Teléfono</h5>
-                        <p>+51 948 211 128</p>
-                      </div>
-                    </div>
-
-                    <div className="contact-method">
-                      <div className="icon-circle">
-                        <i className="fas fa-envelope"></i>
-                      </div>
-                      <div className="subcontenedor-info-contacto ms-3">
-                        <h5>Email</h5>
-                        <p>latambusinessconsulting@gmail.com</p>
-                      </div>
-                    </div>
-
-                    <div className="contact-method">
-                      <div className="icon-circle">
-                        <i className="fas fa-clock"></i>
-                      </div>
-                      <div className="subcontenedor-info-contacto ms-3">
-                        <h5>Horario</h5>
-                        <p>Lunes a Viernes: 9am - 6pm</p>
-                      </div>
-                    </div>
-                  </div>
+        <div className="location-section">
+          <h2 className="section-title">
+            <span className="blue-rectangle">|</span> ubicanos
+          </h2>
+          <div className="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e67356080477!2sMonumen%20Nasional!5e0!3m2!1sen!2sid!4v1605482382734!5m2!1sen!2sid"
+              width="100%"
+              height="450"
+              // frameBorder="0"
+              style={{ border: 0 }}
+              allowFullScreen
+              aria-hidden="false"
+              tabIndex={0}
+            ></iframe>
+          </div>
+        </div>
+        {/* <footer>
+        <div className="footer-content">
+          <div className="footer-left">
+            <h2>INVEXIALAB</h2>
+            <p className="footer-subtitle">tu conocimiento, nuestro impacto</p>
+          </div>
+          <div className="footer-center">
+            <div className="footer-links">
+              <h3>Pagina principal:</h3>
+              <div className="link-columns">
+                <div className="link-column">
+                  <a href="#">Home</a>
+                  <a href="#">Nosotros</a>
+                </div>
+                <div className="link-column">
+                  <a href="#">Especialidades</a>
+                  <a href="#">Contáctanos</a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="contenedor-footer">
-            <div className="contenedor-titulo-footer">
-              <h2 className="mb-4">
-                <i className="fas fa-hashtag hashtag-icon me-2"></i>
-                Síguenos en redes
-              </h2>
-            </div>
-            <div className="contenedor-texto-footer">
-              <p className="lead mb-4">
-                Conéctate con nosotros en nuestras redes sociales
-              </p>
-            </div>
-            <div className="contenedor-icons d-flex justify-content-center gap-3 flex-wrap">
-              <a href="#" className="social-icon hover-effect facebook">
-                <i className="fab fa-facebook-f fa-lg"></i>
+          <div className="footer-right">
+            <h3>Redes sociales</h3>
+            <div className="social-icons">
+              <a href="#">
+                <i className="bi bi-whatsapp"></i>
               </a>
-              <a href="#" className="social-icon hover-effect instagram">
-                <i className="fab fa-instagram fa-lg"></i>
+              <a href="#">
+                <i className="bi bi-facebook"></i>
               </a>
-              <a href="#" className="social-icon hover-effect linkedin">
-                <i className="fab fa-linkedin-in fa-lg"></i>
+              <a href="#">
+                <i className="bi bi-tiktok"></i>
               </a>
-              <a href="#" className="social-icon hover-effect tiktok">
-                <i className="fab fa-tiktok fa-lg"></i>
+              <a href="#">
+                <i className="bi bi-linkedin"></i>
               </a>
             </div>
           </div>
         </div>
+        <div className="footer-bottom">
+          <p className="complaints-book">|Libro de reclamaciones</p>
+        </div>
+      </footer> */}
+        <Footer />
       </div>
-    </>
+    </div>
   );
 }
 
