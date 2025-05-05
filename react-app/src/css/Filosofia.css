@@ -1,0 +1,74 @@
+/* Variables de color */
+:root {
+  --primary: #cf002d;
+  --secondary: #c5b9ba;
+  --secondary2: #d4c8c8;
+  --accent: #4b3d3d;
+  --text-light: #ffffff;
+  --dark: #2c3e50;
+}
+.contenedor-filosofia {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+
+.subcontenedor-filosofia-info {
+  width: 50%;
+  background-color: var(--secondary);
+  padding: 80px;
+  border-radius: 0px 120px 120px 0px;
+}
+.contenedor-titulo {
+  width: 80%;
+  padding-left: 10px;
+  border-left: 10px solid #0c2461;
+}
+.contenedor-titulo h1 {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.contenedor-texto {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 80%;
+}
+
+.contenedor-texto p {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 200;
+  color: black;
+}
+.subcontenedor-filosofia-imagen {
+  width: 50%;
+  position: relative;
+}
+
+.subcontenedor-filosofia-imagen img {
+  width: 100%;
+  height: 60%;
+  border-radius: 25px;
+  display: flex;
+  position: absolute;
+  top: 120px;
+  left: -120px;
+  z-index: 1;
+}
+
+.contenedor-boton {
+  width: 50%;
+}
+
+.contenedor-boton a {
+  text-decoration: none;
+  padding: 15px 30px;
+  color: var(--text-light);
+  background-color: var(--accent);
+}
