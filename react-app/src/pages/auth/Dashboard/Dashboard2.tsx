@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "../../../css/Dashboard2.css";
+// import "../../../css/Dashboard2.css";
 import profilePic from "../../../img/profilepic.png";
 import houseIcon from "../../../img/Houseicon.png";
 import consultIcon from "../../../img/consulticon.png";

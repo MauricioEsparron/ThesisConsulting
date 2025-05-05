@@ -1,5 +1,5 @@
 import "../../../../../css/Consultas.css";
-import { MoreVertical, Mail } from "lucide-react";
+import { MoreVertical } from "lucide-react";
 import banner from "../../../../../img/BannerConsultas.jpg";
 import emailIcon from "../../../../../img/mailicon.png";
 import profilepic from "../../../../../img/profilepic.png";
