@@ -1,0 +1,118 @@
+/* ===== VARIABLES Y ESTILOS BASE ===== */
+:root {
+  /* Colores */
+  --primary: #0c2461;
+  --primary-light: rgba(207, 0, 45, 0.1);
+  --secondary: #c5b9ba;
+  --secondary-light: #d4c8c8;
+  --accent: #4b3d3d;
+  --text-light: #ffffff;
+  --text-dark: #2c3e50;
+  --background-light: #fdf8ec;
+}
+.main-contenedor-login2-2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.contenedor-login2-2 {
+  width: 30%;
+  background-color: var(--secondary);
+  padding: 50px 80px 80px 80px;
+  border-radius: 80px 0px 0px 80px;
+}
+
+.contenedor-titulo-login2-2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.contenedor-titulo-login2-2 h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.contenedor-button-login2-2 {
+  background-color: #0c2461;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 15px;
+}
+
+.contenedor-reset-login2-2 {
+  color: white;
+}
+span {
+  font-weight: 600;
+}
+
+input {
+  margin: 1px 0px 20px 0;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+/* === ESTILOS RESPONSIVE === */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .contenedor-login2-2 {
+    width: 50%;
+    padding: 40px;
+    border-radius: 60px 0px 0px 60px;
+    margin-right: 20px;
+  }
+}
+
+/* Teléfonos grandes */
+@media (max-width: 768px) {
+  .main-contenedor-login2-2 {
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .contenedor-login2-2 {
+    width: 80%;
+    padding: 30px;
+    border-radius: 30px;
+    margin: 0;
+  }
+
+  .contenedor-titulo-login2-2 h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Teléfonos pequeños */
+@media (max-width: 480px) {
+  .contenedor-login2-2 {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .contenedor-titulo-login2-2 h2 {
+    font-size: 1.5rem;
+  }
+
+  .contenedor-button-login2-2 {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
