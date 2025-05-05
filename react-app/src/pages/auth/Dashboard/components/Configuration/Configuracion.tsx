@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import "../../../../../css/Configuracion.css";
 
 type Props = {};

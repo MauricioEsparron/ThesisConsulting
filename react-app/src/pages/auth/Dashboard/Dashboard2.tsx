@@ -1,106 +1,73 @@
-import { useState } from "react";
-import "../../../css/Dasboard2.css";
-import iconHome from "../../../img/icons/icon_home_b.png";
-import iconHoja from "../../../img/icons/icon_hoja_b.png";
-import iconLogOut from "../../../img/icons/icon_logout_b.png";
-import iconGlobe from "../../../img/icons/icon_globe_b.png";
-import iconSettings from "../../../img/icons/icon_settings_b.png";
-import Actividades from "./components/Actividades/Actividades";
-import Consultas from "./components/Consultoria/Consultas";
-import Settings from "./components/Configuration/Configuracion";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import "../../../css/Dashboard2.css";
+import profilePic from "../../../img/profilepic.png";
+import houseIcon from "../../../img/Houseicon.png";
+import consultIcon from "../../../img/consulticon.png";
+import globalIcon from "../../../img/Globalicon.png";
+import logoutIcon from "../../../img/Logouticon.png";
 
-type MenuItem = {
-  id: string;
-  title: string;
-  icon: string;
-  path: string;
-  isLogout?: boolean;
-};
+const Dashboard2 = () => {
+  const location = useLocation();
+  const [collapsed, setCollapsed] = useState(false);
 
-type Props = {
-  onMenuItemClick?: (itemId: string) => void;
-};
+  useEffect(() => {
+    const currentPath = location.pathname;
+    document.querySelectorAll(".nav-item").forEach((item) => {
+      item.classList.remove("active");
+    });
 
-function Dashboard({ onMenuItemClick }: Props) {
-  const [isCompact, setIsCompact] = useState(false);
-  const [activeItem, setActiveItem] = useState("home");
-
-  const menuItems: MenuItem[] = [
-    { id: "home", title: "Home", icon: iconHome, path: "#" },
-    { id: "consultoria", title: "Consultoría", icon: iconHoja, path: "#" },
-    { id: "actividades", title: "Actividades", icon: iconGlobe, path: "#" },
-    { id: "settings", title: "Settings", icon: iconSettings, path: "#" },
-    {
-      id: "logout",
-      title: "Logout",
-      icon: iconLogOut,
-      path: "#",
-      isLogout: true,
-    },
-  ];
-
-  const handleItemClick = (itemId: string) => {
-    setActiveItem(itemId);
-    if (onMenuItemClick) {
-      onMenuItemClick(itemId);
+    switch (currentPath) {
+      case "/":
+        document.getElementById("home-link")?.classList.add("active");
+        break;
+      case "/Consultorias":
+        document.getElementById("consultoria-link")?.classList.add("active");
+        break;
+      case "/Actividades":
+        document.getElementById("activities-link")?.classList.add("active");
+        break;
+      default:
+        break;
     }
-  };
-
-  const toggleSidebar = () => {
-    setIsCompact(!isCompact);
-  };
+  }, [location.pathname]);
 
   return (
-    <div className="contenedor-global-dashboard-slide">
-      <div className={`contenedor-dashboard ${isCompact ? "compact" : ""}`}>
-        <button className="toggle-btn" onClick={toggleSidebar}>
-          {isCompact ? "→" : "←"}
+    <aside
+      className={`sidebar ${collapsed ? "collapsed" : ""}`}
+      id="sidebar"
+      onClick={() => setCollapsed(!collapsed)}
+    >
+      <div className="profile">
+        <div className="profile-image">
+          <img src={profilePic} alt="Profile" className="avatar" />
+        </div>
+        <div className="profile-name">LORENA M.</div>
+      </div>
+
+      <nav className="nav-menu">
+        <Link to="/" className="nav-item" id="home-link">
+          <img src={houseIcon} alt="Home" className="nav-icon" />
+          <span className="nav-text">Home</span>
+        </Link>
+        <Link to="/Consultorias" className="nav-item" id="consultoria-link">
+          <img src={consultIcon} alt="Consultoría" className="nav-icon" />
+          <span className="nav-text">Consultoría</span>
+        </Link>
+        <Link to="/Actividades" className="nav-item" id="activities-link">
+          <img src={globalIcon} alt="Actividades" className="nav-icon" />
+          <span className="nav-text">Actividades</span>
+        </Link>
+      </nav>
+
+      <div className="logout">
+        <button className="logout-btn">
+          <img src={logoutIcon} alt="Cerrar sesión" className="nav-icon" />
+          <span className="nav-text">CERRAR SESIÓN</span>
         </button>
-
-        <div className="contenedor-perfil">
-          <div className="contenedor-imagen-perfil">
-            <img
-              className="imagen-perfil"
-              src="https://images.pexels.com/photos/1435517/pexels-photo-1435517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="imagen-usuario"
-            />
-          </div>
-          <div className="contenedor-nombre-usuario">
-            <h4 className="nombre-usuario">Mauricio Ramirez Esparron</h4>
-          </div>
-        </div>
-
-        <div className="contenedor-opciones">
-          {menuItems.map((item) => (
-            <div
-              key={item.id}
-              className={`opcion-dashboard ${
-                activeItem === item.id ? "active" : ""
-              } ${item.isLogout ? "icon-logout" : ""}`}
-              onClick={() => handleItemClick(item.id)}
-              data-tooltip={item.title}
-            >
-              <img
-                className="icon-dashboard"
-                src={item.icon}
-                alt={`icono-${item.id}`}
-              />
-              <span className="opcion-texto">{item.title}</span>
-            </div>
-          ))}
-        </div>
       </div>
-
-      <div className="contenedor-slider">
-        {/* Contenido principal de tu aplicación */}
-        <h1>Bienvenido al Dashboard</h1>
-        <p>Selecciona una opción del menú</p>
-        <Consultas />
-        <Actividades />
-        <Settings />
-      </div>
-    </div>
+    </aside>
   );
-}
+};
 
-export default Dashboard;
+export default Dashboard2;

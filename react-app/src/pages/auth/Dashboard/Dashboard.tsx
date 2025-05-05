@@ -7,6 +7,8 @@ import iconGlobe from "../../../img/icons/icon_globe_w.png";
 import iconSettings from "../../../img/icons/icon_settings_w.png";
 import iconBurger from "../../../img/icons/icon_burger_w.png";
 import { logout } from "../../../auth/Auth.service"; // Asegúrate de que la ruta sea correcta
+import HomeDashboard from "./components/HomeDashboard";
+import Consultas2 from "./components/Consultoria/Consultas2";
 
 // Lazy loading de componentes
 const Actividades = lazy(() => import("./components/Actividades/Actividades"));
@@ -146,10 +148,12 @@ const Dashboard = () => {
         <Suspense fallback={<div className="cargando">Cargando vista...</div>}>
           {vistaActiva === "Home" && (
             <>
-              <Consultoria />
+              {/* <Consultoria /> */}
+              <HomeDashboard />
             </>
           )}
-          {vistaActiva === "Consultoría" && <Consultoria />}
+          {/* {vistaActiva === "Consultoría" && <Consultoria />} */}
+          {vistaActiva === "Consultoría" && <Consultas2 />}
           {vistaActiva === "Actividades" && <Actividades />}
           {vistaActiva === "Configuración" && <Configuracion />}
         </Suspense>

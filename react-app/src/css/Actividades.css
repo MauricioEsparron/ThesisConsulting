@@ -1,0 +1,136 @@
+.actividades-container {
+  padding: 40px;
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #151b54;
+}
+
+.actividades-titulo {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: #151b54;
+}
+
+.actividades-linea {
+  border-bottom: 1px solid #151b54;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* Timeline styling */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #e6e6e6;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.timeline-date {
+  position: absolute;
+  left: -100px;
+  top: 5px;
+  font-size: 13px;
+  color: #666;
+}
+
+.timeline-content {
+  display: flex;
+  position: relative;
+}
+
+.timeline-content:before {
+  content: "";
+  position: absolute;
+  left: -31px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border: 2px solid #e6e6e6;
+  border-radius: 50%;
+}
+
+.timeline-icon-container {
+  margin-right: 15px;
+  padding-top: 5px;
+}
+
+.timeline-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.timeline-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #151b54;
+}
+
+.timeline-description {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.timeline-button {
+  background-color: #e9e9e9;
+  border: none;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  margin-top: 5px;
+  width: fit-content;
+  color: #444;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.blue-Line {
+  width: 3px;
+  height: 100%;
+  margin-right: 20px;
+  background-color: #0c145c;
+}
+.timeline-button:hover {
+  background-color: #d9d9d9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .actividades-container {
+    padding: 20px;
+  }
+
+  .timeline-date {
+    position: relative;
+    left: 0;
+    margin-bottom: 5px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+  }
+}

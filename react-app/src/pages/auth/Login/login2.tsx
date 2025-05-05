@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faLock,
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+
 import img1 from "../../../img/montañas1.webp";
 import img2 from "../../../img/montañas2.webp";
 import img3 from "../../../img/montañas3.webp";

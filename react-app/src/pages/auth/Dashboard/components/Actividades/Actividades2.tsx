@@ -1,8 +1,7 @@
-import "../../../../../css/actividades.css";
+import "../../../../../css/actividades2.css";
 import commentIcon from "../../../../../img/comment.png";
 import consultIcon from "../../../../../img/consulticon.png";
-
-const Actividades = () => {
+const Actividades2 = () => {
   const actividades = [
     {
       fecha: "13 mar. 2025",
@@ -46,4 +45,4 @@ const Actividades = () => {
   );
 };
 
-export default Actividades;
+export default Actividades2;
