@@ -7,6 +7,7 @@ import asesoria2 from "../../img/asesoria 2.jpg";
 import video3 from "../../img/video3.mp4";
 import header2 from "../../img/header2.jpg";
 import Navbar from "../../components/shared/NavBar";
+import Footer from "../../components/shared/Footer";
 
 const Especialidades: React.FC = () => {
   useEffect(() => {
@@ -107,6 +108,7 @@ const Especialidades: React.FC = () => {
             </section>
           ))}
         </main>
+        <Footer />
       </div>
     </>
   );
