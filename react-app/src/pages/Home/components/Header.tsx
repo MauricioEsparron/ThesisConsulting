@@ -28,7 +28,7 @@ const Header = () => {
         <div className="TConsulting">
           <div className="content">
             <h1>
-              <span className="title-line" translate="no">
+              <span className="title-line-Header" translate="no">
                 THESIS CONSULTING
               </span>
             </h1>
