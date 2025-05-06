@@ -98,6 +98,7 @@ const Dashboard = () => {
           </div>
           <div className="contenedor-nombre-usuario">
             <h4 className="nombre-usuario">Bienvenido {nombre || "Usuario"}</h4>
+            <span>vista {rol}</span>
           </div>
         </div>
 
@@ -106,8 +107,8 @@ const Dashboard = () => {
             {
               icon: iconHome,
               text: "Home",
+              viewId: "home_estudiante",
               roles: [
-                "Administrador",
                 "Estudiante",
                 "Asesor de Experiencia",
                 "Docente Asesor",
@@ -115,8 +116,15 @@ const Dashboard = () => {
               ],
             },
             {
+              icon: iconHome,
+              text: "Home",
+              viewId: "home_admin",
+              roles: ["Administrador"],
+            },
+            {
               icon: iconHoja,
               text: "Consultoría",
+              viewId: "consultoria_estudiante",
               roles: [
                 "Administrador",
                 "Estudiante",
@@ -128,6 +136,7 @@ const Dashboard = () => {
             {
               icon: iconGlobe,
               text: "Actividades",
+              viewId: "actividades_estudiante",
               roles: [
                 "Administrador",
                 "Estudiante",
@@ -139,6 +148,7 @@ const Dashboard = () => {
             {
               icon: iconSettings,
               text: "Configuración",
+              viewId: "configuracion_estudiante",
               roles: [
                 "Administrador",
                 "Estudiante",
@@ -150,6 +160,7 @@ const Dashboard = () => {
             {
               icon: iconLogOut,
               text: "Cerrar sesión",
+              viewId: "cerrar_sesion",
               onClick: handleLogout,
               className: "icon-logout",
               roles: [
@@ -167,7 +178,8 @@ const Dashboard = () => {
                 key={index}
                 className={`opcion-dashboard ${item.className || ""}`}
                 onClick={() => {
-                  if (item.text !== "Cerrar sesión") setVistaActiva(item.text);
+                  if (item.viewId !== "cerrar_sesion")
+                    setVistaActiva(item.viewId);
                   setAbierto(false);
                   if (item.onClick) item.onClick();
                 }}
@@ -186,16 +198,16 @@ const Dashboard = () => {
       {/* Contenido principal */}
       <div className="contenedor-slider">
         <Suspense fallback={<div className="cargando">Cargando vista...</div>}>
-          {vistaActiva === "Home" && (
+          {vistaActiva === "home_estudiante" && <HomeDashboard />}
+          {vistaActiva === "home_admin" && <HomeDashboard />}
+          {vistaActiva === "consultoria_estudiante" && (
             <>
-              {/* <Consultoria /> */}
-              <HomeDashboard />
+              <Consultoria />
+              <Consultas2 />
             </>
           )}
-          {vistaActiva === "Consultoría" && <Consultoria />}
-          {vistaActiva === "Consultoría" && <Consultas2 />}
-          {vistaActiva === "Actividades" && <Actividades />}
-          {vistaActiva === "Configuración" && <Configuracion />}
+          {vistaActiva === "actividades_estudiante" && <Actividades />}
+          {vistaActiva === "configuracion_estudiante" && <Configuracion />}
         </Suspense>
       </div>
     </div>
