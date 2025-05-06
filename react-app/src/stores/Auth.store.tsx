@@ -6,6 +6,8 @@ type AuthContextType = {
   setToken: (token: string | null) => void;
   isAuthenticated: boolean;
   logout: () => void;
+  rol: string | null;
+  setRol: (rol: string | null) => void;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -14,15 +16,18 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(
     localStorage.getItem("token")
   );
+  const [rol, setRol] = useState<string | null>(localStorage.getItem("rol"));
 
   const logout = () => {
     setToken(null);
+    setRol(null);
     localStorage.removeItem("token");
+    localStorage.removeItem("rol");
   };
 
   return (
     <AuthContext.Provider
-      value={{ token, setToken, isAuthenticated: !!token, logout }}
+      value={{ token, setToken, isAuthenticated: !!token, logout, rol, setRol }}
     >
       {children}
     </AuthContext.Provider>

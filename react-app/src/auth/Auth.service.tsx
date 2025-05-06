@@ -10,6 +10,7 @@ export const login = async (username: string, password: string) => {
     token: data.token,
     username,
     nombre: data.nombre,
+    rol: data.rol,
   });
 
   return data;

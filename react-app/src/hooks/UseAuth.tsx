@@ -1,7 +1,11 @@
-type Props = {};
+import { getAuthToken, getUserRol } from "../auth/AuthStorage";
 
-function UseAuth({}: Props) {
-  return <div>UseAuth</div>;
-}
+export const useAuth = () => {
+  const token = getAuthToken();
+  const rol = getUserRol();
 
-export default UseAuth;
+  return {
+    isAuthenticated: !!token,
+    rol,
+  };
+};
