@@ -1,24 +1,28 @@
 /* Variables de color */
 :root {
-  --primary: #aac2fd;
-  --primary2: #0c2461;
-  --primary3: #5184b6;
-  --secondary: #003a88;
-  --accent: #e74c3c;
-  --text-light: #ecf0f1;
-  --text-dark: #000000;
+  --primaryProposito: #aac2fd;
+  --primaryProposito2: #0c2461;
+  --primaryProposito3: #5184b6;
+  --secondaryProposito: #003a88;
+  --accentProposito: #e74c3c;
+  --text-lightProposito: #ecf0f1;
+  --text-darkProposito: #000000;
 }
+
+/* Contenedor principal */
 .Proposito {
   width: 100%;
   background-color: #f4f4f4;
 }
 
+/* Contenido principal */
 .Proposito-contenedor {
   width: 100%;
   padding: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .Proposito-imagen-contenedor {
@@ -30,8 +34,9 @@
 .Proposito-imagen {
   width: 100%;
   max-width: 800px;
-  height: 650px;
-  border-radius: 200px 0px 0px 0px;
+  height: auto;
+  border-radius: 200px 0 0 0;
+  object-fit: cover;
 }
 
 .Proposito-info {
@@ -41,93 +46,21 @@
 }
 
 .Proposito-titulo {
-  color: black;
-  font-size: 80px;
+  color: var(--text-darkProposito);
+  font-size: 3rem;
   margin-bottom: 20px;
   font-weight: 600;
 }
 
-.Proposito {
-  width: 100%;
-  background-color: #f4f4f4;
-}
-
-.Proposito-contenedor {
-  width: 100%;
-  padding: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.Proposito-imagen-contenedor {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.Proposito-imagen {
-  width: 100%;
-  max-width: 800px;
-  height: 650px;
-  border-radius: 200px 0px 0px 0px;
-}
-
-.Proposito-info {
-  flex: 1;
-  padding: 20px;
-  text-align: left;
-}
-
 .Proposito-info p {
-  font-size: 25px;
-  width: 80%;
-  line-height: 1.5;
-  padding: 20px;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  padding: 20px 0;
+  width: 100%;
 }
 
-.contenedor-opciones {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.Proposito-opciones {
-  display: flex;
-  width: 50%;
-  background-color: #f5db86;
-  backdrop-filter: blur(5px);
-  padding: 15px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.Proposito-opciones p {
-  color: #f4f4f4;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 20px;
-}
-
-.Proposito-opciones a {
-  color: #f4f4f4;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 20px;
-  background-color: transparent;
-}
-
-.Proposito-info p {
-  font-size: 25px;
-  width: 80%;
-  line-height: 1.5;
-  padding: 20px;
-}
 .Proposito-info h2 {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 /* Opciones */
@@ -138,39 +71,35 @@
   align-items: center;
   margin-top: 20px;
 }
+
 .Proposito-opciones {
   display: flex;
-  width: 50%;
+  flex-wrap: wrap;
+  width: 80%;
   background-color: #f5db86;
   backdrop-filter: blur(5px);
   padding: 15px;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
-.Proposito-opciones p {
-  color: #f4f4f4;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 20px;
-}
-
+.Proposito-opciones p,
 .Proposito-opciones a {
   color: #f4f4f4;
   font-size: 18px;
   font-weight: bold;
+  margin: 10px;
   text-decoration: none;
-  padding: 20px;
-  background-color: transparent;
 }
 
+/* Overlay */
 .overlay {
   position: absolute;
-  bottom: 60px;
-  left: 30%;
-  width: 40%;
+  bottom: 100px;
+  left: 35%;
+  width: 50%;
   height: auto;
-  background-color: var(--primary2);
+  background-color: var(--primaryProposito3);
   color: #f4f4f4;
   text-align: center;
   padding: 15px;
@@ -179,120 +108,86 @@
   justify-content: space-between;
   align-items: center;
   opacity: 0.92;
+  border-radius: 10px;
 }
-
-@media screen and (max-width: 1445px) {
-  .Proposito {
-    width: 100%;
-    /* border: 2px solid green; */
-  }
-
+/* Media Queries para hacer responsive */
+@media (max-width: 1024px) {
   .Proposito-contenedor {
-    width: 100%;
-    padding: 60px 0px;
-    /* border: 2px solid red; */
+    flex-direction: column;
+    padding: 60px 20px;
   }
 
   .Proposito-imagen {
-    width: 100%;
-    max-width: 800px;
-    height: 650px;
-    border-radius: 200px 0px 0px 0px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 100px 100px 0 0;
+  }
+
+  .Proposito-titulo {
+    font-size: 2.5rem;
+    text-align: center;
   }
 
   .Proposito-info {
-    flex: 1;
-    padding: 10px;
-    /* border: 2px solid blue; */
-    text-align: left;
+    text-align: center;
   }
 
-  .Proposito .Proposito-titulo {
+  .Proposito-info p {
     width: 100%;
-    color: black;
-    font-size: 40px;
-    margin-bottom: 20px;
-    padding: 0px;
-    text-align: left;
   }
 
-  .Proposito .Proposito-texto {
-    width: 100%;
-    font-size: 18px;
-    text-align: left;
-    /* border: 2px solid blue; */
-    margin: 0px;
-    padding: 0px;
+  .Proposito-opciones {
+    width: 90%;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .Proposito-contenedor {
-    width: 100%;
-    padding: 60px 30px;
-    display: block;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .Proposito-imagen-contenedor {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    /* border: 2px solid red; */
-  }
-
-  .Proposito-imagen {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-  }
-
-  .Proposito-info {
-    flex: 1;
-    padding: 20px;
-    text-align: left;
-  }
-
-  .Proposito .contenedor-opciones {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
-  }
-
-  .Proposito .Proposito-opciones {
-    display: flex;
-    width: 100%;
-    padding: 2px;
-  }
-
-  .Proposito .Proposito-opciones p {
-    font-size: 11px;
-    font-weight: bold;
-    margin: 10px;
-  }
-
-  .Proposito .Proposito-opciones a {
-    font-size: 11px;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 10px;
-  }
-
-  .Proposito .overlay {
-    position: absolute;
-    bottom: 60px;
-    left: 55%;
-    width: 50%;
-    padding: 15px;
-    z-index: 10;
-  }
   .overlay {
-    width: 40% !important;
+    width: 70%;
+    left: 15%;
+    bottom: 30px;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
-@media screen and (max-width: 655px) {
+@media (max-width: 681px) {
+  .Proposito-titulo {
+    font-size: 2rem;
+  }
+
+  .Proposito-info p {
+    font-size: 1rem;
+  }
+
+  .overlay {
+    width: 90%;
+    left: 30px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: row;
+  }
+  .overlay .Proposito-opcion,
+  .overlay a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  .overlay {
+    width: 90%;
+    left: 25px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: row;
+  }
+  .overlay .Proposito-opcion,
+  .overlay a {
+    font-size: 11px;
+  }
+}
+
+/* @media screen and (max-width: 655px) {
   .Proposito .overlay {
     position: absolute;
     bottom: 35px;
@@ -372,4 +267,4 @@
   .overlay {
     width: 70% !important;
   }
-}
+} */
