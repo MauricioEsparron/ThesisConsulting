@@ -15,7 +15,7 @@ const Navbar = () => {
         menuOpen &&
         event.target instanceof Node && // Verificar que event.target es un Node
         !document.querySelector(".menu-desplegable")?.contains(event.target) &&
-        !document.querySelector(".nav-icon")?.contains(event.target)
+        !document.querySelector(".nav-iconBar")?.contains(event.target)
       ) {
         setMenuOpen(false);
       }
@@ -43,14 +43,14 @@ const Navbar = () => {
             Contáctanos
           </a>
         </div>
-        <div className="nav-icon" onClick={() => setMenuOpen(!menuOpen)}>
+        <div className="nav-iconBar" onClick={() => setMenuOpen(!menuOpen)}>
           <i className="bi bi-list" id="menu-icon">
             ☰
           </i>
         </div>
 
         <div className={`menu-desplegable ${menuOpen ? "active" : ""}`}>
-          <div className="nav-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          <div className="nav-iconBar" onClick={() => setMenuOpen(!menuOpen)}>
             <i
               className=" cerrar-opcion-menu-desplegable bi bi-list"
               id="menu-icon"
