@@ -34,7 +34,7 @@ const Navbar = () => {
           <h2 className="NavBar-nombre-empresa">InvexiaLab</h2>
         </div>
         <div className="nav-links">
-          <a translate="no" href="/">
+          <a translate="no" href="/Home">
             Home
           </a>
           <a href="/Especialidades">Especialidades</a>
