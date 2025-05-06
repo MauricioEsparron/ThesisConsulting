@@ -1,0 +1,11 @@
+/* home-administrador.css */
+.home-administrador {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.home-administrador h1 {
+  color: #333;
+}

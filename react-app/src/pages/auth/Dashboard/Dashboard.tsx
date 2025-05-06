@@ -7,9 +7,10 @@ import iconGlobe from "../../../img/icons/icon_globe_w.png";
 import iconSettings from "../../../img/icons/icon_settings_w.png";
 import iconBurger from "../../../img/icons/icon_burger_w.png";
 import { logout } from "../../../auth/Auth.service"; // Asegúrate de que la ruta sea correcta
-import HomeDashboard from "./components/HomeDashboard";
+import HomeAministrador from "./components/HomeAministrador";
 import Consultas2 from "./components/Consultoria/Consultas2";
 import { useAuth } from "../../../stores/Auth.store"; // si usas Zustand, Context API u otro
+import HomeEstudiante from "./components/HomeEstudiante";
 
 // Lazy loading de componentes
 const Actividades = lazy(() => import("./components/Actividades/Actividades"));
@@ -124,9 +125,14 @@ const Dashboard = () => {
             {
               icon: iconHoja,
               text: "Consultoría",
+              viewId: "consultoria_admin",
+              roles: ["Administrador"],
+            },
+            {
+              icon: iconHoja,
+              text: "Consultoría",
               viewId: "consultoria_estudiante",
               roles: [
-                "Administrador",
                 "Estudiante",
                 "Asesor de Experiencia",
                 "Docente Asesor",
@@ -136,9 +142,14 @@ const Dashboard = () => {
             {
               icon: iconGlobe,
               text: "Actividades",
+              viewId: "actividades_admin",
+              roles: ["Administrador"],
+            },
+            {
+              icon: iconGlobe,
+              text: "Actividades",
               viewId: "actividades_estudiante",
               roles: [
-                "Administrador",
                 "Estudiante",
                 "Asesor de Experiencia",
                 "Docente Asesor",
@@ -198,8 +209,14 @@ const Dashboard = () => {
       {/* Contenido principal */}
       <div className="contenedor-slider">
         <Suspense fallback={<div className="cargando">Cargando vista...</div>}>
-          {vistaActiva === "home_estudiante" && <HomeDashboard />}
-          {vistaActiva === "home_admin" && <HomeDashboard />}
+          {vistaActiva === "home_estudiante" && <HomeEstudiante />}
+          {vistaActiva === "home_admin" && <HomeAministrador />}
+          {vistaActiva === "consultoria_admin" && (
+            <>
+              <Consultoria />
+              <Consultas2 />
+            </>
+          )}
           {vistaActiva === "consultoria_estudiante" && (
             <>
               <Consultoria />
@@ -207,6 +224,8 @@ const Dashboard = () => {
             </>
           )}
           {vistaActiva === "actividades_estudiante" && <Actividades />}
+          {vistaActiva === "actividades_admin" && <Actividades />}
+          {vistaActiva === "configuracion_admin" && <Configuracion />}
           {vistaActiva === "configuracion_estudiante" && <Configuracion />}
         </Suspense>
       </div>

@@ -1,8 +1,8 @@
-import "../../../../css/HomeDashboard.css";
+import "../../../../css/HomeEstudiante.css";
 import diagnosticoImg from "../../../../img/Diagnostico.png";
 import alianzasImg from "../../../../img/Alianzas.png";
 
-const HomeDashboard = () => {
+const HomeEstudiante = () => {
   return (
     <>
       <h1>CONSULTAS</h1>
@@ -34,4 +34,4 @@ const HomeDashboard = () => {
   );
 };
 
-export default HomeDashboard;
+export default HomeEstudiante;
