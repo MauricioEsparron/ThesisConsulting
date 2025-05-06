@@ -15,7 +15,6 @@ import imgMetodologia2 from "../../img/agencia de Marketing y publicidad.jpg";
 import imgMetodologia3 from "../../img/organizaciones.webp";
 import Nosotros from "./components/Nosotros";
 import CulturaOrganizacional from "./components/CulturaOrganizacional";
-import Valores from "./components/Valores";
 import EmailMessage from "./components/EmailMessage";
 import WhatsappIcon from "../../components/ui/WhatsappIcon/WhatsappIcon";
 import Footer from "../../components/shared/Footer";
@@ -86,7 +85,6 @@ function Home({}: Props) {
         <Nosotros2 titulo="¿QUIENES SOMOS?" />
       )}
       {width <= 913 && <ContactForm ref={formRef} />} <CulturaOrganizacional />
-      <Valores />
       <EmailMessage />
       <WhatsappIcon />
       <Footer />
