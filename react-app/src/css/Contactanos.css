@@ -1,16 +1,13 @@
-/* styles.css (o el nombre que prefieras) */
-
 /* ===== VARIABLES Y ESTILOS BASE ===== */
 :root {
   /* Colores */
-  --primary: #0c2461;
+  --primaryContactanos: #0c2461;
   --primary-light: rgba(207, 0, 45, 0.1);
-  --secondary: #c5b9ba;
-  --secondary-light: #d4c8c8;
+  --secondaryContactanos: #c5b9ba;
+  --secondaryContactanos-light: #d4c8c8;
   --accent: #4b3d3d;
   --text-light: #ffffff;
   --text-dark: #2c3e50;
-  --background-light: #fdf8ec;
 
   /* Sombras */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -49,7 +46,7 @@
   flex: 1 1 400px;
 }
 
-.form-title {
+.form-title-contactanos {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   display: flex;
@@ -58,7 +55,7 @@
 }
 
 .blue-rectangle {
-  color: var(--primary);
+  color: var(--primaryContactanos);
   font-weight: bold;
 }
 
@@ -83,7 +80,7 @@ input,
 textarea {
   width: 100%;
   padding: 0.8rem 1rem;
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--secondaryContactanos);
   border-radius: var(--border-radius-sm);
   font-size: 1rem;
   transition: var(--transition-normal);
@@ -92,7 +89,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--primary);
+  border-color: var(--primaryContactanos);
   box-shadow: 0 0 0 2px rgba(207, 0, 45, 0.2);
 }
 
@@ -102,7 +99,7 @@ textarea:focus {
 }
 
 .submit-btn {
-  background-color: var(--primary);
+  background-color: var(--primaryContactanos);
   color: white;
   padding: 1rem 2rem;
   border: none;
@@ -136,41 +133,41 @@ textarea:focus {
 }
 
 /* ===== TARJETAS DE INFORMACIÓN ===== */
-.info-cards {
+.info-cards-contactanos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-bottom: 3rem;
 }
 
-.card {
+.cardContactanos {
   padding: 2rem;
   border-radius: var(--border-radius-md);
-  background-color: var(--primary);
+  background-color: var(--primaryContactanos);
   color: white;
   box-shadow: var(--shadow-sm);
   transition: var(--transition-normal);
   text-align: center;
 }
 
-.card:hover {
+.cardContactanos:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
 }
 
-.card i {
+.cardContactanos i {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.card h3 {
+.cardContactanos h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
   text-transform: capitalize;
   font-weight: 900;
 }
 
-.card p {
+.cardContactanos p {
   margin-bottom: 0.5rem;
   color: rgb(211, 201, 201);
   font-size: 15px;
@@ -182,7 +179,7 @@ textarea:focus {
   color: #0077b5;
 }
 .schedule-card i {
-  color: var(--primary);
+  color: var(--primaryContactanos);
 }
 .whatsapp-card i {
   color: #25d366;
@@ -193,7 +190,7 @@ textarea:focus {
   margin-bottom: 3rem;
 }
 
-.section-title {
+.section-title-contactanos {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   display: flex;
@@ -233,7 +230,7 @@ footer {
 
 .footer-left h2 {
   font-size: 1.75rem;
-  color: var(--primary);
+  color: var(--primaryContactanos);
   margin-bottom: 0.5rem;
 }
 
@@ -246,7 +243,7 @@ footer {
 .footer-right h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: var(--primary);
+  color: var(--primaryContactanos);
 }
 
 .link-columns {
@@ -263,7 +260,7 @@ footer {
 }
 
 .link-column a:hover {
-  color: var(--primary);
+  color: var(--primaryContactanos);
   text-decoration: underline;
 }
 
@@ -279,13 +276,13 @@ footer {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--secondary-light);
+  background-color: var(--secondaryContactanos-light);
   color: var(--accent);
   transition: var(--transition-normal);
 }
 
 .social-icons a:hover {
-  background-color: var(--primary);
+  background-color: var(--primaryContactanos);
   color: white;
   transform: translateY(-3px);
 }
@@ -293,7 +290,7 @@ footer {
 .footer-bottom {
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--secondary-light);
+  border-top: 1px solid var(--secondaryContactanos-light);
   text-align: center;
 }
 
@@ -314,18 +311,18 @@ footer {
   }
 }
 
-.card {
+.cardContactanos {
   animation: fadeIn 0.5s ease-out forwards;
   opacity: 0;
 }
 
-.card:nth-child(1) {
+.cardContactanos:nth-child(1) {
   animation-delay: 0.1s;
 }
-.card:nth-child(2) {
+.cardContactanos:nth-child(2) {
   animation-delay: 0.2s;
 }
-.card:nth-child(3) {
+.cardContactanos:nth-child(3) {
   animation-delay: 0.3s;
 }
 
@@ -336,8 +333,8 @@ footer {
 
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
-  .form-title,
-  .section-title {
+  .form-title-contactanos,
+  .section-title-contactanos {
     font-size: 1.5rem;
   }
 
@@ -369,7 +366,7 @@ footer {
     gap: 1rem;
   }
 
-  .card {
+  .cardContactanos {
     padding: 1.5rem;
   }
 

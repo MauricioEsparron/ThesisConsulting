@@ -3,11 +3,13 @@ import "../../css/Contactanos.css";
 import imgContacto from "../../img/contactanos.jpg";
 import video3 from "../../img/video3.mp4";
 import header2 from "../../img/header2.jpg";
+import Navbar from "../../components/shared/NavBar";
 type Props = {};
 
 function Contactanos({}: Props) {
   return (
     <div>
+      <Navbar />
       <div className="contenedor-header-contactanos">
         <header className="especialidades-header">
           <div className="video-background-especialidades">
@@ -28,7 +30,7 @@ function Contactanos({}: Props) {
       <div className="contact-container">
         <div className="form-section">
           <div className="form-left">
-            <h1 className="form-title">
+            <h1 className="form-title-contactanos">
               <span className="blue-rectangle">|</span> Transforma tu proyecto!
             </h1>
             <form className="contact-form">
@@ -60,19 +62,19 @@ function Contactanos({}: Props) {
           </div>
         </div>
 
-        <div className="info-cards">
-          <div className="card linkedin-card">
+        <div className="info-cards-contactanos">
+          <div className="cardContactanos linkedin-card">
             <i className="bi bi-linkedin"></i>
             <h3>linkedin</h3>
             <p>Explora nuestros proyectos y alianzas en LinkedIn.</p>
             <p>www.aaa.com</p>
           </div>
-          <div className="card schedule-card">
+          <div className="cardContactanos schedule-card">
             <i className="bi bi-clock"></i>
             <h3>Horario de Atención</h3>
             <p>Lunes a sábado, 9:00 a.m. – 6:00 p.m.</p>
           </div>
-          <div className="card whatsapp-card">
+          <div className="cardContactanos whatsapp-card">
             <i className="bi bi-whatsapp"></i>
             <h3>whatsapp</h3>
             <p>¿Listo para empezar? Escríbenos ahora</p>
@@ -81,7 +83,7 @@ function Contactanos({}: Props) {
         </div>
 
         <div className="location-section">
-          <h2 className="section-title">
+          <h2 className="section-title-contactanos">
             <span className="blue-rectangle">|</span> ubicanos
           </h2>
           <div className="map-container">
@@ -140,8 +142,8 @@ function Contactanos({}: Props) {
           <p className="complaints-book">|Libro de reclamaciones</p>
         </div>
       </footer> */}
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
