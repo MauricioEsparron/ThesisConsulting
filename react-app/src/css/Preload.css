@@ -1,0 +1,72 @@
+.loader-container {
+  font-family: "Alexandria", sans-serif;
+  background-color: #0d47a1;
+  height: 100vh;
+  width: 100vw; /* <- esta línea es clave */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.logo-animation {
+  position: relative;
+  display: inline-block;
+}
+
+.logo {
+  color: white;
+  font-size: 4.5rem;
+  font-weight: 900;
+  display: inline-block;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: appearExpand 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@keyframes appearExpand {
+  0% {
+    opacity: 0;
+    letter-spacing: -5px;
+    transform: scale(0.9);
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    letter-spacing: 12px;
+    transform: scale(1.02);
+  }
+  100% {
+    letter-spacing: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.slogan {
+  color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(-5px);
+  animation: slideOver 0.6s 1.2s ease-out forwards;
+}
+
+@keyframes slideOver {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}
