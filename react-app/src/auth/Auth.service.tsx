@@ -3,6 +3,7 @@
 import { login as loginAPI } from "../service/api/authService";
 import { saveAuthData, clearAuthData } from "./AuthStorage";
 import { RoleMap } from "../constants/RoleMap";
+import { useNavigate } from "react-router-dom";
 
 const normalizeRole = (role: string): string => {
   // Reemplaza espacios por guiones bajos y quita acentos si es necesario
@@ -30,5 +31,6 @@ export const login = async (username: string, password: string) => {
 
 export const logout = () => {
   clearAuthData();
-  window.location.href = "/login";
+  const navigate = useNavigate();
+  navigate("/auth/Login"); // Redirige sin recargar la página
 };
