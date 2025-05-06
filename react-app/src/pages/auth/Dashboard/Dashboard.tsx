@@ -9,6 +9,7 @@ import iconBurger from "../../../img/icons/icon_burger_w.png";
 import { logout } from "../../../auth/Auth.service"; // Asegúrate de que la ruta sea correcta
 import HomeDashboard from "./components/HomeDashboard";
 import Consultas2 from "./components/Consultoria/Consultas2";
+import { useAuth } from "../../../stores/Auth.store"; // si usas Zustand, Context API u otro
 
 // Lazy loading de componentes
 const Actividades = lazy(() => import("./components/Actividades/Actividades"));
@@ -23,6 +24,7 @@ const Dashboard = () => {
   const [vistaActiva, setVistaActiva] = useState("Home");
   const sidebarRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const { rol } = useAuth();
 
   // Pre-carga opcional de componentes al montar el dashboard
   useEffect(() => {
@@ -66,7 +68,6 @@ const Dashboard = () => {
     <div className="contenedor-global-dashboard-slide">
       {/* Navbar superior */}
       <div className="navbar-superior">
-        {" "}
         <button
           ref={buttonRef}
           className="boton-desplegable"
@@ -105,41 +106,80 @@ const Dashboard = () => {
             {
               icon: iconHome,
               text: "Home",
+              roles: [
+                "Administrador",
+                "Estudiante",
+                "Asesor de Experiencia",
+                "Docente Asesor",
+                "Jefe Académico",
+              ],
             },
             {
               icon: iconHoja,
               text: "Consultoría",
+              roles: [
+                "Administrador",
+                "Estudiante",
+                "Asesor de Experiencia",
+                "Docente Asesor",
+                "Jefe Académico",
+              ],
             },
             {
               icon: iconGlobe,
               text: "Actividades",
+              roles: [
+                "Administrador",
+                "Estudiante",
+                "Asesor de Experiencia",
+                "Docente Asesor",
+                "Jefe Académico",
+              ],
             },
             {
               icon: iconSettings,
               text: "Configuración",
+              roles: [
+                "Administrador",
+                "Estudiante",
+                "Asesor de Experiencia",
+                "Docente Asesor",
+                "Jefe Académico",
+              ],
             },
             {
               icon: iconLogOut,
               text: "Cerrar sesión",
               onClick: handleLogout,
               className: "icon-logout",
+              roles: [
+                "Administrador",
+                "Estudiante",
+                "Asesor de Experiencia",
+                "Docente Asesor",
+                "Jefe Académico",
+              ],
             },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className={`opcion-dashboard ${item.className || ""}`}
-              onClick={() => {
-                if (item.text !== "Cerrar sesión") {
-                  setVistaActiva(item.text);
-                }
-                setAbierto(false);
-                if (item.onClick) item.onClick();
-              }}
-            >
-              <img className="icon-dashboard" src={item.icon} alt={item.text} />
-              <span>{item.text}</span>
-            </div>
-          ))}
+          ]
+            .filter((item) => !item.roles || (rol && item.roles.includes(rol)))
+            .map((item, index) => (
+              <div
+                key={index}
+                className={`opcion-dashboard ${item.className || ""}`}
+                onClick={() => {
+                  if (item.text !== "Cerrar sesión") setVistaActiva(item.text);
+                  setAbierto(false);
+                  if (item.onClick) item.onClick();
+                }}
+              >
+                <img
+                  className="icon-dashboard"
+                  src={item.icon}
+                  alt={item.text}
+                />
+                <span>{item.text}</span>
+              </div>
+            ))}
         </div>
       </div>
 
@@ -152,7 +192,7 @@ const Dashboard = () => {
               <HomeDashboard />
             </>
           )}
-          {/* {vistaActiva === "Consultoría" && <Consultoria />} */}
+          {vistaActiva === "Consultoría" && <Consultoria />}
           {vistaActiva === "Consultoría" && <Consultas2 />}
           {vistaActiva === "Actividades" && <Actividades />}
           {vistaActiva === "Configuración" && <Configuracion />}
