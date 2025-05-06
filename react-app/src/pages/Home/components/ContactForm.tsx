@@ -42,12 +42,12 @@ const ContactForm = forwardRef<
           <textarea placeholder="Escribe tu mensaje aquí"></textarea>
         </div>
 
-        <div className="form-group-checkbox">
+        <div className="form-group-checkbox-contactForm">
           <input type="checkbox" required />
           <label>Acepto los Términos y Condiciones</label>
         </div>
 
-        <div className="form-group-checkbox">
+        <div className="form-group-checkbox-contactForm">
           <input type="checkbox" />
           <label>Autorizo el uso de mis datos</label>
         </div>

@@ -76,7 +76,7 @@
   flex: 1 1 200px;
 }
 
-input,
+.contact-form input,
 textarea {
   width: 100%;
   padding: 0.8rem 1rem;

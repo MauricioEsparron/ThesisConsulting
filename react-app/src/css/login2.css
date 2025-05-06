@@ -1,14 +1,14 @@
 /* ===== VARIABLES Y ESTILOS BASE ===== */
 :root {
   /* Colores */
-  --primary: #0c2461;
-  --primary-light: rgba(207, 0, 45, 0.1);
-  --secondary: #c5b9ba;
-  --secondary-light: #d4c8c8;
-  --accent: #4b3d3d;
-  --text-light: #ffffff;
-  --text-dark: #2c3e50;
-  --background-light: #fdf8ec;
+  --primaryLogin2: #0c2461;
+  --primaryLogin2-light: rgba(207, 0, 45, 0.1);
+  --Login2: #c5b9ba;
+  --Login2-light: #d4c8c8;
+  --accentLogin2: #4b3d3d;
+  --text-lightLogin2: #ffffff;
+  --text-darkLogin2: #2c3e50;
+  --background-lightLogin2: #fdf8ec;
 }
 .main-contenedor-login2-2 {
   display: flex;
@@ -20,7 +20,7 @@
 
 .contenedor-login2-2 {
   width: 30%;
-  background-color: var(--secondary);
+  background-color: var(--Login2);
   padding: 50px 80px 80px 80px;
   border-radius: 80px 0px 0px 80px;
 }
@@ -50,7 +50,7 @@ span {
   font-weight: 600;
 }
 
-input {
+.contenedor-input-userename-login2-2 input {
   margin: 1px 0px 20px 0;
   padding: 10px;
   border: 2px solid #ccc;
@@ -102,7 +102,7 @@ input {
     border-radius: 20px;
   }
 
-  input {
+  .contenedor-input-userename-login2-2 input {
     font-size: 14px;
     padding: 8px;
   }

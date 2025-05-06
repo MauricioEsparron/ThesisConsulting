@@ -99,25 +99,25 @@
 }
 
 /* Estilos para los checkboxes */
-.form-group-checkbox {
+.form-group-checkbox-contactForm {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.form-group-checkbox input {
+.form-group-checkbox-contactForm input {
   margin-right: 10px; /* Espacio entre el checkbox y la etiqueta */
   cursor: pointer;
 }
 
-.form-group-checkbox label {
+.form-group-checkbox-contactForm label {
   font-size: 0.8rem; /* Tamaño de fuente más pequeño */
   color: #232e60;
   cursor: pointer;
 }
 
 /* Estilo para el checkbox obligatorio */
-.form-group-checkbox input[required] + label::after {
+.form-group-checkbox-contactForm input[required] + label::after {
   content: " *";
   color: red; /* Indicador de campo obligatorio */
 }
