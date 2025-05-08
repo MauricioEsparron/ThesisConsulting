@@ -31,6 +31,5 @@ export const login = async (username: string, password: string) => {
 
 export const logout = () => {
   clearAuthData();
-  const navigate = useNavigate();
-  navigate("/auth/Login"); // Redirige sin recargar la página
+  window.location.href = "/login";
 };
