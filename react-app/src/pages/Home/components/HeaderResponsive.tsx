@@ -27,18 +27,19 @@ const HeaderResponsive: React.FC<HeaderResponsiveProps> = ({ formRef }) => {
       </video>
 
       <div className="TConsulting">
-        <div className="content">
-          <h1>
-            <span className="title-line" translate="no">
-              THESIS
-            </span>
-            <span className="title-line" translate="no">
-              CONSULTING
-            </span>
+        <div className="content-header">
+          <h1 className="titulo-Header" translate="no">
+            THESIS CONSULTING
           </h1>
+          <h3 className="subtitulo-header" translate="no">
+            Tu conocimiento, nuestro impacto
+          </h3>
           <h3 translate="no">Tu conocimiento, nuestro impacto</h3>
-
-          <button className="button" onClick={scrollToForm} translate="no">
+          <button
+            className="button-header"
+            onClick={scrollToForm}
+            translate="no"
+          >
             Ir al Formulario
           </button>
         </div>

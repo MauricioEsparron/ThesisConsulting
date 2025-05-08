@@ -8,8 +8,8 @@ const ContactForm = forwardRef<
   React.HTMLProps<HTMLFormElement>
 >((props, ref) => {
   return (
-    <div className="form-container form-page">
-      <form className="form" ref={ref} id="contact-form" {...props}>
+    <div className="form-container-contactForm form-page">
+      <form className="form-contacForm" ref={ref} id="contact-form" {...props}>
         <h2>Contáctanos</h2>
         <div className="form-group">
           <label>Nombre Completo</label>
@@ -52,7 +52,7 @@ const ContactForm = forwardRef<
           <label>Autorizo el uso de mis datos</label>
         </div>
 
-        <button type="submit" className="submit-button">
+        <button type="submit" className="submit-button-contactForm">
           Enviar
         </button>
       </form>

@@ -5,7 +5,7 @@ import alianzasImg from "../../../../img/Alianzas.png";
 const HomeEstudiante = () => {
   return (
     <>
-      <h1>CONSULTAS</h1>
+      <h1 className="titulo-home-estudiantes">CONSULTAS</h1>
 
       <div className="cards-container">
         <div className="card">

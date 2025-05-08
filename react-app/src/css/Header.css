@@ -46,19 +46,20 @@
   transition: width 0.5s ease;
 }
 
-.content {
+.content-header {
   text-align: center;
   color: var(--text-lightHeader);
 }
 
-h1 .title-line-Header {
+.titulo-Header {
   display: block;
   margin: auto 30px;
-  font-size: 8rem;
+  font-size: 7.4rem;
   margin: 0;
   font-weight: 900;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  mix-blend-mode: difference !important;
+  /* mix-blend-mode: difference !important; */
+  color: white;
   animation: fadeIn 2s ease-in-out;
   text-transform: uppercase;
   display: flex;
@@ -68,8 +69,8 @@ h1 .title-line-Header {
 }
 
 .subtitulo-header {
+  color: white;
   font-size: 1.8rem;
-  color: var(--text-lightHeader);
   text-align: center;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -77,7 +78,7 @@ h1 .title-line-Header {
   animation: fadeIn 2.5s ease-in-out;
 }
 
-.button {
+.button-header {
   margin-top: 20px;
   padding: 12px 24px;
   font-size: 1rem;
@@ -90,7 +91,7 @@ h1 .title-line-Header {
   animation: fadeIn 2.5s ease-in-out;
 }
 
-.button:hover {
+.button-header:hover {
   background-color: rgba(133, 94, 94, 0.2);
   transform: scale(1.05);
 }
@@ -109,82 +110,95 @@ html {
   }
 }
 
-.button {
+.button-header {
   animation: bounce 2.5s infinite ease-in-out; /* Aumenté la duración a 2.5s */
 }
 
-@media screen and (max-width: 17827px) {
-  h1 .title-line-Header {
-    font-size: 6.5rem;
-  }
-}
-@media screen and (max-width: 1764px) {
-  h1 .title-line-Header {
+@media screen and (max-width: 1836px) {
+  .titulo-Header {
     font-size: 6.5rem;
   }
 }
 
-@media screen and (max-width: 1536px) {
-  h1 .title-line-Header {
+@media screen and (max-width: 1764px) {
+  .titulo-Header {
     font-size: 6rem;
   }
 }
+
 @media screen and (max-width: 1536px) {
-  h1 .title-line-Header {
-    font-size: 5.5rem;
+  .titulo-Header {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 1465px) {
+  .titulo-Header {
+    font-size: 5.6rem;
   }
 }
 
 @media screen and (max-width: 1395px) {
-  h1 .title-line-Header {
+  .titulo-Header {
     font-size: 5.5rem;
   }
 }
 
 @media screen and (max-width: 1314px) {
-  h1 .title-line-Header {
+  .titulo-Header {
     font-size: 5rem;
   }
 }
 
-@media screen and (max-width: 1180px) {
-  h1 .title-line-Header {
+@media screen and (max-width: 1236px) {
+  .titulo-Header {
     font-size: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .titulo-Header {
+    font-size: 4.3rem;
   }
 }
 
 @media screen and (max-width: 1080px) {
-  h1 .title-line-Header {
-    font-size: 4.5rem;
+  .titulo-Header {
+    font-size: 4.1rem;
   }
 }
-
+@media screen and (max-height: 430px) {
+  .titulo-Header {
+    padding-top: 10px;
+    font-size: 3.8rem;
+  }
+}
 @media screen and (max-width: 1024px) {
-  h1 .title-line-Header {
-    font-size: 4.3rem;
+  .titulo-Header {
+    font-size: 4rem;
   }
 }
 
 @media screen and (max-width: 997px) {
-  h1 .title-line-Header {
-    font-size: 4.3rem;
+  .titulo-Header {
+    font-size: 3.8rem;
   }
   .subtitulo-header {
     font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 970px) {
-  h1 .title-line-Header {
-    font-size: 4rem;
+  .titulo-Header {
+    font-size: 3.5rem;
   }
 }
 @media screen and (max-width: 938px) {
-  h1 .title-line-Header {
+  .titulo-Header {
     font-size: 3.5em;
   }
 }
 @media screen and (max-width: 914px) {
-  h1 .title-line-Header {
+  .titulo-Header {
     font-size: 60px;
   }
   h3 {
@@ -193,15 +207,11 @@ html {
 }
 
 @media screen and (max-width: 768px) {
-  h1 .title-line-Header {
+  .titulo-Header {
     font-size: 50px;
   }
 
   h3 {
     font-size: 20px;
   }
-
-  /* #formulario {
-    width: 100vh;
-  } */
 }

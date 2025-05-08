@@ -26,7 +26,7 @@
   padding-left: 10px;
   border-left: 10px solid #0c2461;
 }
-.contenedor-titulo h1 {
+.titulo-filosofia {
   font-size: 40px;
   font-weight: 600;
   text-align: left;
@@ -40,7 +40,7 @@
   width: 80%;
 }
 
-.contenedor-texto p {
+.texto-filosofia {
   text-align: left;
   font-size: 18px;
   font-weight: 200;
@@ -51,7 +51,7 @@
   position: relative;
 }
 
-.subcontenedor-filosofia-imagen img {
+.img-filosofia {
   width: 100%;
   height: 60%;
   border-radius: 25px;

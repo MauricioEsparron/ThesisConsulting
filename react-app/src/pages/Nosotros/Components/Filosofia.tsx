@@ -7,10 +7,10 @@ function Filosofia({}: Props) {
       <div className="contenedor-filosofia">
         <div className="subcontenedor-filosofia-info">
           <div className="contenedor-titulo">
-            <h1>QUIENES SOMOS?</h1>
+            <h1 className="titulo-filosofia">QUIENES SOMOS?</h1>
           </div>
           <div className="contenedor-texto">
-            <p>
+            <p className="texto-filosofia">
               Somos la unidad de Latam Business Consulting especializada en
               asesorar investigaciones académicas con un enfoque en
               sostenibilidad, innovación y excelencia. Acompañamos a estudiantes
@@ -22,7 +22,11 @@ function Filosofia({}: Props) {
         </div>
         <div className="subcontenedor-filosofia-imagen">
           <div className="contenedor-imagen">
-            <img src={imgFilosofia} alt="imgFilosofia" />
+            <img
+              className="img-filosofia"
+              src={imgFilosofia}
+              alt="imgFilosofia"
+            />
           </div>
         </div>
       </div>
