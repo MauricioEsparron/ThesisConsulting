@@ -3,7 +3,6 @@
 import { login as loginAPI } from "../service/api/authService";
 import { saveAuthData, clearAuthData } from "./AuthStorage";
 import { RoleMap } from "../constants/RoleMap";
-import { useNavigate } from "react-router-dom";
 
 const normalizeRole = (role: string): string => {
   // Reemplaza espacios por guiones bajos y quita acentos si es necesario
