@@ -3,11 +3,9 @@ import Navbar from "../../components/shared/NavBar";
 import Filosofia from "./Components/Filosofia";
 import video3 from "../../img/video3.mp4";
 import Valores from "../Home/components/Valores";
-import Pilares from "../Home/components/Pilares";
-import icon1 from "../../img/icon_libro.png";
-import icon2 from "../../img/icon_computadora.png";
-import icon3 from "../../img/icon_impacto.png";
 import imgBait from "../../img/bait.png";
+import "../../css/Nosotros.css";
+import NuestrosPilares from "./Components/NuestrosPilares";
 type Props = {};
 
 function Nosotros({}: Props) {
@@ -29,15 +27,12 @@ function Nosotros({}: Props) {
         </div>
       </header>
       <Filosofia />
-      <Valores />
-      <Pilares
-        imagen1={icon1}
-        texto1={"Excelencia Académica"}
-        imagen2={icon2}
-        texto2={"Tecnología al servicio del conocimiento"}
-        imagen3={icon3}
-        texto3={"Impacto Sostenible"}
-      />
+      <div className="contenedor-valores-nosotros">
+        <div>
+          <Valores />
+        </div>
+        <NuestrosPilares />
+      </div>
       <div>
         <img src={imgBait} alt="" />
       </div>

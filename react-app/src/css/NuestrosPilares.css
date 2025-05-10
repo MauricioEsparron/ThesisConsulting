@@ -1,0 +1,155 @@
+.main-contenedor-nuestrosPilares {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-titulo-nuestrosPilares {
+  width: 30%;
+  border-bottom: 5px solid #023e8a;
+  margin: 60px 0;
+}
+
+.titulo-nuestrosPilares {
+  width: 100%;
+  font-size: 2.4rem;
+  font-weight: 600;
+  align-items: center;
+  text-align: center;
+}
+
+.contenedor-bloques-nuestrosPilares {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subcontenedor-bloque-nuestrosPilares {
+  background-color: #d9d9d9;
+  margin: 40px;
+  max-width: 185px;
+  min-width: 185px;
+  min-height: 185px;
+  max-height: 185px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-imagen-nuestrosPilares,
+.contenedor-texto-nuestrosPilares {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  font-size: 16px;
+  width: 80%;
+}
+
+.contenedor-imagen-nuestrosPilares {
+  margin: 15px;
+}
+
+@media (max-width: 1025px) {
+  .contenedor-titulo-nuestrosPilares {
+    width: 40%;
+  }
+}
+@media (max-width: 834px) {
+  .contenedor-titulo-nuestrosPilares {
+    width: 45%;
+  }
+  .titulo-nuestrosPilares {
+    width: 100%;
+    font-size: 2.4rem;
+    font-weight: 600;
+    align-items: center;
+  }
+  .contenedor-bloques-nuestrosPilares {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subcontenedor-bloque-nuestrosPilares {
+    margin: 10px;
+    max-width: 180px;
+    min-width: 180px;
+    min-height: 180px;
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 688px) {
+  .contenedor-titulo-nuestrosPilares {
+    width: 60%;
+  }
+
+  .contenedor-texto-nuestrosPilares {
+    font-size: 14px;
+  }
+}
+@media (max-width: 650px) {
+  .titulo-nuestrosPilares {
+    width: 100%;
+    font-size: 2.2rem;
+    font-weight: 600;
+    align-items: center;
+    text-align: center;
+  }
+  .contenedor-bloques-nuestrosPilares {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subcontenedor-bloque-nuestrosPilares {
+    margin: 10px;
+    max-width: 170px;
+    min-width: 170px;
+    min-height: 170px;
+    max-height: 170px;
+  }
+}
+@media (max-width: 598px) {
+  .contenedor-bloques-nuestrosPilares {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subcontenedor-bloque-nuestrosPilares {
+    margin: 5px;
+    max-width: 150px;
+    min-width: 150px;
+    min-height: 150px;
+    max-height: 150px;
+  }
+  .contenedor-texto-nuestrosPilares {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .contenedor-titulo-nuestrosPilares {
+    width: 60%;
+  }
+}
