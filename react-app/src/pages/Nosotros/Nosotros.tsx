@@ -3,9 +3,9 @@ import Navbar from "../../components/shared/NavBar";
 import Filosofia from "./Components/Filosofia";
 import video3 from "../../img/video3.mp4";
 import Valores from "../Home/components/Valores";
-import imgBait from "../../img/bait.png";
 import "../../css/Nosotros.css";
 import NuestrosPilares from "./Components/NuestrosPilares";
+import NuestroEquipo from "./Components/NuestroEquipo";
 type Props = {};
 
 function Nosotros({}: Props) {
@@ -33,9 +33,7 @@ function Nosotros({}: Props) {
         </div>
         <NuestrosPilares />
       </div>
-      <div>
-        <img src={imgBait} alt="" />
-      </div>
+      <NuestroEquipo />
       <Footer />
     </>
   );
