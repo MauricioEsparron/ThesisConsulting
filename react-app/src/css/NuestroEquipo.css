@@ -7,9 +7,10 @@
 }
 
 .contenedor-titulo-nuestroEquipo {
-  width: 23%;
+  width: 25%;
+  padding-left: 10px;
   border-left: 5px solid #023e8a;
-  margin: 60px 0;
+  margin: 60px auto; /* <-- centra horizontalmente */
 }
 
 .titulo-nuestroEquipo {

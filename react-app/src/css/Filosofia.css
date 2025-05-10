@@ -72,3 +72,70 @@
   color: var(--text-light);
   background-color: var(--accent);
 }
+@media (max-width: 1024px) {
+  .contenedor-filosofia {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .subcontenedor-filosofia-info,
+  .subcontenedor-filosofia-imagen {
+    width: 100%;
+    border-radius: 0px;
+    padding: 40px 20px;
+  }
+
+  .contenedor-titulo,
+  .contenedor-texto {
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  .titulo-filosofia {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .texto-filosofia {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .img-filosofia {
+    position: static;
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 20px;
+  }
+
+  .contenedor-boton {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .contenedor-boton a {
+    display: inline-block;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-filosofia {
+    font-size: 24px;
+  }
+
+  .texto-filosofia {
+    font-size: 15px;
+  }
+
+  .subcontenedor-filosofia-info {
+    padding: 30px 15px;
+  }
+
+  .contenedor-boton a {
+    padding: 12px 24px;
+  }
+}
