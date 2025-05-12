@@ -6,13 +6,15 @@ import iconLogOut from "../../../img/icons/icon_logout_w.png";
 import iconGlobe from "../../../img/icons/icon_globe_w.png";
 import iconSettings from "../../../img/icons/icon_settings_w.png";
 import iconBurger from "../../../img/icons/icon_burger_w.png";
-import { logout } from "../../../auth/Auth.service"; // Asegúrate de que la ruta sea correcta
+import { logout } from "../../../auth/Auth.service";
 import HomeAministrador from "./components/HomeAministrador";
 import Consultas2 from "./components/Consultoria/Consultas2";
-import { useAuth } from "../../../stores/Auth.store"; // si usas Zustand, Context API u otro
+import { useAuth } from "../../../stores/Auth.store";
 import HomeEstudiante from "./components/HomeEstudiante";
+import ListarUsuarios from "./components/Usuarios/ListarUsuarios";
+import ListarUsuariosPorTipo from "./components/Usuarios/ListarUsuariosPorTipo";
+import ListarUsuariosPorEstado from "./components/Usuarios/ListarUsuariosPorEstado";
 
-// Lazy loading de componentes
 const Actividades = lazy(() => import("./components/Actividades/Actividades"));
 const Consultoria = lazy(() => import("./components/Consultoria/Consultoria"));
 const Configuracion = lazy(
@@ -20,21 +22,21 @@ const Configuracion = lazy(
 );
 
 const Dashboard = () => {
-  const [nombre, setNombre] = useState<string>(""); // CAMBIO 1: Cambié de username a nombre
+  const [nombre, setNombre] = useState<string>("");
   const [abierto, setAbierto] = useState(false);
   const [vistaActiva, setVistaActiva] = useState("Home");
   const sidebarRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const { rol } = useAuth();
 
-  // Pre-carga opcional de componentes al montar el dashboard
+  // Precarga
   useEffect(() => {
     import("./components/Consultoria/Consultoria");
     import("./components/Actividades/Actividades");
     import("./components/Configuration/Configuracion");
   }, []);
 
-  // Cerrar el menú si se hace click fuera de él
+  // Cerrar menú si se hace clic fuera
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -51,18 +53,31 @@ const Dashboard = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Obtener nombre desde localStorage
+  // Obtener nombre
   useEffect(() => {
-    const storedNombre = localStorage.getItem("nombre"); // CAMBIO 2: Ahora obtiene "nombre" en vez de "username"
+    const storedNombre = localStorage.getItem("nombre");
     if (storedNombre) {
       setNombre(storedNombre);
     }
   }, []);
 
-  // Función para cerrar sesión
+  // Obtener la vista activa del localStorage
+  useEffect(() => {
+    const vistaGuardada = localStorage.getItem("vistaActiva");
+    if (vistaGuardada) {
+      setVistaActiva(vistaGuardada);
+    }
+  }, []);
+
+  // Guardar vista activa en localStorage
+  useEffect(() => {
+    localStorage.setItem("vistaActiva", vistaActiva);
+  }, [vistaActiva]);
+
   const handleLogout = () => {
-    logout(); // Llamar a la función logout centralizada
-    window.location.href = "/auth/Login"; // Redirigir a la página de login después de cerrar sesión
+    logout();
+    localStorage.removeItem("vistaActiva");
+    window.location.href = "/auth/Login";
   };
 
   return (
@@ -84,7 +99,7 @@ const Dashboard = () => {
         <div className="navbar-titulo">InvexiaLab</div>
       </div>
 
-      {/* Navbar lateral */}
+      {/* Sidebar */}
       <div
         ref={sidebarRef}
         className={`contenedor-dashboard ${abierto ? "abierto" : ""}`}
@@ -108,6 +123,42 @@ const Dashboard = () => {
             {
               icon: iconHome,
               text: "Home",
+              viewId: "home_admin",
+              roles: ["Administrador"],
+            },
+            // {
+            //   icon: iconHoja,
+            //   text: "Consultoría",
+            //   viewId: "consultoria_admin",
+            //   roles: ["Administrador"],
+            // },
+            // {
+            //   icon: iconGlobe,
+            //   text: "Actividades",
+            //   viewId: "actividades_admin",
+            //   roles: ["Administrador"],
+            // },
+            {
+              icon: iconGlobe,
+              text: "Listar Usuarios",
+              viewId: "listarUsuarios_admin",
+              roles: ["Administrador"],
+            },
+            {
+              icon: iconGlobe,
+              text: "Listar Usuarios por tipo",
+              viewId: "listarUsuariosPorTipo_admin",
+              roles: ["Administrador"],
+            },
+            {
+              icon: iconGlobe,
+              text: "Listar Usuarios por Estado",
+              viewId: "listarUsuariosPorEstado_admin",
+              roles: ["Administrador"],
+            },
+            {
+              icon: iconHome,
+              text: "Home",
               viewId: "home_estudiante",
               roles: [
                 "Estudiante",
@@ -115,18 +166,6 @@ const Dashboard = () => {
                 "Docente Asesor",
                 "Jefe Académico",
               ],
-            },
-            {
-              icon: iconHome,
-              text: "Home",
-              viewId: "home_admin",
-              roles: ["Administrador"],
-            },
-            {
-              icon: iconHoja,
-              text: "Consultoría",
-              viewId: "consultoria_admin",
-              roles: ["Administrador"],
             },
             {
               icon: iconHoja,
@@ -138,12 +177,6 @@ const Dashboard = () => {
                 "Docente Asesor",
                 "Jefe Académico",
               ],
-            },
-            {
-              icon: iconGlobe,
-              text: "Actividades",
-              viewId: "actividades_admin",
-              roles: ["Administrador"],
             },
             {
               icon: iconGlobe,
@@ -209,7 +242,7 @@ const Dashboard = () => {
       {/* Contenido principal */}
       <div className="contenedor-slider">
         <Suspense fallback={<div className="cargando">Cargando vista...</div>}>
-          {vistaActiva === "home_estudiante" && <HomeEstudiante />}
+          {/* Admin */}
           {vistaActiva === "home_admin" && <HomeAministrador />}
           {vistaActiva === "consultoria_admin" && (
             <>
@@ -217,6 +250,17 @@ const Dashboard = () => {
               <Consultas2 />
             </>
           )}
+          {vistaActiva === "actividades_admin" && <Actividades />}
+          {vistaActiva === "configuracion_admin" && <Configuracion />}
+          {vistaActiva === "listarUsuarios_admin" && <ListarUsuarios />}
+          {vistaActiva === "listarUsuariosPorTipo_admin" && (
+            <ListarUsuariosPorTipo />
+          )}
+          {vistaActiva === "listarUsuariosPorEstado_admin" && (
+            <ListarUsuariosPorEstado />
+          )}
+          {/* Estudiantes */}
+          {vistaActiva === "home_estudiante" && <HomeEstudiante />}
           {vistaActiva === "consultoria_estudiante" && (
             <>
               <Consultoria />
@@ -224,8 +268,6 @@ const Dashboard = () => {
             </>
           )}
           {vistaActiva === "actividades_estudiante" && <Actividades />}
-          {vistaActiva === "actividades_admin" && <Actividades />}
-          {vistaActiva === "configuracion_admin" && <Configuracion />}
           {vistaActiva === "configuracion_estudiante" && <Configuracion />}
         </Suspense>
       </div>
