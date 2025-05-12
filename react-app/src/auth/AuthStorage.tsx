@@ -6,21 +6,21 @@ export const saveAuthData = (data: {
   nombre: string;
   rol: string;
 }) => {
-  localStorage.setItem("token", data.token);
-  localStorage.setItem("username", data.username);
-  localStorage.setItem("nombre", data.nombre);
-  localStorage.setItem("rol", data.rol);
+  sessionStorage.setItem("token", data.token); // Cambiado a sessionStorage
+  sessionStorage.setItem("username", data.username);
+  sessionStorage.setItem("nombre", data.nombre);
+  sessionStorage.setItem("rol", data.rol);
 };
 
-export const getAuthToken = () => localStorage.getItem("token");
+export const getAuthToken = () => sessionStorage.getItem("token"); // Cambiado a sessionStorage
 
 export const getUserRol = (): string | null => {
-  return localStorage.getItem("rol");
+  return sessionStorage.getItem("rol"); // Cambiado a sessionStorage
 };
 
 export const clearAuthData = () => {
-  localStorage.removeItem("token");
-  localStorage.removeItem("username");
-  localStorage.removeItem("nombre");
-  localStorage.removeItem("rol");
+  sessionStorage.removeItem("token"); // Cambiado a sessionStorage
+  sessionStorage.removeItem("username");
+  sessionStorage.removeItem("nombre");
+  sessionStorage.removeItem("rol");
 };

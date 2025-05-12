@@ -1,11 +1,38 @@
-import { getAuthToken, getUserRol } from "../auth/AuthStorage";
+// auth/AuthHook.ts
+import { useEffect, useState } from "react";
+import { getAuthToken, getUserRol, clearAuthData } from "../auth/AuthStorage";
 
 export const useAuth = () => {
-  const token = getAuthToken();
-  const rol = getUserRol();
+  const [authState, setAuthState] = useState({
+    isAuthenticated: false,
+    rol: null as string | null,
+  });
+
+  const setAuthData = (token: string, rol: string) => {
+    setAuthState({
+      isAuthenticated: !!token,
+      rol,
+    });
+  };
+
+  const clearAuth = () => {
+    clearAuthData();
+    setAuthState({
+      isAuthenticated: false,
+      rol: null,
+    });
+  };
+
+  // Verificar al montar
+  useEffect(() => {
+    const token = getAuthToken();
+    const rol = getUserRol();
+    setAuthData(token || "", rol || "");
+  }, []);
 
   return {
-    isAuthenticated: !!token,
-    rol,
+    ...authState,
+    setAuthData,
+    clearAuth,
   };
 };

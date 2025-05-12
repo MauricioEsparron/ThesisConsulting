@@ -1,11 +1,9 @@
 // src/auth/Auth.service.ts
-
 import { login as loginAPI } from "../service/api/authService";
-import { saveAuthData, clearAuthData } from "./AuthStorage";
+import { saveAuthData, clearAuthData, getAuthToken } from "./AuthStorage";
 import { RoleMap } from "../constants/RoleMap";
 
 const normalizeRole = (role: string): string => {
-  // Reemplaza espacios por guiones bajos y quita acentos si es necesario
   return role.replace(/\s+/g, "_").toUpperCase();
 };
 
@@ -31,4 +29,9 @@ export const login = async (username: string, password: string) => {
 export const logout = () => {
   clearAuthData();
   window.location.href = "/login";
+};
+
+// Nueva función para verificar sesión al cargar
+export const checkSession = (): boolean => {
+  return !!getAuthToken();
 };
