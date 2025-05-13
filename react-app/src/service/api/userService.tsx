@@ -99,9 +99,9 @@ export const UserService = {
   /**
    * Obtiene usuarios por estado
    */
-  getUsersByState: async (estado: number): Promise<UsuarioDTO[]> => {
+  getUsersByState: async (userState: number): Promise<UsuarioDTO[]> => {
     try {
-      const response = await api.get(`/users/state/${estado}`);
+      const response = await api.get(`/users/state/${userState}`);
       return response.data;
     } catch (error) {
       handleApiError(error);
