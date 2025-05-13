@@ -2,7 +2,7 @@ import { useState } from "react";
 import { UsuarioDTO } from "../../../../../service/api/userService";
 import { UserIdService } from "../../../../../service/api/userIdService";
 
-const ListartUsuarioPorId = () => {
+const ListarUsuarioPorId = () => {
   const [userId, setUserId] = useState<string>("");
   const [usuario, setUsuario] = useState<UsuarioDTO | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -127,4 +127,4 @@ const ListartUsuarioPorId = () => {
   );
 };
 
-export default ListartUsuarioPorId;
+export default ListarUsuarioPorId;
