@@ -13,7 +13,7 @@ import { useAuth } from "../../../stores/Auth.store";
 import HomeEstudiante from "./components/HomeEstudiante";
 import ListarUsuarios from "./components/Usuarios/ListarUsuarios";
 import ListarUsuariosPorTipo from "./components/Usuarios/ListarUsuariosPorTipo";
-import ListarUsuariosPorEstado from "./components/Usuarios/ListarUsuariosPorEstado";
+
 
 const Actividades = lazy(() => import("./components/Actividades/Actividades"));
 const Consultoria = lazy(() => import("./components/Consultoria/Consultoria"));
@@ -256,9 +256,7 @@ const Dashboard = () => {
           {vistaActiva === "listarUsuariosPorTipo_admin" && (
             <ListarUsuariosPorTipo />
           )}
-          {vistaActiva === "listarUsuariosPorEstado_admin" && (
-            <ListarUsuariosPorEstado />
-          )}
+      
           {/* Estudiantes */}
           {vistaActiva === "home_estudiante" && <HomeEstudiante />}
           {vistaActiva === "consultoria_estudiante" && (

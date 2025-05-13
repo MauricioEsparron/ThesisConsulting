@@ -21,8 +21,7 @@ import Footer from "../../components/shared/Footer";
 import Nosotros2 from "./components/Nosotros2";
 import HeaderResponsive from "./components/HeaderResponsive";
 import ContactForm from "./components/ContactForm";
-// import EspecialidadesAcademicas from "../Especialidades/EspecialidadesAcademicas";
-import imgA from "../../img/image.png";
+import EspecialidadesAcademicas from "../Especialidades/EspecialidadesAcademicas";
 
 const imagenesMetodologia2 = [
   {
@@ -81,10 +80,7 @@ function Home({}: Props) {
         texto="Un enfoque innovador para investigaciones de alto impacto. Nuestro método combina tecnología, sostenibilidad y personalización:"
         imagenes={imagenesMetodologia2}
       />
-      {/* <EspecialidadesAcademicas /> */}
-      <div>
-        <img src={imgA} alt="" />
-      </div>
+       <EspecialidadesAcademicas /> 
       {width >= 914 ? (
         <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO" />
       ) : (

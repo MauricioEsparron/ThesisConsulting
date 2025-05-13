@@ -1,6 +1,7 @@
 import desc0857 from "../../img/DSC_0857.png";
 import "../../css/EspecialidadesAcademicas.css";
 import desc0477 from "../../img/DSC_0857.png";
+import iconConsult from "../../img/icons/icon_consult.png"
 const EspecialidadesAcademicas: React.FC = () => {
   return (
     <section className="informacion-section">
@@ -29,11 +30,26 @@ const EspecialidadesAcademicas: React.FC = () => {
 
             <div className="description-section">
               <div className="inner-description">
-                <p>
-                  Asesoría en tesis con enfoque ODS Capacitación en herramientas
-                  avanzadas para tus proyectos Capacitación en herramientas
-                  avanzadas Alianzas estratégicas para impacto social
-                </p>
+
+                <ul className="list-academy">
+                  <li className="item-academy">
+                    <img src={iconConsult} alt="icon  " />
+                    <p> Asesoría en tesis con enfoque ODS.</p>
+                  </li>
+                  <li className="item-academy">
+                    <img src={iconConsult} alt="icon  " />
+                    <p> Capacitación en herramientas avanzadas para tus proyectos. </p>
+                  </li>
+                  <li className="item-academy">
+                    <img src={iconConsult} alt="icon  " />
+                    <p>Capacitación en herramientas avanzadas</p>
+                  </li>
+                  <li className="item-academy">
+                    <img src={iconConsult} alt="icon  " />
+                    <p>Alianzas estratégicas para impacto social</p>
+                  </li>
+                </ul>
+
                 {/* <div className="button-container">
                   <button className="btn-contacto">Contáctanos</button>
                 </div> */}
