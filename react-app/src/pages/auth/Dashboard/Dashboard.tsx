@@ -13,7 +13,7 @@ import { useAuth } from "../../../stores/Auth.store";
 import HomeEstudiante from "./components/HomeEstudiante";
 import ListarUsuarios from "./components/Usuarios/ListarUsuarios";
 import ListarUsuariosPorTipo from "./components/Usuarios/ListarUsuariosPorTipo";
-
+import ListarUsuariosPorId from "./components/Usuarios/ListarUsuariosPorId";
 
 const Actividades = lazy(() => import("./components/Actividades/Actividades"));
 const Consultoria = lazy(() => import("./components/Consultoria/Consultoria"));
@@ -146,6 +146,12 @@ const Dashboard = () => {
             },
             {
               icon: iconGlobe,
+              text: "Listar Usuarios por Id",
+              viewId: "listarUsuariosPorId_admin",
+              roles: ["Administrador"],
+            },
+            {
+              icon: iconGlobe,
               text: "Listar Usuarios por tipo",
               viewId: "listarUsuariosPorTipo_admin",
               roles: ["Administrador"],
@@ -253,10 +259,13 @@ const Dashboard = () => {
           {vistaActiva === "actividades_admin" && <Actividades />}
           {vistaActiva === "configuracion_admin" && <Configuracion />}
           {vistaActiva === "listarUsuarios_admin" && <ListarUsuarios />}
+          {vistaActiva === "listarUsuariosPorId_admin" && (
+            <ListarUsuariosPorId />
+          )}
           {vistaActiva === "listarUsuariosPorTipo_admin" && (
             <ListarUsuariosPorTipo />
           )}
-      
+
           {/* Estudiantes */}
           {vistaActiva === "home_estudiante" && <HomeEstudiante />}
           {vistaActiva === "consultoria_estudiante" && (
