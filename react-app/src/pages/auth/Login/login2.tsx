@@ -49,58 +49,60 @@ const Login2 = () => {
   };
 
   return (
-    <div
-      className="main-contenedor-login2-2"
-      style={{
-        backgroundImage: `url(${images[currentImage]})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        transition: "background-image 1s ease-in-out",
-        display: "flex",
-        justifyContent: "flex-end",
-        alignItems: "center",
-        height: "100vh",
-        width: "100%",
-      }}
-    >
-      <div className="contenedor-login2-2">
-        <form onSubmit={handleLogin}>
-          <div className="contenedor-titulo-login2-2">
-            <h2>Iniciar Sesión</h2>
-          </div>
-          <div className="contenedor-input-userename-login2-2">
-            <span>Usuario:</span>
-            <input
-              type="text"
-              placeholder="@username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </div>
-          <div className="contenedor-input-password-login2-2">
-            <span>Contraseña:</span>
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <div className="contenedor-button-login2-2">
-            <button
-              type="submit"
-              className="submit-button-login2"
-              disabled={loading}
-            >
-              {loading ? "Cargando..." : "Login"}
-            </button>
-          </div>
-          <div className="contenedor-reset-login2-2">
-            <a href="#">¿Olvidaste tu contraseña?</a>
-          </div>
-        </form>
+    <div className="wrapper-login2-2">
+      <div
+        className="main-contenedor-login2-2"
+        style={{
+          backgroundImage: `url(${images[currentImage]})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          transition: "background-image 1s ease-in-out",
+          display: "flex",
+          // justifyContent: "flex-end",
+          alignItems: "center",
+          height: "100vh",
+          width: "100%",
+        }}
+      >
+        <div className="contenedor-login2-2">
+          <form onSubmit={handleLogin}>
+            <div className="contenedor-titulo-login2-2">
+              <h2>Iniciar Sesión</h2>
+            </div>
+            <div className="contenedor-input-userename-login2-2">
+              <span>Usuario:</span>
+              <input
+                type="text"
+                placeholder="@username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
+            <div className="contenedor-input-password-login2-2">
+              <span>Contraseña:</span>
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="contenedor-button-login2-2">
+              <button
+                type="submit"
+                className="submit-button-login2"
+                disabled={loading}
+              >
+                {loading ? "Cargando..." : "Login"}
+              </button>
+            </div>
+            <div className="contenedor-reset-login2-2">
+              <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -10,119 +10,172 @@
   --text-darkLogin2: #2c3e50;
   --background-lightLogin2: #fdf8ec;
 }
+
 .main-contenedor-login2-2 {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f0f0f0;
 }
 
 .contenedor-login2-2 {
-  width: 600px;
-  height: 600px;
+  width: 100%;
+  max-width: 600px;
+  min-height: 600px;
   background-color: var(--Login2);
-  padding: 50px 80px 80px 80px;
+  padding: 40px;
   border-radius: 80px 0px 0px 80px;
+  box-sizing: border-box;
+  animation: slideRight 0.8s ease-out forwards;
 }
 
-/* .contenedor-login2-2 form */
-
+/* ===== ESTILOS DEL FORMULARIO ===== */
 .contenedor-titulo-login2-2 {
   text-align: center;
-  padding-bottom: 20px;
+  padding: 20px 0px 30px;
 }
+
 .contenedor-titulo-login2-2 h2 {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 600;
+  color: var(--text-darkLogin2);
+  margin-bottom: 10px;
 }
 
-.contenedor-button-login2-2 {
-  background-color: #0c2461;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  font-weight: 600;
-  border-radius: 15px;
+.contenedor-input-userename-login2-2,
+.contenedor-input-password-login2-2 {
+  margin-bottom: 20px;
 }
 
-.contenedor-reset-login2-2 {
-  color: white;
-}
-span {
-  font-weight: 600;
+.contenedor-input-userename-login2-2 label,
+.contenedor-input-password-login2-2 label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-darkLogin2);
+  font-weight: 500;
 }
 
 .contenedor-input-userename-login2-2 input,
 .contenedor-input-password-login2-2 input {
-  margin: 1px 0px 20px 0;
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
   width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--Login2-light);
+  border-radius: 10px;
   font-size: 16px;
-  color: #333;
-  box-sizing: border-box;
-  background-color: #f0f0f0;
-}
-.contenedor-input-userename-login2-2 span,
-.contenedor-input-password-login2-2 span {
-  margin-left: 5px;
+  color: var(--text-darkLogin2);
+  background-color: var(--background-lightLogin2);
+  transition: border-color 0.3s;
 }
 
+.contenedor-input-userename-login2-2 input:focus,
+.contenedor-input-password-login2-2 input:focus {
+  border-color: var(--primaryLogin2);
+  outline: none;
+}
+
+/* Estilos para el checkbox */
+.contenedor-checkbox-login2-2 {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.contenedor-checkbox-login2-2 input {
+  margin-right: 10px;
+}
+
+.contenedor-checkbox-login2-2 label {
+  color: var(--text-darkLogin2);
+}
+
+/* Estilos para el botón */
 .contenedor-button-login2-2 {
-  margin-top: 10px;
+  background-color: var(--primaryLogin2);
+  color: var(--text-lightLogin2);
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contenedor-button-login2-2:hover {
+  background-color: #1a3a8f;
 }
 
 .contenedor-reset-login2-2 {
-  margin-top: 10px;
+  margin-top: 20px;
   text-align: center;
+  color: var(--text-darkLogin2);
 }
-/* === ESTILOS RESPONSIVE === */
 
-/* @media (max-width: 768px) {
-  .main-contenedor-login2-2 {
+.contenedor-reset-login2-2 a {
+  color: var(--primaryLogin2);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .wrapper-login2-2 {
+    display: flex;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    height: 100vh;
   }
-
-  .contenedor-login2-2 {
-    width: 80%;
+  .main-contenedor-login2-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 30px;
-    border-radius: 30px;
-    margin: 0;
   }
 
-  .contenedor-titulo-login2-2 h2 {
-    font-size: 1.8rem;
-  }
-}
-@media (max-width: 520px) {
-  .contenedor-login2-2 {
-    width: 50%;
-    padding: 40px;
-    border-radius: 60px 0px 0px 60px;
-    margin-right: 20px;
-  }
-}
-@media (max-width: 480px) {
   .contenedor-login2-2 {
     width: 100%;
-    padding: 20px;
-    border-radius: 20px;
-  }
-
-  .contenedor-input-userename-login2-2 input {
-    font-size: 14px;
-    padding: 8px;
+    /* max-width: 500px;  */
+    padding: 25px;
+    border-radius: 30px;
+    animation: slideUp 0.8s ease-out forwards;
   }
 
   .contenedor-titulo-login2-2 h2 {
     font-size: 1.5rem;
   }
 
-  .contenedor-button-login2-2 {
-    font-size: 14px;
-    padding: 8px;
+  .contenedor-input-userename-login2-2 input,
+  .contenedor-input-password-login2-2 input {
+    padding: 10px 12px;
   }
-} */
+
+  .contenedor-button-login2-2 {
+    padding: 10px;
+    font-size: 15px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
