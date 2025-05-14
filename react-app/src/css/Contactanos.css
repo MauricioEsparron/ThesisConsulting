@@ -47,16 +47,20 @@
 }
 
 .form-title-contactanos {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .blue-rectangle {
   color: var(--primaryContactanos);
-  font-weight: bold;
+  font-weight: 900;
+  font-size: 40px;
 }
 
 /* Formulario */
@@ -112,7 +116,7 @@ textarea:focus {
 }
 
 .submit-btn:hover {
-  background-color: #a80024;
+  background-color: #1a3a8f;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -144,11 +148,11 @@ textarea:focus {
 .cardContactanos {
   padding: 2rem;
   border-radius: var(--border-radius-md);
-  background-color: var(--primaryContactanos);
   color: white;
   box-shadow: var(--shadow-sm);
   transition: var(--transition-normal);
   text-align: center;
+  height: 100%;
 }
 
 .cardContactanos:hover {
@@ -176,14 +180,62 @@ textarea:focus {
 }
 
 /* Tarjetas específicas */
+.linkedin-card {
+  background-color: #d7e2fb;
+}
+
 .linkedin-card i {
   color: #0077b5;
 }
+
+.linkedin-card h3,
+.linkedin-card p {
+  color: #363e42;
+}
+
+.schedule-card {
+  background-color: #b6cbfc;
+}
+
 .schedule-card i {
   color: var(--primaryContactanos);
 }
+
+.schedule-card h3,
+.schedule-card p {
+  color: var(--primaryContactanos);
+}
+
+.whatsapp-card {
+  background-color: #b0d4ab;
+}
+
 .whatsapp-card i {
-  color: #25d366;
+  /* color: #25d366; */
+  color: white;
+}
+
+.whatsapp-card h3,
+.whatsapp-card p {
+  color: white;
+}
+
+.linkedin-card i,
+.schedule-card i,
+.whatsapp-card i {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.enlace-cardContactanos {
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-normal);
+}
+
+.enlace-cardContactanos:hover {
+  transform: scale(1.02);
 }
 
 /* ===== SECCIÓN DE UBICACIÓN ===== */
@@ -193,11 +245,14 @@ textarea:focus {
 }
 
 .section-title-contactanos {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .map-container-contactanos {
@@ -214,99 +269,13 @@ textarea:focus {
   border: none;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background-color: white;
-  padding: 3rem 1rem;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-sm);
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-left h2 {
-  font-size: 1.75rem;
-  color: var(--primaryContactanos);
-  margin-bottom: 0.5rem;
-}
-
-.footer-subtitle {
-  color: var(--accent);
-  font-style: italic;
-}
-
-.footer-center h3,
-.footer-right h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: var(--primaryContactanos);
-}
-
-.link-columns {
-  display: flex;
-  gap: 2rem;
-}
-
-.link-column a {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: var(--accent);
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-.link-column a:hover {
-  color: var(--primaryContactanos);
-  text-decoration: underline;
-}
-
-.social-icons {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--secondaryContactanos-light);
-  color: var(--accent);
-  transition: var(--transition-normal);
-}
-
-.social-icons a:hover {
-  background-color: var(--primaryContactanos);
-  color: white;
-  transform: translateY(-3px);
-}
-
-.footer-bottom {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--secondaryContactanos-light);
-  text-align: center;
-}
-
-.complaints-book {
-  color: var(--accent);
-  font-weight: 500;
-}
-
 /* ===== ANIMACIONES ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -321,9 +290,11 @@ footer {
 .cardContactanos:nth-child(1) {
   animation-delay: 0.1s;
 }
+
 .cardContactanos:nth-child(2) {
   animation-delay: 0.2s;
 }
+
 .cardContactanos:nth-child(3) {
   animation-delay: 0.3s;
 }

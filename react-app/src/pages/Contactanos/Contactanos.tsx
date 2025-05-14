@@ -4,6 +4,7 @@ import imgContacto from "../../img/contactanos.jpg";
 import video3 from "../../img/video3.mp4";
 import header2 from "../../img/header2.jpg";
 import Navbar from "../../components/shared/NavBar";
+import { FaLinkedin, FaRegClock, FaWhatsapp } from "react-icons/fa";
 type Props = {};
 
 function Contactanos({}: Props) {
@@ -31,7 +32,7 @@ function Contactanos({}: Props) {
         <div className="form-section">
           <div className="form-left">
             <h1 className="form-title-contactanos">
-              <span className="blue-rectangle">|</span> Transforma tu proyecto!
+              <span className="blue-rectangle">|</span> TRANSFORMA TU PROYECTO!
             </h1>
             <form className="contact-form">
               <div className="form-row">
@@ -63,28 +64,55 @@ function Contactanos({}: Props) {
         </div>
 
         <div className="info-cards-contactanos">
-          <div className="cardContactanos linkedin-card">
-            <i className="bi bi-linkedin"></i>
-            <h3>linkedin</h3>
-            <p>Explora nuestros proyectos y alianzas en LinkedIn.</p>
-            <p>www.aaa.com</p>
-          </div>
-          <div className="cardContactanos schedule-card">
-            <i className="bi bi-clock"></i>
-            <h3>Horario de Atención</h3>
-            <p>Lunes a sábado, 9:00 a.m. – 6:00 p.m.</p>
-          </div>
-          <div className="cardContactanos whatsapp-card">
-            <i className="bi bi-whatsapp"></i>
-            <h3>whatsapp</h3>
-            <p>¿Listo para empezar? Escríbenos ahora</p>
-            <p>999 999 99</p>
-          </div>
+          <a href="#" className="enlace-cardContactanos">
+            <div className="cardContactanos linkedin-card">
+              <i className="bi bi-linkedin">
+                <a href="#">
+                  <FaLinkedin
+                    className="icono-footer"
+                    style={{ margin: "5px", fontSize: "40px" }}
+                  />
+                </a>
+              </i>
+              <h3>linkedin</h3>
+              <p>Explora nuestros proyectos y alianzas en LinkedIn.</p>
+              <p>www.aaa.com</p>
+            </div>
+          </a>
+          <a href="#" className="enlace-cardContactanos">
+            <div className="cardContactanos schedule-card">
+              <i className="bi bi-clock">
+                <a href="#">
+                  <FaRegClock
+                    className="icono-footer"
+                    style={{ margin: "5px", fontSize: "40px" }}
+                  />
+                </a>
+              </i>
+              <h3>Horario de Atención</h3>
+              <p>Lunes a sábado, 9:00 a.m. – 6:00 p.m.</p>
+            </div>
+          </a>
+          <a href="#" className="enlace-cardContactanos">
+            <div className="cardContactanos whatsapp-card">
+              <i className="bi bi-whatsapp">
+                <a href="#">
+                  <FaWhatsapp
+                    className="icono-footer"
+                    style={{ margin: "5px", fontSize: "40px" }}
+                  />
+                </a>
+              </i>
+              <h3>whatsapp</h3>
+              <p>¿Listo para empezar? Escríbenos ahora</p>
+              <p>999 999 99</p>
+            </div>
+          </a>
         </div>
 
         <div className="location-section-contactanos">
           <h2 className="section-title-contactanos">
-            <span className="blue-rectangle">|</span> ubicanos
+            <span className="blue-rectangle">|</span> UBICANOS
           </h2>
           <div className="map-container-contactanos">
             <iframe
@@ -99,49 +127,6 @@ function Contactanos({}: Props) {
             ></iframe>
           </div>
         </div>
-        {/* <footer>
-        <div className="footer-content">
-          <div className="footer-left">
-            <h2>INVEXIALAB</h2>
-            <p className="footer-subtitle">tu conocimiento, nuestro impacto</p>
-          </div>
-          <div className="footer-center">
-            <div className="footer-links">
-              <h3>Pagina principal:</h3>
-              <div className="link-columns">
-                <div className="link-column">
-                  <a href="#">Home</a>
-                  <a href="#">Nosotros</a>
-                </div>
-                <div className="link-column">
-                  <a href="#">Especialidades</a>
-                  <a href="#">Contáctanos</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="footer-right">
-            <h3>Redes sociales</h3>
-            <div className="social-icons">
-              <a href="#">
-                <i className="bi bi-whatsapp"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-facebook"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-tiktok"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-linkedin"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p className="complaints-book">|Libro de reclamaciones</p>
-        </div>
-      </footer> */}
       </div>
       <Footer />
     </div>
