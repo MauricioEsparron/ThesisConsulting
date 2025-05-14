@@ -93,7 +93,17 @@ interface SubTituloNosotrosProps {
   subtitulo?: string;
 }
 export function SubTituloNosotros({ subtitulo }: SubTituloNosotrosProps) {
-  return <h4 className="Nosotros-subtitulo">{subtitulo}</h4>;
+  if (!subtitulo) return null;
+
+  const [primeraParte, ...resto] = subtitulo.split(" ");
+  const segundaParte = resto.join(" ");
+
+  return (
+    <h4 className="Nosotros-subtitulo-home">
+      <span className="impacto">{primeraParte}</span>{" "}
+      <span className="linea">{segundaParte}</span>
+    </h4>
+  );
 }
 
 export default Nosotros;

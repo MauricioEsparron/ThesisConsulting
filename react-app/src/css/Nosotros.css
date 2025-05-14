@@ -15,13 +15,12 @@
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  /* border: 2px solid red; */
-  padding: 10% 10% 0% 5%;
-  width: 100%;
+  padding: 90px 180px;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .div1 {
-  /* border: 2px solid green; */
   width: 90%;
   grid-area: 1 / 1 / 2 / 5;
   background-color: var(--primary2);
@@ -30,26 +29,46 @@
 }
 .div2 {
   grid-area: 2 / 1 / 6 / 2;
-  /* border: 2px solid black; */
   width: 40%;
   height: 70%;
   /* display: flex; */
-  padding-top: 125%;
-  font-size: 50px;
-  margin: 10px;
+  padding-top: 525px;
+  /* margin: 10px; */
 }
 .div2 h4 {
-  font-size: 50px;
-  /* border: 2px solid black; */
   width: 100%;
   height: 100%;
   padding-left: 100%;
   font-weight: 600;
 }
 
+.Nosotros-subtitulo-home {
+  rotate: 270deg;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  white-space: nowrap; /* 👈 evita el salto de línea */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem; /* Espacio entre "IMPACTO" y las líneas */
+}
+
+.impacto {
+  color: #111; /* o el color que uses para "IMPACTO" */
+  font-weight: bold;
+  font-size: 3.5rem;
+}
+
+.linea {
+  font-size: 2.5rem;
+  color: #111; /* o el color que usas para "――――" */
+  font-family: monospace; /* opcional, si quieres que la línea se vea más uniforme */
+}
+
 .div3 {
-  width: 120%;
-  height: 70%;
+  min-width: 140%;
+  max-width: 140%;
+  max-height: 490px;
   grid-area: 2 / 2 / 6 / 2;
   background-color: #3b4a8b;
   /* border: 2px solid #3b4a8b; */
@@ -58,11 +77,10 @@
   background-size: cover; /* Ajusta la imagen para cubrir el div */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita repeticiones */
-  margin: 10px;
-  padding: 160% 10% 10% 50%;
+  margin: 10px 0px 0px -180px;
+  padding: 390px 0px 0px 100px;
   color: #f4f4f4;
   font-size: 25px;
-  margin-left: -110px;
   filter: contrast(100%) brightness(85%);
 }
 
@@ -73,8 +91,9 @@
 }
 
 .div4 {
-  width: 80%;
-  height: 65%;
+  width: 89%;
+  display: block;
+  height: 240px;
   grid-area: 2 / 3 / 4 / 5;
   background-color: #cfa85a;
   /* background-image: url("https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
@@ -82,25 +101,23 @@
   background-size: cover; /* Ajusta la imagen para cubrir el div */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita repeticiones */
-  margin: 2%;
-  margin-bottom: 30px;
+  margin: 10px 0 30px -50px;
   padding: 30px;
   color: #f4f4f4;
   font-size: 25px;
   filter: contrast(100%) brightness(85%);
 }
 .div5 {
-  width: 80%;
-  height: 65%;
+  width: 89%;
+  height: 240px;
   grid-area: 4 / 3 / 6 / 5;
   /* background-image: url("https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
   background-image: url("../img/profesionales.webp");
   background-size: cover; /* Ajusta la imagen para cubrir el div */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita repeticiones */
-  margin: 5% 2% 10%;
   padding: 30px;
-  margin-top: -15%;
+  margin: -125px 0px 0px -50px;
   color: #f4f4f4;
   font-size: 25px;
   filter: contrast(100%) brightness(85%);
@@ -108,16 +125,15 @@
 
 .div6 {
   width: 130%;
-  height: 76%;
+  height: 680px;
   grid-area: 1 / 5 / 6 / 6;
   /* border: 2px solid purple; */
   background-image: url("../img/contactanos.jpg");
   background-size: cover; /* Ajusta la imagen para cubrir el div */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita repeticiones */
-  margin: 10px 10px 10px;
-  padding: 227% 10% 10% 60%;
-  margin-left: -25%;
+  padding: 550px 0px 0px 40px;
+  margin: 10px 0px 0px -95px;
   filter: contrast(100%) brightness(85%);
 }
 
@@ -125,7 +141,7 @@
   color: #f4f4f4;
   padding: 50px;
   text-align: center;
-  font-size: 80px;
+  font-size: 3rem;
   position: relative;
   cursor: pointer;
   font-weight: 600;
@@ -211,14 +227,6 @@
   content: "3. Organizaciones este es un mensaje de prueba";
 }
 
-.Nosotros-subtitulo {
-  rotate: 270deg;
-  /* margin: 2px solid red; */
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-}
-
 .Nosotros-imagen {
   width: 100%;
   height: 100%;
@@ -236,537 +244,766 @@
   padding: 10px;
   border-radius: 10px;
 }
-
-@media screen and (max-width: 1435px) {
-  .Nosotros-titulo {
-    padding: 50px;
-    font-size: 50px;
-  }
+@media screen and (max-width: 1870px) {
   .div1 {
-    width: 81%;
+    width: 90%;
     border-radius: 110px 0px 0px 0px;
     margin: 10px;
   }
   .div2 {
     width: 40%;
-    height: 50%;
-    padding-top: 125%;
-    font-size: 50px;
-    margin: 10px;
+    height: 70%;
+    padding-top: 525px;
   }
   .div2 h4 {
-    font-size: 50px;
     width: 100%;
     height: 100%;
     padding-left: 100%;
+    font-weight: 600;
+  }
+
+  .Nosotros-subtitulo-home {
+    rotate: 270deg;
+    font-weight: 600;
+    gap: 0.3rem; /* Espacio entre "IMPACTO" y las líneas */
+  }
+
+  .impacto {
+    font-size: 3.5rem;
+  }
+
+  .linea {
+    font-size: 2.5rem;
   }
 
   .div3 {
-    width: 140%;
-    height: 52%;
-    margin: 10px;
-    padding: 145% 10% 10% 65%;
+    min-width: 140%;
+    max-width: 140%;
+    max-height: 490px;
+    margin: 10px 0px 0px -180px;
+    padding: 390px 0px 0px 100px;
     font-size: 25px;
-    margin-left: -110px;
-    filter: contrast(100%) brightness(85%);
   }
 
   .sub-div3 {
     width: 100%;
     height: 100%;
-    background-color: red;
   }
 
   .div4 {
-    width: 65%;
-    height: 50%;
-    margin: 2%;
-    margin-bottom: 30px;
-    padding: 20px;
+    width: 89%;
+    height: 240px;
+    margin: 10px 0 30px -50px;
+    padding: 30px;
     font-size: 25px;
-    margin-left: -1%;
-    filter: contrast(100%) brightness(85%);
   }
   .div5 {
-    width: 65%;
-    height: 50%;
-    margin: 5% 2% 10%;
-    padding: 20px;
-    margin-top: -35%;
-    margin-left: -1%;
+    width: 89%;
+    height: 240px;
+    padding: 30px;
+    margin: -125px 0px 0px -50px;
     font-size: 25px;
     filter: contrast(100%) brightness(85%);
   }
 
   .div6 {
-    width: 170%;
-    height: 61%;
-    margin: 10px 10px 10px;
-    padding: 230% 10% 10% 90%;
-    margin-left: -55%;
+    width: 130%;
+    height: 680px;
+    padding: 550px 0px 0px 40px;
+    margin: 10px 0px 0px -95px;
   }
-  .subtitulo-efecto {
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 1264px) {
+
   .Nosotros-titulo {
     padding: 50px;
-    font-size: 50px;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 1540px) {
+  .div1 {
+    width: 97%;
+    margin: 10px;
+  }
+  .div2 {
+    width: 40%;
+    height: 70%;
+    padding-top: 525px;
+  }
+  .div2 h4 {
+    width: 100%;
+    height: 100%;
+    padding-left: 100%;
+    font-weight: 600;
+  }
+
+  .Nosotros-subtitulo-home {
+    rotate: 270deg;
+    font-weight: 600;
+    gap: 0.3rem; /* Espacio entre "IMPACTO" y las líneas */
+  }
+
+  .impacto {
+    font-size: 3.5rem;
+  }
+
+  .linea {
+    font-size: 2.5rem;
+  }
+
+  .div3 {
+    min-width: 170%;
+    max-width: 170%;
+    max-height: 490px;
+    margin: 10px 0px 0px -200px;
+    padding: 390px 0px 0px 100px;
+    font-size: 25px;
+  }
+
+  .sub-div3 {
+    width: 100%;
+    height: 100%;
+  }
+
+  .div4 {
+    width: 109%;
+    height: 240px;
+    margin: 10px 0 30px -50px;
+    padding: 30px;
+    font-size: 25px;
+  }
+  .div5 {
+    width: 109%;
+    height: 240px;
+    padding: 30px;
+    margin: -125px 0px 0px -50px;
+    font-size: 25px;
+    filter: contrast(100%) brightness(85%);
+  }
+
+  .div6 {
+    width: 130%;
+    height: 680px;
+    padding: 550px 0px 0px 40px;
+    margin: 10px 0px 0px 5px;
+  }
+
+  .Nosotros-titulo {
+    padding: 50px;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 1366px) and (max-height: 633px) {
+  .Nosotros-titulo {
+    padding: 50px;
+    font-size: 2rem;
   }
   .div1 {
-    width: 81%;
-    border-radius: 110px 0px 0px 0px;
+    width: 97%;
     margin: 10px;
   }
   .div2 {
     width: 40%;
     height: 50%;
-    padding-top: 125%;
-    font-size: 50px;
-    margin: 10px;
+    padding-top: 430px;
   }
   .div2 h4 {
-    font-size: 50px;
     width: 100%;
     height: 100%;
     padding-left: 100%;
+    font-weight: 600;
+  }
+
+  .Nosotros-subtitulo-home {
+    rotate: 270deg;
+    font-weight: 600;
+    gap: 0.3rem; /* Espacio entre "IMPACTO" y las líneas */
+  }
+
+  .impacto {
+    font-size: 3.5rem;
+  }
+
+  .linea {
+    font-size: 2.5rem;
   }
 
   .div3 {
-    width: 140%;
-    height: 52%;
-    margin: 10px;
-    padding: 130% 10% 10% 80%;
+    min-width: 200%;
+    max-width: 200%;
+    max-height: 370px;
+    margin: 10px 0px 0px -220px;
+    padding: 290px 0px 0px 40px;
     font-size: 25px;
-    margin-left: -110px;
-    filter: contrast(100%) brightness(85%);
   }
 
   .sub-div3 {
     width: 100%;
     height: 100%;
-    background-color: red;
   }
 
   .div4 {
-    width: 65%;
-    height: 50%;
-    margin: 2%;
-    margin-bottom: 30px;
-    padding: 20px;
+    width: 122%;
+    height: 170px;
+    margin: 10px 0px 0px -70px;
+    padding: 30px;
     font-size: 25px;
-    margin-left: -1%;
-    filter: contrast(100%) brightness(85%);
   }
   .div5 {
-    width: 65%;
-    height: 50%;
-    margin: 5% 2% 10%;
-    padding: 20px;
-    margin-top: -38%;
-    margin-left: -1%;
+    width: 122%;
+    height: 170px;
+    padding: 30px;
+    margin: -126px 0px 0px -70px;
     font-size: 25px;
     filter: contrast(100%) brightness(85%);
   }
 
   .div6 {
-    width: 170%;
-    height: 61%;
-    margin: 10px 10px 10px;
-    padding: 215% 10% 10% 105%;
-    margin-left: -55%;
-  }
-  .subtitulo-efecto {
-    font-size: 20px;
+    width: 100%;
+    height: 540px;
+    padding: 480px 0px 0px 40px;
+    margin: 10px 0px 0px 5px;
   }
 }
-@media screen and (max-width: 1264px) {
+
+@media screen and (max-width: 1320px) {
+  .parent {
+    padding: 90px 60px;
+    min-width: 100%;
+    min-height: 100%;
+  }
   .Nosotros-titulo {
-    padding: 50px;
-    font-size: 50px;
+    padding: 60px;
+    font-size: 2.5rem;
   }
   .div1 {
-    width: 81%;
-    border-radius: 110px 0px 0px 0px;
+    width: 97%;
     margin: 10px;
   }
   .div2 {
     width: 40%;
     height: 50%;
-    padding-top: 125%;
-    font-size: 50px;
-    margin: 10px;
+    padding-top: 430px;
   }
   .div2 h4 {
-    font-size: 50px;
     width: 100%;
     height: 100%;
     padding-left: 100%;
+    font-weight: 600;
+  }
+
+  .Nosotros-subtitulo-home {
+    rotate: 270deg;
+    font-weight: 600;
+    gap: 0.3rem; /* Espacio entre "IMPACTO" y las líneas */
+  }
+
+  .impacto {
+    font-size: 3.4rem;
+  }
+
+  .linea {
+    font-size: 2.5rem;
   }
 
   .div3 {
-    width: 140%;
-    height: 52%;
-    margin: 10px;
-    padding: 150% 10% 10% 60%;
+    min-width: 170%;
+    max-width: 170%;
+    max-height: 370px;
+    margin: 10px 0px 0px -220px;
+    padding: 290px 0px 0px 40px;
     font-size: 25px;
-    margin-left: -110px;
-    filter: contrast(100%) brightness(85%);
   }
 
   .sub-div3 {
     width: 100%;
     height: 100%;
-    background-color: red;
   }
 
   .div4 {
-    width: 65%;
-    height: 50%;
-    margin: 2%;
-    margin-bottom: 30px;
-    padding: 20px;
+    width: 113%;
+    height: 175px;
+    margin: 10px 0px 0px -70px;
+    padding: 30px;
     font-size: 25px;
-    margin-left: -2%;
-    filter: contrast(100%) brightness(85%);
   }
   .div5 {
-    width: 65%;
-    height: 50%;
-    margin: 5% 2% 10%;
-    padding: 20px;
-    margin-top: -38%;
-    margin-left: -2%;
+    width: 113%;
+    height: 175px;
+    padding: 30px;
+    margin: -195px 0px 0px -70px;
     font-size: 25px;
     filter: contrast(100%) brightness(85%);
   }
 
   .div6 {
-    width: 170%;
-    height: 61%;
-    margin: 10px 10px 10px;
-    padding: 235% 10% 10% 90%;
-    margin-left: -65%;
-  }
-  .subtitulo-efecto {
-    font-size: 20px;
+    width: 100%;
+    height: 568px;
+    padding: 480px 0px 0px 40px;
+    margin: 10px 0px 0px 5px;
   }
 }
-@media screen and (max-width: 1229px) {
+
+@media screen and (max-width: 1250px) {
+  .parent {
+    padding: 90px 60px;
+    min-width: 100%;
+    min-height: 100%;
+  }
   .Nosotros-titulo {
-    padding: 50px;
-    font-size: 50px;
+    padding: 60px;
+    font-size: 2.5rem;
   }
   .div1 {
-    width: 81%;
-    border-radius: 110px 0px 0px 0px;
+    width: 97%;
     margin: 10px;
   }
   .div2 {
     width: 40%;
     height: 50%;
-    padding-top: 125%;
-    font-size: 50px;
-    margin: 10px;
+    padding-top: 430px;
   }
   .div2 h4 {
-    font-size: 50px;
     width: 100%;
     height: 100%;
     padding-left: 100%;
+    font-weight: 600;
+  }
+
+  .Nosotros-subtitulo-home {
+    rotate: 270deg;
+    font-weight: 600;
+    gap: 0.3rem; /* Espacio entre "IMPACTO" y las líneas */
+  }
+
+  .impacto {
+    font-size: 3.4rem;
+  }
+
+  .linea {
+    font-size: 2.5rem;
   }
 
   .div3 {
-    width: 140%;
-    height: 52%;
-    margin: 10px;
-    padding: 160% 10% 10% 60%;
+    min-width: 180%;
+    max-width: 180%;
+    max-height: 370px;
+    margin: 10px 0px 0px -220px;
+    padding: 290px 0px 0px 40px;
     font-size: 25px;
-    margin-left: -110px;
-    filter: contrast(100%) brightness(85%);
   }
 
   .sub-div3 {
     width: 100%;
     height: 100%;
-    background-color: red;
   }
 
   .div4 {
-    width: 65%;
-    height: 50%;
-    margin: 2%;
-    margin-bottom: 30px;
-    padding: 20px;
+    width: 115%;
+    height: 175px;
+    margin: 10px 0px 0px -70px;
+    padding: 30px;
     font-size: 25px;
-    margin-left: -5%;
-    filter: contrast(100%) brightness(85%);
   }
   .div5 {
-    width: 65%;
-    height: 50%;
-    margin: 5% 2% 10%;
-    padding: 20px;
-    margin-top: -40%;
-    margin-left: -5%;
+    width: 115%;
+    height: 175px;
+    padding: 30px;
+    margin: -195px 0px 0px -70px;
     font-size: 25px;
     filter: contrast(100%) brightness(85%);
   }
 
   .div6 {
-    width: 170%;
-    height: 61%;
-    margin: 10px 10px 10px;
-    padding: 250% 10% 10% 80%;
-    margin-left: -55%;
-  }
-  .subtitulo-efecto {
-    font-size: 20px;
+    width: 100%;
+    height: 570px;
+    padding: 480px 0px 0px 40px;
+    margin: 10px 0px 0px 5px;
   }
 }
 
-@media screen and (max-width: 1177px) {
+@media screen and (max-width: 1225px) {
   .Nosotros-titulo {
-    padding: 50px;
-    font-size: 50px;
+    padding: 60px;
+    font-size: 2.4rem;
   }
   .div1 {
-    width: 81%;
-    border-radius: 110px 0px 0px 0px;
+    width: 97%;
     margin: 10px;
   }
   .div2 {
     width: 40%;
     height: 50%;
-    padding-top: 125%;
-    font-size: 50px;
-    margin: 10px;
+    padding-top: 430px;
   }
   .div2 h4 {
-    font-size: 50px;
     width: 100%;
     height: 100%;
     padding-left: 100%;
+    font-weight: 600;
+  }
+
+  .Nosotros-subtitulo-home {
+    rotate: 270deg;
+    font-weight: 600;
+    gap: 0.3rem; /* Espacio entre "IMPACTO" y las líneas */
+  }
+
+  .impacto {
+    font-size: 3.4rem;
+  }
+
+  .linea {
+    font-size: 2.5rem;
   }
 
   .div3 {
-    width: 140%;
-    height: 52%;
-    margin: 10px;
-    padding: 170% 10% 10% 50%;
+    min-width: 200%;
+    max-width: 200%;
+    max-height: 370px;
+    margin: 10px 0px 0px -220px;
+    padding: 290px 0px 0px 40px;
     font-size: 25px;
-    margin-left: -110px;
-    filter: contrast(100%) brightness(85%);
   }
 
   .sub-div3 {
     width: 100%;
     height: 100%;
-    background-color: red;
   }
 
   .div4 {
-    width: 65%;
-    height: 50%;
-    margin: 2%;
-    margin-bottom: 30px;
-    padding: 20px;
+    width: 108%;
+    height: 175px;
+    margin: 10px 0px 0px -40px;
+    padding: 30px;
     font-size: 25px;
-    margin-left: -5%;
-    filter: contrast(100%) brightness(85%);
   }
   .div5 {
-    width: 65%;
-    height: 50%;
-    margin: 5% 2% 10%;
-    padding: 20px;
-    margin-top: -43%;
-    margin-left: -5%;
+    width: 108%;
+    height: 175px;
+    padding: 30px;
+    margin: -191px 0px 0px -40px;
     font-size: 25px;
     filter: contrast(100%) brightness(85%);
   }
 
   .div6 {
-    width: 170%;
-    height: 61%;
-    margin: 10px 10px 10px;
-    padding: 270% 10% 10% 75%;
-    margin-left: -55%;
-  }
-  .subtitulo-efecto {
-    font-size: 20px;
+    width: 100%;
+    height: 568px;
+    padding: 480px 0px 0px 40px;
+    margin: 10px 0px 0px 5px;
   }
 }
-@media screen and (max-width: 1126px) {
+
+@media screen and (max-width: 1150px) {
+  .parent {
+    padding: 90px 30px;
+    min-width: 100%;
+    min-height: 100%;
+  }
   .Nosotros-titulo {
-    padding: 50px;
-    font-size: 50px;
+    padding: 60px;
+    font-size: 2.2rem;
   }
   .div1 {
-    width: 81%;
-    border-radius: 110px 0px 0px 0px;
+    width: 97%;
     margin: 10px;
   }
   .div2 {
     width: 40%;
     height: 50%;
-    padding-top: 125%;
-    font-size: 50px;
-    margin: 10px;
+    padding-top: 430px;
   }
   .div2 h4 {
-    font-size: 50px;
     width: 100%;
     height: 100%;
     padding-left: 100%;
+    font-weight: 600;
+  }
+
+  .Nosotros-subtitulo-home {
+    rotate: 270deg;
+    font-weight: 600;
+    gap: 0.3rem; /* Espacio entre "IMPACTO" y las líneas */
+  }
+
+  .impacto {
+    font-size: 3.4rem;
+  }
+
+  .linea {
+    font-size: 2.5rem;
   }
 
   .div3 {
-    width: 140%;
-    height: 52%;
-    margin: 10px;
-    padding: 170% 10% 10% 50%;
+    min-width: 195%;
+    max-width: 195%;
+    max-height: 370px;
+    margin: 10px 0px 0px -220px;
+    padding: 290px 0px 0px 40px;
     font-size: 25px;
-    margin-left: -110px;
-    filter: contrast(100%) brightness(85%);
   }
 
   .sub-div3 {
     width: 100%;
     height: 100%;
-    background-color: red;
   }
 
   .div4 {
-    width: 68%;
-    height: 50%;
-    margin: 2%;
-    margin-bottom: 30px;
-    padding: 5px 40px 0px 0px;
+    width: 110%;
+    height: 175px;
+    margin: 10px 0px 0px -50px;
+    padding: 30px;
     font-size: 25px;
-    margin-left: -8%;
-    filter: contrast(100%) brightness(85%);
   }
   .div5 {
-    width: 68%;
-    height: 50%;
-    margin: 5%;
-    padding: 5px 40px 0px 0px;
-    margin-top: -43%;
-    margin-left: -8%;
+    width: 110%;
+    height: 175px;
+    padding: 30px;
+    margin: -183px 0px 0px -50px;
     font-size: 25px;
     filter: contrast(100%) brightness(85%);
   }
 
   .div6 {
-    width: 170%;
-    height: 61.5%;
-    margin: 10px 10px 10px;
-    padding: 270% 10% 10% 70%;
-    margin-left: -55%;
-  }
-
-  .subtitulo-efecto {
-    font-size: 20px;
+    width: 100%;
+    height: 560px;
+    padding: 480px 0px 0px 40px;
+    margin: 10px 0px 0px 5px;
   }
 }
 
-@media screen and (max-width: 1043px) {
-  .Nosotros-titulo {
-    padding: 50px;
-    font-size: 40px;
+@media screen and (max-width: 1050px) {
+  .parent {
+    padding: 90px 30px;
+    min-width: 100%;
+    min-height: 100%;
   }
-
+  .Nosotros-titulo {
+    padding: 60px;
+    font-size: 2.2rem;
+  }
   .div1 {
-    width: 82%;
+    width: 97%;
+    margin: 10px;
+  }
+  .div2 {
+    width: 40%;
+    height: 50%;
+    padding-top: 430px;
+  }
+  .div2 h4 {
+    width: 100%;
+    height: 100%;
+    padding-left: 100%;
+    font-weight: 600;
   }
 
-  .Nosotros-subtitulo {
-    font-size: 30px !important;
-    padding: 1% 45% 45% 60% !important;
-    margin: 0px 0px 30px 0px !important;
+  .Nosotros-subtitulo-home {
+    rotate: 270deg;
+    font-weight: 600;
+    gap: 0.3rem; /* Espacio entre "IMPACTO" y las líneas */
+  }
+
+  .impacto {
+    font-size: 3.4rem;
+  }
+
+  .linea {
+    font-size: 2.5rem;
   }
 
   .div3 {
-    padding: 160% 20% 10% 50%;
+    min-width: 215%;
+    max-width: 215%;
+    max-height: 370px;
+    margin: 10px 0px 0px -220px;
+    padding: 290px 0px 0px 40px;
     font-size: 25px;
-    margin-left: -100px;
+  }
+
+  .sub-div3 {
+    width: 100%;
+    height: 100%;
   }
 
   .div4 {
-    width: 70%;
-    height: 50%;
-    margin-left: -3%;
-    padding: 5% 0% 0% 2%;
+    width: 115%;
+    height: 175px;
+    margin: 10px 0px 0px -50px;
+    padding: 30px;
+    font-size: 25px;
   }
   .div5 {
-    width: 70%;
-    height: 50%;
-    margin-top: -40%;
-    margin-left: -3%;
-    padding: 5% 0% 0% 2%;
+    width: 115%;
+    height: 175px;
+    padding: 30px;
+    margin: -183px 0px 0px -50px;
+    font-size: 25px;
+    filter: contrast(100%) brightness(85%);
   }
 
   .div6 {
-    width: 170%;
-    height: 61.5%;
-    margin: 10px 10px 10px;
-    padding: 255% 10% 10% 75%;
-    margin-left: -55%;
-  }
-
-  .Nosotros-titulo::after {
-    padding: 50px;
+    width: 100%;
+    height: 560px;
+    padding: 480px 0px 0px 40px;
+    margin: 10px 0px 0px 5px;
   }
 }
-@media screen and (max-width: 958px) {
+
+@media screen and (max-width: 1040px) {
+  .parent {
+    padding: 90px 30px;
+    min-width: 100%;
+    min-height: 100%;
+  }
   .Nosotros-titulo {
-    padding: 50px;
-    font-size: 40px;
+    padding: 60px;
+    font-size: 1.8rem;
+  }
+  .div1 {
+    width: 97%;
+    margin: 10px;
+  }
+  .div2 {
+    width: 40%;
+    height: 50%;
+    padding-top: 430px;
+  }
+  .div2 h4 {
+    width: 100%;
+    height: 100%;
+    padding-left: 100%;
+    font-weight: 600;
   }
 
-  .Nosotros-subtitulo {
-    font-size: 30px !important;
-    padding: 1% 40% 45% 60% !important;
-    margin: 0px 0px 30px 0px !important;
+  .Nosotros-subtitulo-home {
+    rotate: 270deg;
+    font-weight: 600;
+    gap: 0.3rem; /* Espacio entre "IMPACTO" y las líneas */
+  }
+
+  .impacto {
+    font-size: 3.4rem;
+  }
+
+  .linea {
+    font-size: 2.5rem;
   }
 
   .div3 {
-    padding: 175% 20% 10% 45%;
+    min-width: 220%;
+    max-width: 220%;
+    max-height: 370px;
+    margin: 10px 0px 0px -220px;
+    padding: 290px 0px 0px 40px;
     font-size: 25px;
-    margin-left: -100px;
+  }
+
+  .sub-div3 {
+    width: 100%;
+    height: 100%;
   }
 
   .div4 {
-    width: 70%;
-    height: 50%;
-    margin-left: -5%;
-    padding: 5% 0% 0% 2%;
+    width: 120%;
+    height: 175px;
+    margin: 10px 0px 0px -60px;
+    padding: 30px;
+    font-size: 25px;
   }
   .div5 {
-    width: 70%;
-    height: 50%;
-    margin-top: -45%;
-    margin-left: -5%;
-    padding: 5% 0% 0% 2%;
+    width: 120%;
+    height: 175px;
+    padding: 30px;
+    margin: -163px 0px 0px -60px;
+    font-size: 25px;
+    filter: contrast(100%) brightness(85%);
   }
 
   .div6 {
-    width: 170%;
-    height: 61%;
-    margin: 10px 10px 10px;
-    padding: 275% 10% 10% 65%;
-    margin-left: -55%;
-  }
-
-  .Nosotros-titulo::after {
-    padding: 50px;
+    width: 100%;
+    height: 553px;
+    padding: 480px 0px 0px 40px;
+    margin: 10px 0px 0px 5px;
   }
 }
 
-.contenedor-valores-nosotros {
-  /* border: 2px solid baed; */
-  background-color: #96b0e0;
-  border-radius: 0px 0px 580px 580px;
+@media screen and (max-width: 991px) {
+  .parent {
+    padding: 90px 30px;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .Nosotros-titulo {
+    padding: 60px;
+    font-size: 1.8rem;
+  }
+  .div1 {
+    width: 97%;
+    margin: 10px;
+  }
+  .div2 {
+    width: 40%;
+    height: 50%;
+    padding-top: 430px;
+  }
+  .div2 h4 {
+    width: 100%;
+    height: 100%;
+    padding-left: 100%;
+    font-weight: 600;
+  }
+
+  .Nosotros-subtitulo-home {
+    rotate: 270deg;
+    font-weight: 600;
+    gap: 0.3rem; /* Espacio entre "IMPACTO" y las líneas */
+  }
+
+  .impacto {
+    font-size: 3.4rem;
+  }
+
+  .linea {
+    font-size: 2.5rem;
+  }
+
+  .div3 {
+    min-width: 230%;
+    max-width: 230%;
+    max-height: 370px;
+    margin: 10px 0px 0px -220px;
+    padding: 290px 0px 0px 40px;
+    font-size: 25px;
+  }
+
+  .sub-div3 {
+    width: 100%;
+    height: 100%;
+  }
+
+  .div4 {
+    width: 130%;
+    height: 175px;
+    margin: 10px 0px 0px -70px;
+    padding: 30px;
+    font-size: 25px;
+  }
+  .div5 {
+    width: 130%;
+    height: 175px;
+    padding: 30px;
+    margin: -163px 0px 0px -70px;
+    font-size: 25px;
+    filter: contrast(100%) brightness(85%);
+  }
+
+  .div6 {
+    width: 100%;
+    height: 555px;
+    padding: 480px 0px 0px 40px;
+    margin: 10px 0px 0px 5px;
+  }
 }
