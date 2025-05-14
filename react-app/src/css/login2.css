@@ -19,18 +19,21 @@
 }
 
 .contenedor-login2-2 {
-  width: 30%;
+  width: 600px;
+  height: 600px;
   background-color: var(--Login2);
   padding: 50px 80px 80px 80px;
   border-radius: 80px 0px 0px 80px;
 }
+
+/* .contenedor-login2-2 form */
 
 .contenedor-titulo-login2-2 {
   text-align: center;
   padding-bottom: 20px;
 }
 .contenedor-titulo-login2-2 h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 
@@ -50,7 +53,8 @@ span {
   font-weight: 600;
 }
 
-.contenedor-input-userename-login2-2 input {
+.contenedor-input-userename-login2-2 input,
+.contenedor-input-password-login2-2 input {
   margin: 1px 0px 20px 0;
   padding: 10px;
   border: 2px solid #ccc;
@@ -60,23 +64,23 @@ span {
   color: #333;
   box-sizing: border-box;
   background-color: #f0f0f0;
-  padding: 10px;
+}
+.contenedor-input-userename-login2-2 span,
+.contenedor-input-password-login2-2 span {
+  margin-left: 5px;
 }
 
+.contenedor-button-login2-2 {
+  margin-top: 10px;
+}
+
+.contenedor-reset-login2-2 {
+  margin-top: 10px;
+  text-align: center;
+}
 /* === ESTILOS RESPONSIVE === */
 
-/* Tablets */
-@media (max-width: 1024px) {
-  .contenedor-login2-2 {
-    width: 50%;
-    padding: 40px;
-    border-radius: 60px 0px 0px 60px;
-    margin-right: 20px;
-  }
-}
-
-/* Teléfonos grandes */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .main-contenedor-login2-2 {
     justify-content: center;
     padding: 20px;
@@ -93,8 +97,14 @@ span {
     font-size: 1.8rem;
   }
 }
-
-/* Teléfonos pequeños */
+@media (max-width: 520px) {
+  .contenedor-login2-2 {
+    width: 50%;
+    padding: 40px;
+    border-radius: 60px 0px 0px 60px;
+    margin-right: 20px;
+  }
+}
 @media (max-width: 480px) {
   .contenedor-login2-2 {
     width: 100%;
@@ -115,4 +125,4 @@ span {
     font-size: 14px;
     padding: 8px;
   }
-}
+} */
