@@ -80,9 +80,9 @@ function Home({}: Props) {
         texto="Un enfoque innovador para investigaciones de alto impacto. Nuestro método combina tecnología, sostenibilidad y personalización:"
         imagenes={imagenesMetodologia2}
       />
-       <EspecialidadesAcademicas /> 
-      {width >= 914 ? (
-        <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO" />
+      <EspecialidadesAcademicas />
+      {width >= 991 ? (
+        <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO ――――" />
       ) : (
         <Nosotros2 titulo="¿QUIENES SOMOS?" />
       )}
