@@ -89,6 +89,19 @@ const Login2 = () => {
                 required
               />
             </div>
+            {error && (
+              <div
+                className="error-message"
+                style={{
+                  color: "red",
+                  textAlign: "center",
+                  marginBottom: "10px",
+                }}
+              >
+                {error}
+              </div>
+            )}
+
             <div className="contenedor-button-login2-2">
               <button
                 type="submit"
