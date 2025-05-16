@@ -1,7 +1,6 @@
-/* Reset básico */
-@tailwind base; /* 1. Inyecta estilos base de Tailwind */
-@tailwind components; /* 2. Inyecta clases de componentes */
-@tailwind utilities; /* 3. Inyecta clases utilitarias */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 
 /* Protección contra Tailwind */
 .not-tailwind,
