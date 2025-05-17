@@ -1,13 +1,14 @@
+@import "tailwindcss";
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
 
 /* Protección contra Tailwind */
-.not-tailwind,
+/* .not-tailwind,
 .not-tailwind * {
-  all: revert; /* 4. Reset para navegadores modernos */
-  all: initial; /* 5. Reset más agresivo (fallback) */
-}
+  all: revert; 
+  all: initial; 
+} */
 /* Tus estilos anidados aquí */
 /* .parent {
   color: black;

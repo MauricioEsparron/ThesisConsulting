@@ -46,6 +46,7 @@ const ListarUsuarioPorId = () => {
 
   return (
     <div className="p-4 max-w-3xl mx-auto">
+      <h1 className="text-3xl font-bold underline">Listar Por ID Usuario</h1>
       <div className="flex gap-2 mb-6">
         <input
           type="text"
