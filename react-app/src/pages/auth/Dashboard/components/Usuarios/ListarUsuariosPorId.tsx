@@ -34,26 +34,25 @@ const ListarUsuarioPorId = () => {
       setUsuario(usuarioEncontrado);
     } catch (error) {
       setUsuario(null);
-      if (error instanceof Error) {
-        setError(error.message);
-      } else {
-        setError("Error desconocido al buscar usuario");
-      }
+      setError(error instanceof Error ? error.message : "Error desconocido");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="p-4 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold underline">Listar Por ID Usuario</h1>
-      <div className="flex gap-2 mb-6">
+    <div className="p-6 bg-white rounded-xl shadow-lg">
+      <h2 className="text-2xl font-bold text-blue-600 mb-6 text-center">
+        Buscar Usuario por ID
+      </h2>
+
+      <div className="flex gap-2 mb-4">
         <input
           type="text"
           value={userId}
           onChange={(e) => setUserId(e.target.value)}
           placeholder="Ingrese ID de usuario"
-          className="border rounded p-2 flex-1"
+          className="border border-gray-300 rounded px-4 py-2 flex-1"
         />
         <button
           onClick={handleSearch}
@@ -65,61 +64,74 @@ const ListarUsuarioPorId = () => {
       </div>
 
       {error && (
-        <div className="p-3 mb-4 bg-red-100 text-red-700 rounded">{error}</div>
+        <div className="bg-red-100 text-red-800 px-4 py-2 rounded mb-4">
+          {error}
+        </div>
       )}
 
       {usuario && (
-        <div className="border rounded-lg overflow-hidden">
-          <div className="bg-gray-100 p-3 font-bold border-b">
+        <div className="mt-4 border border-gray-200 rounded-lg shadow-sm p-4 bg-white text-black">
+          <h3 className="text-xl font-semibold text-blue-700 mb-4 text-center">
             Detalles del Usuario (ID: {usuario.userId})
-          </div>
-          <div className="p-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <h3 className="font-semibold text-lg mb-2">
-                  Información Básica
-                </h3>
-                <p>
-                  <span className="font-medium">Nombre:</span> {usuario.name}
-                </p>
-                <p>
-                  <span className="font-medium">Usuario:</span>{" "}
-                  {usuario.username}
-                </p>
-                <p>
-                  <span className="font-medium">Tipo:</span>{" "}
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="text-lg font-bold text-gray-700 mb-2">
+                Información Básica
+              </h4>
+              <p className="text-black">
+                <strong className="text-black">Nombre:</strong>{" "}
+                <span className="text-black">{usuario.name}</span>
+              </p>
+              <p className="text-black">
+                <strong className="text-black">Username:</strong>{" "}
+                <span className="text-black">{usuario.username}</span>
+              </p>
+              <p className="text-black">
+                <strong className="text-black">Tipo:</strong>{" "}
+                <span className="text-black">
                   {usuario.userType.description}
-                </p>
-                <p>
-                  <span className="font-medium">Estado:</span>{" "}
-                  {usuario.active ? "Activo" : "Inactivo"}
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-lg mb-2">
-                  Información Personal
-                </h3>
-                <p>
-                  <span className="font-medium">Nombre Completo:</span>{" "}
+                </span>
+              </p>
+              <p className="text-black">
+                <strong className="text-black">Estado:</strong>{" "}
+                <span
+                  className={`px-2 py-1 rounded-full text-xs font-medium ${
+                    usuario.active === 1
+                      ? "bg-green-100 text-green-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
+                  {usuario.active === 1 ? "Activo" : "Inactivo"}
+                </span>
+              </p>
+            </div>
+            <div>
+              <h4 className="text-lg font-bold text-gray-700 mb-2">
+                Información Personal
+              </h4>
+              <p className="text-black">
+                <strong className="text-black">Nombre Completo:</strong>{" "}
+                <span className="text-black">
                   {usuario.person.name} {usuario.person.lastname}
-                </p>
-                <p>
-                  <span className="font-medium">DNI:</span> {usuario.person.dni}
-                </p>
-                <p>
-                  <span className="font-medium">Email:</span>{" "}
-                  {usuario.person.mail}
-                </p>
-                <p>
-                  <span className="font-medium">Teléfono:</span>{" "}
-                  {usuario.person.phone}
-                </p>
-                <p>
-                  <span className="font-medium">Dirección:</span>{" "}
-                  {usuario.person.address}
-                </p>
-              </div>
+                </span>
+              </p>
+              <p className="text-black">
+                <strong className="text-black">DNI:</strong>{" "}
+                <span className="text-black">{usuario.person.dni}</span>
+              </p>
+              <p className="text-black">
+                <strong className="text-black">Email:</strong>{" "}
+                <span className="text-black">{usuario.person.mail}</span>
+              </p>
+              <p className="text-black">
+                <strong className="text-black">Teléfono:</strong>{" "}
+                <span className="text-black">{usuario.person.phone}</span>
+              </p>
+              <p className="text-black">
+                <strong className="text-black">Dirección:</strong>{" "}
+                <span className="text-black">{usuario.person.address}</span>
+              </p>
             </div>
           </div>
         </div>

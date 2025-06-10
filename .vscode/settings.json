@@ -1,0 +1,15 @@
+// {
+//   "tailwindCSS.includeLanguages": {
+//     "plaincss": "css",
+//     "javascript": "javascriptreact",
+//     "typescript": "typescriptreact"
+//   },
+//   "tailwindCSS.suggest.classInHtml": true,
+//   "tailwindCSS.experimental.configFile": "tailwind.config.js",
+//   "tailwindCSS.validate": true,
+//   "tailwindCSS.experimental.classRegex": ["tw-[\\w-]+"],
+//   "editor.quickSuggestions": {
+//     "strings": true
+//   },
+//   "css.lint.unknownAtRules": "ignore"
+// }

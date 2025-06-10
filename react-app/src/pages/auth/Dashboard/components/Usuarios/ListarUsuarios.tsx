@@ -25,33 +25,50 @@ const ListarUsuarios: React.FC = () => {
     fetchUsers();
   }, []);
 
-  if (loading) return <div>Cargando...</div>;
-  if (error) return <div>{error}</div>;
+  if (loading) return <div className="text-center py-10">Cargando...</div>;
+  if (error) return <div className="text-center text-red-500">{error}</div>;
 
   return (
-    <div>
-      <h2>Lista de Usuarios</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Username</th>
-            {/* <th>Email</th> */}
-            <th>Estado</th>
-            <th>Tipo</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.userId}>
-              <td>{user.userId}</td>
-              <td>{user.username}</td>
-              <td>{user.active === 1 ? "Activo" : "Inactivo"}</td>
-              <td>{user.userType.description}</td>
+    <div className="p-6 bg-white rounded-xl shadow-lg">
+      <h2 className="text-2xl font-bold text-blue-600 mb-6 text-center">
+        Lista de Usuarios
+      </h2>
+
+      <div className="overflow-x-auto">
+        <table className="min-w-full border border-gray-200 rounded-lg shadow-sm">
+          <thead>
+            <tr className="bg-blue-100 text-blue-800 text-sm font-semibold uppercase">
+              <th className="px-6 py-3 text-left">ID</th>
+              <th className="px-6 py-3 text-left">Username</th>
+              <th className="px-6 py-3 text-left">Estado</th>
+              <th className="px-6 py-3 text-left">Tipo</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr
+                key={user.userId}
+                className="hover:bg-gray-100 border-b border-gray-200 transition"
+              >
+                <td className="px-6 py-4">{user.userId}</td>
+                <td className="px-6 py-4">{user.username}</td>
+                <td className="px-6 py-4">
+                  <span
+                    className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      user.active === 1
+                        ? "bg-green-100 text-green-800"
+                        : "bg-red-100 text-red-800"
+                    }`}
+                  >
+                    {user.active === 1 ? "Activo" : "Inactivo"}
+                  </span>
+                </td>
+                <td className="px-6 py-4">{user.userType.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

@@ -1,23 +1,10 @@
 @import "tailwindcss";
+
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
 
-/* Protección contra Tailwind */
-/* .not-tailwind,
-.not-tailwind * {
-  all: revert; 
-  all: initial; 
-} */
-/* Tus estilos anidados aquí */
-/* .parent {
-  color: black;
-
-  & .child {
-    color: white;
-  }
-} */
-
+/* Tus estilos personalizados globales aquí */
 * {
   margin: 0;
   padding: 0;
@@ -28,9 +15,10 @@ html,
 body {
   height: auto;
   overflow-x: hidden;
-  overflow-y: auto; /* o simplemente no lo pongas */
+  overflow-y: auto;
   font-family: "Alexandria", sans-serif;
 }
+
 html {
   background-color: #f4f4f4;
 }

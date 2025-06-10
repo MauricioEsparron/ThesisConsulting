@@ -26,14 +26,12 @@ const ListarUsuariosPorEstado: React.FC<ListarUsuariosPorEstadoProps> = ({
       try {
         setLoading(true);
 
-        // Obtener estados de usuario
         const estadosResponse = await UserStateService.getAllUserState();
         const estadosArray = Array.isArray(estadosResponse)
           ? estadosResponse
           : [estadosResponse];
         setEstadosUsuario(estadosArray);
 
-        // Establecer estado inicial
         const estadoInicial =
           estadoSeleccionado ||
           (estadosArray.length > 0 ? estadosArray[0].userStateId : null);
@@ -95,7 +93,7 @@ const ListarUsuariosPorEstado: React.FC<ListarUsuariosPorEstadoProps> = ({
         <select
           value={estadoActual || ""}
           onChange={(e) => handleChangeEstado(Number(e.target.value))}
-          className="border rounded p-2 w-full max-w-xs"
+          className="border border-gray-300 rounded-lg p-2 w-full max-w-xs shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           disabled={estadosUsuario.length === 0}
         >
           {estadosUsuario.map((estado) => (
@@ -108,20 +106,20 @@ const ListarUsuariosPorEstado: React.FC<ListarUsuariosPorEstadoProps> = ({
 
       {estadoActual && (
         <>
-          <h2 className="text-xl font-bold mb-4">
+          <h2 className="text-xl font-semibold mb-4 text-gray-800">
             Usuarios con estado:{" "}
             {estadosUsuario.find((e) => e.userStateId === estadoActual)
               ?.description || "Desconocido"}
           </h2>
 
-          <div className="overflow-x-auto">
-            <table className="min-w-full border">
-              <thead className="bg-gray-100">
+          <div className="overflow-x-auto rounded-xl shadow-md">
+            <table className="min-w-full bg-white border border-gray-200 rounded-xl">
+              <thead className="bg-gray-50 text-gray-700 text-left">
                 <tr>
-                  <th className="p-2 text-left">ID</th>
-                  <th className="p-2 text-left">Nombre</th>
-                  <th className="p-2 text-left">Apellido</th>
-                  <th className="p-2 text-left">Correo</th>
+                  <th className="p-3">ID</th>
+                  <th className="p-3">Nombre</th>
+                  <th className="p-3">Apellido</th>
+                  <th className="p-3">Correo</th>
                 </tr>
               </thead>
               <tbody>
@@ -129,19 +127,19 @@ const ListarUsuariosPorEstado: React.FC<ListarUsuariosPorEstadoProps> = ({
                   usuarios.map((usuario) => (
                     <tr
                       key={usuario.userId}
-                      className="border-b hover:bg-gray-50"
+                      className="border-t border-gray-200 hover:bg-gray-50"
                     >
-                      <td className="p-2">{usuario.userId}</td>
-                      <td className="p-2">{usuario.name}</td>
-                      <td className="p-2">
+                      <td className="p-3">{usuario.userId}</td>
+                      <td className="p-3">{usuario.name}</td>
+                      <td className="p-3">
                         {usuario.person?.lastname || "N/A"}
                       </td>
-                      <td className="p-2">{usuario.person?.mail || "N/A"}</td>
+                      <td className="p-3">{usuario.person?.mail || "N/A"}</td>
                     </tr>
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={4} className="p-2 text-center">
+                    <td colSpan={4} className="p-4 text-center text-gray-500">
                       No hay usuarios con este estado
                     </td>
                   </tr>
