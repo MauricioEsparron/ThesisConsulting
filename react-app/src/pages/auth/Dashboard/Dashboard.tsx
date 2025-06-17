@@ -7,7 +7,7 @@ import iconGlobe from "../../../img/icons/icon_globe_w.png";
 import iconSettings from "../../../img/icons/icon_settings_w.png";
 import iconBurger from "../../../img/icons/icon_burger_w.png";
 import { logout } from "../../../auth/Auth.service";
-import HomeAministrador from "./components/HomeAministrador";
+import HomeAministrador from "./components/HomeAdministrador";
 import Consultas2 from "./components/Consultoria/Consultas2";
 import { useAuth } from "../../../stores/Auth.store";
 import HomeEstudiante from "./components/HomeEstudiante";
@@ -78,7 +78,7 @@ const Dashboard = () => {
   const handleLogout = () => {
     logout();
     localStorage.removeItem("vistaActiva");
-    window.location.href = "/auth/login";
+    window.location.href = "/auth/Login";
   };
 
   return (
