@@ -78,7 +78,7 @@ const Dashboard = () => {
   const handleLogout = () => {
     logout();
     localStorage.removeItem("vistaActiva");
-    window.location.href = "/auth/Login";
+    window.location.href = "/auth/login";
   };
 
   return (

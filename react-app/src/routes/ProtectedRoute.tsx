@@ -41,7 +41,7 @@ export const ProtectedRoute = ({
   }
 
   if (!authState.isAuthenticated) {
-    return <Navigate to="/auth/Login" replace />;
+    return <Navigate to="/auth/login" replace />;
   }
 
   if (allowedRoles && authState.rol && !allowedRoles.includes(authState.rol)) {

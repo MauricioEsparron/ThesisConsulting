@@ -34,12 +34,12 @@ const Navbar = () => {
           <h2 className="NavBar-nombre-empresa">InvexiaLab</h2>
         </div>
         <div className="nav-links">
-          <a translate="no" href="/Home">
+          <a translate="no" href="/home">
             Home
           </a>
-          <a href="/Especialidades">Especialidades</a>
-          <a href="/Nosotros">Nosotros</a>
-          <a target="_blank" href="/Contactanos">
+          <a href="/especialidades">Especialidades</a>
+          <a href="/nosotros">Nosotros</a>
+          <a target="_blank" href="/contactanos">
             Contáctanos
           </a>
         </div>
@@ -58,14 +58,14 @@ const Navbar = () => {
               ☰
             </i>
           </div>
-          <Link className="opcion1-navbar" to="/Especialidades">
+          <Link className="opcion1-navbar" to="/especialidades">
             <FaGraduationCap style={{ marginRight: "8px" }} /> Especialidades
           </Link>
-          <a href="/auth/Login" target="_blank" rel="noopener noreferrer">
+          <a href="/auth/login" target="_blank" rel="noopener noreferrer">
             <FaUser style={{ marginRight: "8px" }} /> Acceder
           </a>
 
-          <Link to="/Contactanos">
+          <Link to="/contactanos">
             <FaWhatsapp style={{ marginRight: "8px" }} /> Contáctanos
           </Link>
           <a href="#">

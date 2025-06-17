@@ -1,16 +1,26 @@
-import "../../css/Preload.css"; // Asegúrate de que el CSS esté en el archivo correcto
-// src/components/Preload.tsx
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../../css/Preload.css";
 
 const Preload = () => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      sessionStorage.setItem("preload-shown", "true");
-      window.location.href = "/Home"; // Redirige nuevamente a Home
-    }, 2500);
+  const navigate = useNavigate();
+  const [isResourcesLoaded, setIsResourcesLoaded] = useState(false);
 
-    return () => clearTimeout(timer);
+  useEffect(() => {
+    const loadResources = async () => {
+      // Simula la carga de recursos críticos
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simula carga de recursos
+      setIsResourcesLoaded(true);
+    };
+
+    loadResources();
   }, []);
+
+  useEffect(() => {
+    if (isResourcesLoaded) {
+      navigate("/home", { replace: true });
+    }
+  }, [isResourcesLoaded, navigate]);
 
   return (
     <div className="loader-container">

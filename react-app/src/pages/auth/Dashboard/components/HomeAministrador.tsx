@@ -19,7 +19,7 @@ const HomeAdministrador: React.FC = () => {
           <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-md">
             📊 Ver Reportes
           </button>
-          <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-all duration-200 shadow-md">
+          <button className="sm:mt-0 mt-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-all duration-200 shadow-md">
             ➕ Agregar Usuario
           </button>
         </div>

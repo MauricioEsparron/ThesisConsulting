@@ -19,14 +19,14 @@ function Footer({}: Props) {
                 <h2 className="titulo-footer1">PÁGINA PRINCIPAL</h2>
                 <div className="sub-subcontenedor-footer-enlaces">
                   <div className="footer-enlaces-bloque1">
-                    <a href="/Home">Inicio</a>
-                    <a href="/Nosotros">Nosotros</a>
+                    <a href="/home">Inicio</a>
+                    <a href="/nosotros">Nosotros</a>
                     {/* <a href="#">Servicios</a> */}{" "}
                   </div>
                   <div className="footer-enlaces-bloque2">
-                    <a href="/Especialidades">Especialidades</a>
+                    <a href="/especialidades">Especialidades</a>
                     {/* <a href="#">Productos</a> */}
-                    <a href="/Contactanos">Contáctanos</a>
+                    <a href="/contactanos">Contáctanos</a>
                   </div>
                 </div>
               </div>

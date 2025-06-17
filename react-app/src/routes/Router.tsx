@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Preload from "../pages/Home/Preload"; // <- Asegúrate de tener este componente creado
-
+import Preload from "../pages/Home/Preload";
 import Home from "../pages/Home/Home";
 import Especialidades from "../pages/Especialidades/Especialidades";
 import Contactanos from "../pages/Contactanos/Contactanos";
@@ -21,36 +20,30 @@ export const AppRouter = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    const loadResources = async () => {
+      // Simula la carga de recursos críticos
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simula carga de recursos
       setIsLoading(false);
-    }, 2500); // Tiempo de la animación de preload
+    };
 
-    return () => clearTimeout(timeout);
+    loadResources();
   }, []);
 
   return (
     <Router>
       <AuthProvider>
         <Routes>
-          {/* Mostrar Preload solo en "/" */}
-          {isLoading ? (
-            <Route path="/" element={<Preload />} />
-          ) : (
-            <Route path="/Home" element={<Home />} />
-          )}
-
-          {/* Rutas públicas */}
-          <Route path="/Especialidades" element={<Especialidades />} />
-          <Route path="/Contactanos" element={<Contactanos />} />
-          <Route path="/Gracias" element={<Gracias />} />
-          <Route path="/auth/Login" element={<Login />} />
-          <Route path="/auth/Login2" element={<Login2 />} />
-          <Route path="/Nosotros" element={<Nosotros />} />
-          <Route path="/Dashboard2" element={<Dashboard2 />} />
-
-          {/* Rutas protegidas */}
+          <Route path="/" element={isLoading ? <Preload /> : <Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/especialidades" element={<Especialidades />} />
+          <Route path="/contactanos" element={<Contactanos />} />
+          <Route path="/gracias" element={<Gracias />} />
+          <Route path="/auth/login" element={<Login />} />
+          <Route path="/auth/login2" element={<Login2 />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/dashboard2" element={<Dashboard2 />} />
           <Route
-            path="/Dashboard"
+            path="/dashboard"
             element={
               <ProtectedRoute>
                 <Dashboard />
@@ -58,7 +51,7 @@ export const AppRouter = () => {
             }
           />
           <Route
-            path="/Pruebas"
+            path="/pruebas"
             element={
               <ProtectedRoute>
                 <Pruebas />

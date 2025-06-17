@@ -1,27 +1,33 @@
-import { useState, useEffect, useRef } from "react";
-import Header from "./components/Header";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../components/shared/NavBar";
+import Header from "./components/Header";
+import HeaderResponsive from "./components/HeaderResponsive";
 import "../../index.css";
 import "../../css/ContactForm.css";
-import Pilares from "./components/Pilares";
+
 import icon1 from "../../img/icon_libro.png";
 import icon2 from "../../img/icon_computadora.png";
 import icon3 from "../../img/icon_impacto.png";
-import Proposito from "./components/Proposito";
 import imgProposito from "../../img/Aprendizaje Interactivo y Práctico.jpg";
-import Metodologia from "./components/Metodologia";
 import imgMetodologia1 from "../../img/Aprendizaje Interactivo y Práctico.jpg";
 import imgMetodologia2 from "../../img/agencia de Marketing y publicidad.jpg";
 import imgMetodologia3 from "../../img/organizaciones.webp";
-import Nosotros from "./components/Nosotros";
+
+import Pilares from "./components/Pilares";
+import Proposito from "./components/Proposito";
+import Metodologia from "./components/Metodologia";
 import CulturaOrganizacional from "./components/CulturaOrganizacional";
 import EmailMessage from "./components/EmailMessage";
 import WhatsappIcon from "../../components/ui/WhatsappIcon/WhatsappIcon";
 import Footer from "../../components/shared/Footer";
-import Nosotros2 from "./components/Nosotros2";
-import HeaderResponsive from "./components/HeaderResponsive";
-import ContactForm from "./components/ContactForm";
-import EspecialidadesAcademicas from "../Especialidades/EspecialidadesAcademicas";
+
+// Lazy loading para componentes no críticos
+const Nosotros = React.lazy(() => import("./components/Nosotros"));
+const Nosotros2 = React.lazy(() => import("./components/Nosotros2"));
+const ContactForm = React.lazy(() => import("./components/ContactForm"));
+const EspecialidadesAcademicas = React.lazy(
+  () => import("../Especialidades/EspecialidadesAcademicas")
+);
 
 const imagenesMetodologia2 = [
   {
@@ -41,11 +47,9 @@ const imagenesMetodologia2 = [
   },
 ];
 
-type Props = {};
-
-function Home({}: Props) {
+function Home() {
   const [width, setWidth] = useState(window.innerWidth);
-  const formRef = useRef<HTMLFormElement | null>(null); // 🔹 Referencia para el formulario
+  const formRef = React.useRef<HTMLFormElement | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -73,20 +77,23 @@ function Home({}: Props) {
       <Proposito
         imagen={imgProposito}
         titulo="NUESTRO PROPÓSITO"
-        texto="Guiar a estudiantes y profesionales en la creación de investigaciones de impacto global, utilizando metodologías avanzadas, herramientas tecnológicas y un enfoque en sostenibilidad y los Objetivos de Desarrollo Sostenible (ODS)."
+        texto="Guiar a estudiantes y profesionales en la creación de investigaciones de impacto global..."
       />
       <Metodologia
         titulo="METODOLOGÍA"
-        texto="Un enfoque innovador para investigaciones de alto impacto. Nuestro método combina tecnología, sostenibilidad y personalización:"
+        texto="Un enfoque innovador para investigaciones de alto impacto..."
         imagenes={imagenesMetodologia2}
       />
-      <EspecialidadesAcademicas />
-      {width >= 991 ? (
-        <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO ――――" />
-      ) : (
-        <Nosotros2 titulo="¿QUIENES SOMOS?" />
-      )}
-      {width <= 913 && <ContactForm ref={formRef} />} <CulturaOrganizacional />
+      <React.Suspense fallback={null}>
+        <EspecialidadesAcademicas />
+        {width >= 991 ? (
+          <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO ――――" />
+        ) : (
+          <Nosotros2 titulo="¿QUIENES SOMOS?" />
+        )}
+        {width <= 913 && <ContactForm ref={formRef} />}
+      </React.Suspense>
+      <CulturaOrganizacional />
       <EmailMessage />
       <WhatsappIcon />
       <Footer />

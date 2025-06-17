@@ -35,7 +35,7 @@ const Gracias: React.FC = () => {
           </a>
           <div className="mt-5">
             <a
-              href="/Contactanos"
+              href="/contactanos"
               className="btn btn-outline-primary btn-final"
             >
               <i className="fas fa-arrow-left me-2"></i>Volver al inicio

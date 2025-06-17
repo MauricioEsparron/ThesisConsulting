@@ -198,7 +198,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px 0px !important;
+  /* padding: 5px 0px !important; */
   transition: var(--transition);
   display: flex;
   align-items: center;
