@@ -1,17 +1,16 @@
 import React from "react";
-import iconHome from "../../../../img/icons/icon_home_w.png";
-import iconHoja from "../../../../img/icons/icon_hoja_w.png";
-import iconGlobe from "../../../../img/icons/icon_globe_w.png";
-import iconSettings from "../../../../img/icons/icon_settings_w.png";
-import iconLogOut from "../../../../img/icons/icon_logout_w.png";
+import iconHome from "../../../../../img/icons/icon_home_w.png";
+import iconGlobe from "../../../../../img/icons/icon_globe_w.png";
+import iconSettings from "../../../../../img/icons/icon_settings_w.png";
+import iconLogOut from "../../../../../img/icons/icon_logout_w.png";
 
-interface AsesorMenuProps {
+interface AdminMenuProps {
   setVistaActiva: (viewId: string) => void;
   setAbierto: (abierto: boolean) => void;
   handleLogout: () => void;
 }
 
-const AsesorMenu: React.FC<AsesorMenuProps> = ({
+const AdminMenu: React.FC<AdminMenuProps> = ({
   setVistaActiva,
   setAbierto,
   handleLogout,
@@ -20,17 +19,27 @@ const AsesorMenu: React.FC<AsesorMenuProps> = ({
     {
       icon: iconHome,
       text: "Home",
-      viewId: "home_estudiante",
-    },
-    {
-      icon: iconHoja,
-      text: "Consultoría",
-      viewId: "consultoria_estudiante",
+      viewId: "home_admin",
     },
     {
       icon: iconGlobe,
-      text: "Actividades",
-      viewId: "actividades_estudiante",
+      text: "Listar Usuarios",
+      viewId: "listarUsuarios_admin",
+    },
+    {
+      icon: iconGlobe,
+      text: "Listar Usuarios por Id",
+      viewId: "listarUsuariosPorId_admin",
+    },
+    {
+      icon: iconGlobe,
+      text: "Listar Usuarios por tipo",
+      viewId: "listarUsuariosPorTipo_admin",
+    },
+    {
+      icon: iconGlobe,
+      text: "Listar Usuarios por Estado",
+      viewId: "listarUsuariosPorEstado_admin",
     },
     {
       icon: iconSettings,
@@ -68,4 +77,4 @@ const AsesorMenu: React.FC<AsesorMenuProps> = ({
   );
 };
 
-export default AsesorMenu;
+export default AdminMenu;

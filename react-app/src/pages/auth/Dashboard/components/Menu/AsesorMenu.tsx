@@ -1,17 +1,17 @@
 import React from "react";
-import iconHome from "../../../../img/icons/icon_home_w.png";
-import iconHoja from "../../../../img/icons/icon_hoja_w.png";
-import iconGlobe from "../../../../img/icons/icon_globe_w.png";
-import iconSettings from "../../../../img/icons/icon_settings_w.png";
-import iconLogOut from "../../../../img/icons/icon_logout_w.png";
+import iconHome from "../../../../../img/icons/icon_home_w.png";
+import iconHoja from "../../../../../img/icons/icon_hoja_w.png";
+import iconGlobe from "../../../../../img/icons/icon_globe_w.png";
+import iconSettings from "../../../../../img/icons/icon_settings_w.png";
+import iconLogOut from "../../../../../img/icons/icon_logout_w.png";
 
-interface StudentMenuProps {
+interface AsesorMenuProps {
   setVistaActiva: (viewId: string) => void;
   setAbierto: (abierto: boolean) => void;
   handleLogout: () => void;
 }
 
-const StudentMenu: React.FC<StudentMenuProps> = ({
+const AsesorMenu: React.FC<AsesorMenuProps> = ({
   setVistaActiva,
   setAbierto,
   handleLogout,
@@ -68,4 +68,4 @@ const StudentMenu: React.FC<StudentMenuProps> = ({
   );
 };
 
-export default StudentMenu;
+export default AsesorMenu;

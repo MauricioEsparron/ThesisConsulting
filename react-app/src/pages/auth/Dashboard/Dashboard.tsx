@@ -1,24 +1,15 @@
-import { useState, useRef, useEffect, Suspense, lazy } from "react";
+// src/components/Dashboard.tsx
+import { useState, useRef, useEffect } from "react";
 import "../../../css/Dashboard.css";
 import iconBurger from "../../../img/icons/icon_burger_w.png";
 import { logout } from "../../../auth/Auth.service";
-import HomeAdministrador from "./components/HomeAdministrador";
-import Consultas2 from "./components/Consultoria/Consultas2";
 import { useAuth } from "../../../stores/Auth.store";
-import HomeEstudiante from "./components/HomeEstudiante";
-import ListarUsuarios from "./components/Usuarios/ListarUsuarios";
-import ListarUsuariosPorTipo from "./components/Usuarios/ListarUsuariosPorTipo";
-import ListarUsuariosPorId from "./components/Usuarios/ListarUsuariosPorId";
-import ListarUsuariosPorEstado from "./components/Usuarios/ListarUsuariosPorEstado";
-import AdminMenu from "./components/AdminMenu";
-import StudentMenu from "./components/StudentMenu";
-import AsesorMenu from "./components/AsesorMenu";
-
-const Actividades = lazy(() => import("./components/Actividades/Actividades"));
-const Consultoria = lazy(() => import("./components/Consultoria/Consultoria"));
-const Configuracion = lazy(
-  () => import("./components/Configuration/Configuracion")
-);
+import AdminMenu from "./components/Menu/AdminMenu";
+import StudentMenu from "./components/Menu/StudentMenu";
+import AsesorMenu from "./components/Menu/AsesorMenu";
+import AdminViews from "./components/views/AdminViews";
+import StudentViews from "./components/views/StudentViews";
+import AsesorViews from "./components/views/AsesorViews";
 
 const Dashboard = () => {
   const [nombre, setNombre] = useState<string>("");
@@ -27,14 +18,7 @@ const Dashboard = () => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const { rol } = useAuth();
-  console.log("Rol in Dashboard:", rol);
-
-  // Precarga
-  useEffect(() => {
-    import("./components/Consultoria/Consultoria");
-    import("./components/Actividades/Actividades");
-    import("./components/Configuration/Configuracion");
-  }, []);
+  // console.log("Rol in Dashboard:", rol);
 
   // Cerrar menú si se hace clic fuera
   useEffect(() => {
@@ -143,49 +127,9 @@ const Dashboard = () => {
 
       {/* Contenido principal */}
       <div className="contenedor-slider">
-        <Suspense fallback={<div className="cargando">Cargando vista...</div>}>
-          {/* Admin */}
-          {vistaActiva === "home_admin" && <HomeAdministrador />}
-          {vistaActiva === "consultoria_admin" && (
-            <>
-              <Consultoria />
-              <Consultas2 />
-            </>
-          )}
-          {vistaActiva === "actividades_admin" && <Actividades />}
-          {vistaActiva === "configuracion_admin" && <Configuracion />}
-          {vistaActiva === "listarUsuarios_admin" && <ListarUsuarios />}
-          {vistaActiva === "listarUsuariosPorId_admin" && (
-            <ListarUsuariosPorId />
-          )}
-          {vistaActiva === "listarUsuariosPorTipo_admin" && (
-            <ListarUsuariosPorTipo />
-          )}
-          {vistaActiva === "listarUsuariosPorEstado_admin" && (
-            <ListarUsuariosPorEstado />
-          )}
-          {/* Estudiantes */}
-          {vistaActiva === "home_estudiante" && <HomeEstudiante />}
-          {vistaActiva === "consultoria_estudiante" && (
-            <>
-              <Consultoria />
-              <Consultas2 />
-            </>
-          )}
-          {vistaActiva === "actividades_estudiante" && <Actividades />}
-          {vistaActiva === "configuracion_estudiante" && <Configuracion />}
-
-          {/* Asesor */}
-          {/* {vistaActiva === "home_asesor" && <HomeAsesor />} */}
-          {vistaActiva === "consultoria_asesor" && (
-            <>
-              <Consultoria />
-              <Consultas2 />
-            </>
-          )}
-          {vistaActiva === "actividades_asesor" && <Actividades />}
-          {vistaActiva === "configuracion_asesor" && <Configuracion />}
-        </Suspense>
+        {rol === "Administrador" && <AdminViews vistaActiva={vistaActiva} />}
+        {rol === "Estudiante" && <StudentViews vistaActiva={vistaActiva} />}
+        {rol === "Asesor" && <AsesorViews vistaActiva={vistaActiva} />}
       </div>
     </div>
   );
