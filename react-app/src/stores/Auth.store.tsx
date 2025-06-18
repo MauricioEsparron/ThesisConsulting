@@ -1,5 +1,10 @@
-// src/stores/Auth.store.tsx
-import { createContext, useContext, useState, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 
 type AuthContextType = {
   token: string | null;
@@ -14,15 +19,23 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(
-    localStorage.getItem("token")
+    sessionStorage.getItem("token")
   );
-  const [rol, setRol] = useState<string | null>(localStorage.getItem("rol"));
+  const [rol, setRol] = useState<string | null>(sessionStorage.getItem("rol"));
+
+  useEffect(() => {
+    // Actualiza el token y el rol desde sessionStorage cuando el componente se monta
+    const userToken = sessionStorage.getItem("token");
+    const userRol = sessionStorage.getItem("rol");
+    setToken(userToken);
+    setRol(userRol);
+  }, []);
 
   const logout = () => {
     setToken(null);
     setRol(null);
-    localStorage.removeItem("token");
-    localStorage.removeItem("rol");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("rol");
   };
 
   return (
@@ -34,4 +47,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useAuth = () => useContext(AuthContext)!;
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (context === undefined) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return context;
+};

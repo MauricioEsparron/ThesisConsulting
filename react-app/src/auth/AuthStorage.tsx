@@ -1,25 +1,26 @@
-// src/auth/AuthStorage.ts
-
 export const saveAuthData = (data: {
   token: string;
   username: string;
   nombre: string;
   rol: string;
 }) => {
-  sessionStorage.setItem("token", data.token); // Cambiado a sessionStorage
+  // console.log("Saving auth data:", data);
+  sessionStorage.setItem("token", data.token);
   sessionStorage.setItem("username", data.username);
   sessionStorage.setItem("nombre", data.nombre);
   sessionStorage.setItem("rol", data.rol);
 };
 
-export const getAuthToken = () => sessionStorage.getItem("token"); // Cambiado a sessionStorage
+export const getAuthToken = () => sessionStorage.getItem("token");
 
 export const getUserRol = (): string | null => {
-  return sessionStorage.getItem("rol"); // Cambiado a sessionStorage
+  const rol = sessionStorage.getItem("rol");
+  // console.log("Retrieved rol:", rol);
+  return rol;
 };
 
 export const clearAuthData = () => {
-  sessionStorage.removeItem("token"); // Cambiado a sessionStorage
+  sessionStorage.removeItem("token");
   sessionStorage.removeItem("username");
   sessionStorage.removeItem("nombre");
   sessionStorage.removeItem("rol");

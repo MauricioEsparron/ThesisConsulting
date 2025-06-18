@@ -1,10 +1,11 @@
-// src/auth/Auth.service.ts
 import { login as loginAPI } from "../service/api/authService";
 import { saveAuthData, clearAuthData, getAuthToken } from "./AuthStorage";
 import { RoleMap } from "../constants/RoleMap";
 
 const normalizeRole = (role: string): string => {
-  return role.replace(/\s+/g, "_").toUpperCase();
+  const normalizedRole = role.replace(/\s+/g, "_").toUpperCase();
+  // console.log("Normalized role:", normalizedRole);
+  return normalizedRole;
 };
 
 export const login = async (username: string, password: string) => {
@@ -12,6 +13,8 @@ export const login = async (username: string, password: string) => {
 
   const normalizedRoleKey = normalizeRole(data.rol);
   const readableRole = RoleMap[normalizedRoleKey] ?? data.rol;
+
+  //sole.log("Readable role:", readableRole); //
 
   saveAuthData({
     token: data.token,
