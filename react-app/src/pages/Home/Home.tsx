@@ -84,8 +84,9 @@ function Home() {
         texto="Un enfoque innovador para investigaciones de alto impacto..."
         imagenes={imagenesMetodologia2}
       />
+      <EspecialidadesAcademicas />
       <React.Suspense fallback={null}>
-        <EspecialidadesAcademicas />
+
         {width >= 991 ? (
           <Nosotros titulo="¿QUIENES SOMOS?" subtitulo="IMPACTO ――――" />
         ) : (

@@ -1,58 +1,87 @@
-import desc0857 from "../../img/DSC_0857.png";
+import React from "react";
 import "../../css/EspecialidadesAcademicas.css";
-import desc0477 from "../../img/DSC_0857.png";
-import iconConsult from "../../img/icons/icon_consult.png"
+import iconConsult from "../../img/icons/icon_consult.png";
+import consult1 from "../../img/ConsultoriaAcademica1.jpg";
+import consult2 from "../../img/ConsultoriaAcademica2.jpg";
+
+// Datos de las especialidades para mejor mantenabilidad
+const especialidades = [
+  {
+    id: 1,
+    texto: "Asesoría en tesis con enfoque ODS"
+  },
+  {
+    id: 2,
+    texto: "Capacitación en herramientas avanzadas para tus proyectos"
+  },
+  {
+    id: 3,
+    texto: "Metodologías de investigación científica"
+  },
+  {
+    id: 4,
+    texto: "Alianzas estratégicas para impacto social"
+  }
+];
+
 const EspecialidadesAcademicas: React.FC = () => {
   return (
-    <section className="informacion-section">
+    <section className="informacion-section" aria-labelledby="especialidades-title">
       <div className="informacion-container">
+        {/* Panel izquierdo - Imagen principal */}
         <div className="left-panel">
           <div className="imagen-contenedores">
-            <img src={desc0477} alt="Contenedores" />
+            <img 
+              src={consult1} 
+              alt="Equipo de consultoría académica trabajando en proyectos innovadores" 
+              loading="lazy"
+            />
           </div>
         </div>
 
+        {/* Panel derecho - Contenido */}
         <div className="right-panel">
-          <div className="title-section">
+          {/* Sección de título */}
+          <header className="title-section">
             <div className="titulo-con-banda">
-              <div className="banda-roja"></div>
-              <h2>NUESTRAS ESPECIALIDADES EN CONSULTORÍA ACADÉMICA</h2>
+              <div className="banda-roja" aria-hidden="true"></div>
+              <h2 id="especialidades-title">
+                NUESTRAS ESPECIALIDADES EN CONSULTORÍA ACADÉMICA
+              </h2>
             </div>
-          </div>
+          </header>
 
+          {/* Contenido inferior */}
           <div className="bottom-content">
-            {/* Second image */}
+            {/* Segunda imagen */}
             <div className="imagen-cajas-container">
               <div className="imagen-cajas">
-                <img src={desc0857} alt="Cajas" />
+                <img 
+                  src={consult2} 
+                  alt="Herramientas y recursos de consultoría académica" 
+                  loading="lazy"
+                />
               </div>
             </div>
 
+            {/* Sección de descripción */}
             <div className="description-section">
               <div className="inner-description">
-
-                <ul className="list-academy">
-                  <li className="item-academy">
-                    <img src={iconConsult} alt="icon  " />
-                    <p> Asesoría en tesis con enfoque ODS.</p>
-                  </li>
-                  <li className="item-academy">
-                    <img src={iconConsult} alt="icon  " />
-                    <p> Capacitación en herramientas avanzadas para tus proyectos. </p>
-                  </li>
-                  <li className="item-academy">
-                    <img src={iconConsult} alt="icon  " />
-                    <p>Capacitación en herramientas avanzadas</p>
-                  </li>
-                  <li className="item-academy">
-                    <img src={iconConsult} alt="icon  " />
-                    <p>Alianzas estratégicas para impacto social</p>
-                  </li>
+                <ul className="list-academy" role="list">
+                  {especialidades.map((especialidad) => (
+                    <li key={especialidad.id} className="item-academy" role="listitem">
+                      <img 
+                        src={iconConsult} 
+                        alt="" 
+                        aria-hidden="true"
+                        loading="lazy"
+                      />
+                      <p>{especialidad.texto}</p>
+                    </li>
+                  ))}
                 </ul>
 
-                {/* <div className="button-container">
-                  <button className="btn-contacto">Contáctanos</button>
-                </div> */}
+                
               </div>
             </div>
           </div>
