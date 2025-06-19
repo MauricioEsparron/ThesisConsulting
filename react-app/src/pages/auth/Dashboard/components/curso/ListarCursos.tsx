@@ -39,9 +39,10 @@ const ListarCursos: React.FC = () => {
           <thead>
             <tr className="bg-blue-100 text-blue-800 text-sm font-semibold uppercase">
               <th className="px-6 py-3 text-left">ID</th>
-              <th className="px-6 py-3 text-left">Username</th>
+              <th className="px-6 py-3 text-left">Nombre curso</th>
+              <th className="px-6 py-3 text-left">Descripcion</th>
               <th className="px-6 py-3 text-left">Estado</th>
-              <th className="px-6 py-3 text-left">Tipo</th>
+              <th className="px-6 py-3 text-left">Profesor</th>
             </tr>
           </thead>
           <tbody>

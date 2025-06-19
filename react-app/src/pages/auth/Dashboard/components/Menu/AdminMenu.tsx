@@ -44,6 +44,10 @@ const AdminMenu: React.FC<AdminMenuProps> = ({
           text: "Listar Usuarios por Estado",
           viewId: "listarUsuariosPorEstado_admin",
         },
+        {
+          text: "Listar Cursos",
+          viewId: "listarCursos_admin",
+        },
       ],
     },
     {
