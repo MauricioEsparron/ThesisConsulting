@@ -2,13 +2,13 @@ import api from "./axiosConfig";
 
 export interface PersonaDTO {
   personId: number;
-  name: String;
-  lastname: String;
-  phone: String;
+  name: string;
+  lastname: string;
+  phone: string;
   age: number;
-  dni: String;
-  mail: String;
-  address: String;
+  dni: string;
+  mail: string;
+  address: string;
   state: number;
 }
 
