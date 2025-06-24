@@ -8,6 +8,7 @@ import ListarUsuariosPorTipo from "../Usuarios/ListarUsuariosPorTipo";
 import ListarUsuariosPorId from "../Usuarios/ListarUsuariosPorId";
 import ListarUsuariosPorEstado from "../Usuarios/ListarUsuariosPorEstado";
 import ListarCursos from "../curso/ListarCursos";
+import ListarPersonas from "../Persona/ListarPersonas";
 
 const Actividades = lazy(() => import("../Actividades/Actividades"));
 const Consultoria = lazy(() => import("../Consultoria/Consultoria"));
@@ -38,6 +39,7 @@ const AdminViews: React.FC<AdminViewsProps> = ({ vistaActiva }) => {
         <ListarUsuariosPorEstado />
       )}
       {vistaActiva === "listarCursos_admin" && <ListarCursos />}
+      {vistaActiva === "listarPersonas_admin" && <ListarPersonas />}
     </Suspense>
   );
 };

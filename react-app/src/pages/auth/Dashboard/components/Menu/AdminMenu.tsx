@@ -48,6 +48,10 @@ const AdminMenu: React.FC<AdminMenuProps> = ({
           text: "Listar Cursos",
           viewId: "listarCursos_admin",
         },
+        {
+          text: "Listar Personas",
+          viewId: "listarPersonas_admin",
+        },
       ],
     },
     {
