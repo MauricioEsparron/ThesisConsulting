@@ -55,12 +55,18 @@ const ListarUsuarios: React.FC = () => {
                 <td className="px-6 py-4">
                   <span
                     className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      user.active === 1
+                      user.userState.userStateId === 1
                         ? "bg-green-100 text-green-800"
+                        : user.userState.userStateId === 2
+                        ? "bg-yellow-100 text-yellow-800"
                         : "bg-red-100 text-red-800"
                     }`}
                   >
-                    {user.active === 1 ? "Activo" : "Inactivo"}
+                    {user.userState.userStateId === 1
+                      ? "Activo"
+                      : user.userState.userStateId === 2
+                      ? "En mantenimiento"
+                      : "Inactivo"}
                   </span>
                 </td>
                 <td className="px-6 py-4">{user.userType.description}</td>

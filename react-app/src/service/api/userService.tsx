@@ -23,6 +23,10 @@ export interface UsuarioDTO {
     userType: number;
     description: string;
   };
+  userState: {
+    userStateId: number;
+    description: string;
+  };
 }
 
 // Tipo personalizado para errores de API
