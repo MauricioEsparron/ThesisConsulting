@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 import {
   PersonService,
   PersonaDTO,
 } from "../../../../../service/api/personService";
 
 const ListarPersonas: React.FC = () => {
-  const [persons, setpersons] = useState<PersonaDTO[]>([]);
+  const [persons, setPersons] = useState<PersonaDTO[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -14,7 +13,7 @@ const ListarPersonas: React.FC = () => {
     const fetchPersons = async () => {
       try {
         const data = await PersonService.getAllPersons();
-        setpersons(data);
+        setPersons(data);
       } catch (err) {
         setError("Error al cargar personas");
         console.error("Error:", err);
@@ -51,32 +50,46 @@ const ListarPersonas: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {persons.map((person) => (
-              <tr
-                key={person.personId}
-                className="hover:bg-gray-100 border-b border-gray-200 transition"
-              >
-                <td className="px-6 py-4">{person.personId}</td>
-                <td className="px-6 py-4">{person.name}</td>
-                <td className="px-6 py-4">{person.lastname}</td>
-                <td className="px-6 py-4">{person.phone}</td>
-                <td className="px-6 py-4">{person.age}</td>
-                <td className="px-6 py-4">{person.dni}</td>
-                <td className="px-6 py-4">{person.mail}</td>
-                <td className="px-6 py-4">{person.address}</td>
-                <td className="px-6 py-4">
-                  <span
-                    className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      person.state === 1
-                        ? "bg-green-100 text-green-800"
-                        : "bg-red-100 text-red-800"
-                    }`}
-                  >
-                    {person.state === 1 ? "Activo" : "Inactivo"}
-                  </span>
-                </td>
-              </tr>
-            ))}
+            {persons.map((person) => {
+              console.log(
+                "Person state:",
+                person.personStateId,
+                typeof person.personStateId
+              );
+
+              return (
+                <tr
+                  key={person.personId}
+                  className="hover:bg-gray-100 border-b border-gray-200 transition"
+                >
+                  <td className="px-6 py-4">{person.personId}</td>
+                  <td className="px-6 py-4">{person.name}</td>
+                  <td className="px-6 py-4">{person.lastname}</td>
+                  <td className="px-6 py-4">{person.phone}</td>
+                  <td className="px-6 py-4">{person.age}</td>
+                  <td className="px-6 py-4">{person.dni}</td>
+                  <td className="px-6 py-4">{person.mail}</td>
+                  <td className="px-6 py-4">{person.address}</td>
+                  <td className="px-6 py-4">
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        person.personStateId === 1
+                          ? "bg-green-100 text-green-800"
+                          : person.personStateId === 2
+                          ? "bg-yellow-100 text-yellow-800"
+                          : "bg-red-100 text-red-800"
+                      }`}
+                    >
+                      {person.personStateId === 1
+                        ? "Activo"
+                        : person.personStateId === 2
+                        ? "En mantenimiento"
+                        : "Inactivo"}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

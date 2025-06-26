@@ -9,7 +9,11 @@ export interface PersonaDTO {
   dni: string;
   mail: string;
   address: string;
-  state: number;
+  personStateId: number;
+  personState: {
+    personStateId: number;
+    description: string;
+  };
 }
 
 interface ApiError {
