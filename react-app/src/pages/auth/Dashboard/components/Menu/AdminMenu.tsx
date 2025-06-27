@@ -37,14 +37,6 @@ const AdminMenu: React.FC<AdminMenuProps> = ({
           viewId: "listarUsuariosPorId_admin",
         },
         {
-          text: "Listar Usuarios por tipo",
-          viewId: "listarUsuariosPorTipo_admin",
-        },
-        {
-          text: "Listar Usuarios por Estado",
-          viewId: "listarUsuariosPorEstado_admin",
-        },
-        {
           text: "Listar Cursos",
           viewId: "listarCursos_admin",
         },
