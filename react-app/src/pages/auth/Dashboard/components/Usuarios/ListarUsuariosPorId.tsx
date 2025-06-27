@@ -97,12 +97,14 @@ const ListarUsuarioPorId = () => {
                 <strong className="text-black">Estado:</strong>{" "}
                 <span
                   className={`px-2 py-1 rounded-full text-xs font-medium ${
-                    usuario.active === 1
+                    usuario.userState.userStateId === 1
                       ? "bg-green-100 text-green-800"
+                      : usuario.userState.userStateId === 2
+                      ? "bg-yellow-100 text-yellow-800"
                       : "bg-red-100 text-red-800"
                   }`}
                 >
-                  {usuario.active === 1 ? "Activo" : "Inactivo"}
+                  {usuario.userState.description}
                 </span>
               </p>
             </div>
