@@ -14,12 +14,18 @@ export interface CursoDTO {
   typeUserDescription: string;
   typeUserId: number;
   restrictedAcces: number;
-  state: number;
+  courseStateId: number;
+  courseState: {
+    courseStateId: number;
+    description: string;
+  };
   professorEmail: string;
   professorFirstName: string;
   professorLastName: string;
   professorFullName: string;
   studentCount: number;
+  startDate: string;
+  endDate: string;
 }
 
 interface ApiError {

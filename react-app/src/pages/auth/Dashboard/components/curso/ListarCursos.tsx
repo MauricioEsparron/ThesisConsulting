@@ -57,12 +57,18 @@ const ListarCursos: React.FC = () => {
                 <td className="px-6 py-4">
                   <span
                     className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      course.state === 1
+                      course.courseStateId === 1
                         ? "bg-green-100 text-green-800"
+                        : course.courseStateId === 2
+                        ? "bg-yellow-100 text-yellow-800"
                         : "bg-red-100 text-red-800"
                     }`}
                   >
-                    {course.state === 1 ? "Activo" : "Inactivo"}
+                    {course.courseStateId === 1
+                      ? "Activo"
+                      : course.courseStateId === 2
+                      ? "En mantenimiento"
+                      : "Inactivo"}
                   </span>
                 </td>
                 <td className="px-6 py-4">{course.professorFullName}</td>
