@@ -20,7 +20,7 @@ export interface UsuarioDTO {
     state: number;
   };
   userType: {
-    userType: number;
+    userTypeId: number;
     description: string;
   };
   userState: {
