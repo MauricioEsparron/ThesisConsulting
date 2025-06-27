@@ -29,53 +29,89 @@ const ListarCursos: React.FC = () => {
   if (error) return <div className="text-center text-red-500">{error}</div>;
 
   return (
-    <div className="p-6 bg-white rounded-xl shadow-lg">
-      <h2 className="text-2xl font-bold text-blue-600 mb-6 text-center">
-        Lista de Cursos
-      </h2>
+    <div className="flex justify-center p-6">
+      <div className="bg-white rounded-xl shadow-lg w-full max-w-8xl">
+        <h2
+          style={{ padding: "12px 15px" }}
+          className="text-2xl font-bold text-blue-600 mb-6 text-center"
+        >
+          Lista de Cursos
+        </h2>
 
-      <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-200 rounded-lg shadow-sm">
-          <thead>
-            <tr className="bg-blue-100 text-blue-800 text-sm font-semibold uppercase">
-              <th className="px-6 py-3 text-left">ID</th>
-              <th className="px-6 py-3 text-left">Nombre curso</th>
-              <th className="px-6 py-3 text-left">Descripcion</th>
-              <th className="px-6 py-3 text-left">Estado</th>
-              <th className="px-6 py-3 text-left">Profesor</th>
-            </tr>
-          </thead>
-          <tbody>
-            {courses.map((course) => (
-              <tr
-                key={course.idCourse}
-                className="hover:bg-gray-100 border-b border-gray-200 transition"
-              >
-                <td className="px-6 py-4">{course.idCourse}</td>
-                <td className="px-6 py-4">{course.name}</td>
-                <td className="px-6 py-4">{course.description}</td>
-                <td className="px-6 py-4">
-                  <span
-                    className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      course.courseStateId === 1
-                        ? "bg-green-100 text-green-800"
-                        : course.courseStateId === 2
-                        ? "bg-yellow-100 text-yellow-800"
-                        : "bg-red-100 text-red-800"
-                    }`}
-                  >
-                    {course.courseStateId === 1
-                      ? "Activo"
-                      : course.courseStateId === 2
-                      ? "En mantenimiento"
-                      : "Inactivo"}
-                  </span>
-                </td>
-                <td className="px-6 py-4">{course.professorFullName}</td>
+        <div className="overflow-x-auto">
+          <table className="min-w-full border border-gray-200 rounded-lg shadow-sm">
+            <thead>
+              <tr className="bg-blue-100 text-blue-800 text-sm font-semibold uppercase">
+                <th
+                  style={{ padding: "12px 15px" }}
+                  className="px-6 py-3 text-left"
+                >
+                  ID
+                </th>
+                <th
+                  style={{ padding: "12px 15px" }}
+                  className="px-6 py-3 text-left"
+                >
+                  Nombre curso
+                </th>
+                <th
+                  style={{ padding: "12px 15px" }}
+                  className="px-6 py-3 text-left"
+                >
+                  Descripcion
+                </th>
+                <th
+                  style={{ padding: "12px 15px" }}
+                  className="px-6 py-3 text-left"
+                >
+                  Estado
+                </th>
+                <th
+                  style={{ padding: "12px 15px" }}
+                  className="px-6 py-3 text-left"
+                >
+                  Profesor
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {courses.map((course) => (
+                <tr
+                  key={course.idCourse}
+                  className="hover:bg-gray-100 border-b border-gray-200 transition"
+                >
+                  <td className="px-6 py-4" style={{ padding: "12px 15px" }}>
+                    {course.idCourse}
+                  </td>
+                  <td className="px-6 py-4" style={{ padding: "12px 15px" }}>
+                    {course.name}
+                  </td>
+                  <td className="px-6 py-4" style={{ padding: "12px 15px" }}>
+                    {course.description}
+                  </td>
+                  <td className="px-6 py-4" style={{ padding: "12px 15px" }}>
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        course.courseStateId === 1
+                          ? "bg-green-100 text-green-800"
+                          : course.courseStateId === 2
+                          ? "bg-yellow-100 text-yellow-800"
+                          : "bg-red-100 text-red-800"
+                      }`}
+                    >
+                      {course.courseStateId === 1
+                        ? "Activo"
+                        : course.courseStateId === 2
+                        ? "En mantenimiento"
+                        : "Inactivo"}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4">{course.professorFullName}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
